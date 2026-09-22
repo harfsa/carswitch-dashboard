@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22",
+  "updated_at": "2026-09-22T13:20:16Z",
   "source": "CarSwitch",
   "count": 207,
   "cars": [
@@ -1659,5 +1659,14 @@
       "price": 784500.0,
       "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sv/2024/830925"
     }
-  ]
+  ],
+  "update_stats": {
+    "checked": 207,
+    "counts": {
+      "gone": 58,
+      "temporary": 4,
+      "unparsed": 145
+    },
+    "deleted": 0
+  }
 }
