@@ -1,0 +1,33 @@
+name: Test CarSwitch Playwright updater
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright and Chromium
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Test 3 listings
+        env:
+          TEST_LIMIT: "3"
+          PAGE_TIMEOUT_MS: "60000"
+          WAIT_AFTER_LOAD_MS: "5000"
+        run: python scripts/update_carswitch_playwright.py
