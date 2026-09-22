@@ -1,228 +1,352 @@
 #!/usr/bin/env python3
-"""Update the CarSwitch luxury-car dataset.
-
-Strategy:
-1. Read the current dataset as a seed.
-2. Validate/discover listing URLs from CarSwitch search pages.
-3. Keep only the configured luxury brands.
-4. Re-fetch each listing page and extract current year/mileage/price.
-5. Drop listings that are no longer live.
-6. Write an atomic JSON file with update metadata.
-
-The script is deliberately conservative: if a listing page is temporarily
-unavailable, it is not immediately deleted. It is removed only after a
-confirmed 404/redirect-away/dead-listing signal.
 """
-from __future__ import annotations
-import json, os, re, sys, time, random
+CarSwitch safe updater.
+
+Reads data/carswitch_data.json, visits the individual listing URLs already
+stored in the dataset, extracts current listing information, and only writes
+changes when enough listings were successfully verified.
+
+This script is deliberately conservative:
+- A temporary/network/parsing failure never deletes a car.
+- A listing is removed only after a successful page response explicitly
+  indicates that the listing is unavailable.
+- If the successful verification rate is too low, the old dataset is kept.
+"""
+
+import json
+import os
+import re
+import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data" / "carswitch_data.json"
-BASE = "https://ksa.carswitch.com"
-SEARCH = "https://ksa.carswitch.com/en/saudi/used-cars/search?page={}"
-BRANDS = {"BMW", "Lexus", "Range Rover", "Audi", "Genesis", "Land Rover", "Porsche", "Infiniti", "Cadillac", "Maserati"}
-BRAND_ALIASES = {
-    "bmw":"BMW", "lexus":"Lexus", "range-rover":"Range Rover", "range_rover":"Range Rover",
-    "audi":"Audi", "genesis":"Genesis", "land-rover":"Land Rover", "land_rover":"Land Rover",
-    "porsche":"Porsche", "infiniti":"Infiniti", "cadillac":"Cadillac", "maserati":"Maserati"
+DATA_FILE = Path("data/carswitch_data.json")
+BACKUP_FILE = Path("data/carswitch_data.backup.json")
+
+MIN_SUCCESS_RATE = float(os.getenv("MIN_SUCCESS_RATE", "0.60"))
+MIN_SUCCESS_COUNT = int(os.getenv("MIN_SUCCESS_COUNT", "20"))
+REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "25"))
+SLEEP_SECONDS = float(os.getenv("REQUEST_DELAY", "0.35"))
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/140.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
+              "image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9,ar;q=0.8",
+    "Cache-Control": "no-cache",
 }
 
-session = requests.Session()
-session.headers.update({
-    "User-Agent": "Mozilla/5.0 (compatible; CarSwitchDashboardUpdater/1.0; +https://github.com/)",
-    "Accept-Language": "en-US,en;q=0.9,ar;q=0.8",
-})
+UNAVAILABLE_MARKERS = [
+    "car not found",
+    "listing not found",
+    "vehicle not found",
+    "page not found",
+    "no longer available",
+    "listing is no longer available",
+    "this car is no longer available",
+    "this vehicle is no longer available",
+    "404 - not found",
+]
 
+def clean_text(value):
+    if value is None:
+        return ""
+    return re.sub(r"\s+", " ", str(value)).strip()
 
-def norm_num(s):
-    if s is None: return None
-    s = str(s).replace(",", "").replace("٬", "").replace("٫", ".")
+def to_number(value):
+    if value is None:
+        return None
+    s = clean_text(value).replace(",", "").replace("٫", ".")
     m = re.search(r"\d+(?:\.\d+)?", s)
-    return float(m.group(0)) if m else None
-
-
-def listing_id(url):
-    m = re.search(r"/(\d+)/?$", url or "")
-    return m.group(1) if m else ""
-
-
-def brand_from_url(url):
-    parts = [x for x in urlparse(url).path.split("/") if x]
-    try:
-        i = parts.index("used-car")
-        slug = parts[i+1]
-    except (ValueError, IndexError):
+    if not m:
         return None
-    return BRAND_ALIASES.get(slug.lower())
-
-
-def request(url, timeout=25):
     try:
-        r = session.get(url, timeout=timeout, allow_redirects=True)
-        return r
-    except requests.RequestException:
+        n = float(m.group())
+        return int(n) if n.is_integer() else n
+    except ValueError:
         return None
 
+def first_number(text):
+    return to_number(text)
 
-def extract_jsonld(soup):
-    vals = []
-    for tag in soup.select('script[type="application/ld+json"]'):
-        try:
-            data = json.loads(tag.string or tag.get_text())
-            vals.extend(data if isinstance(data, list) else [data])
-        except Exception:
-            pass
-    return vals
+def find_value(text, labels):
+    low = text.lower()
+    for label in labels:
+        i = low.find(label.lower())
+        if i >= 0:
+            chunk = text[i:i + 180]
+            n = first_number(chunk)
+            if n is not None:
+                return n
+    return None
 
-
-def parse_detail(url, fallback=None):
-    r = request(url)
-    if r is None:
-        return None, "temporary"
-    if r.status_code == 404:
-        return None, "gone"
-    final_url = r.url
-    # A live listing should remain a used-car detail URL. Redirects to search/home
-    # are treated as a confirmed removal.
-    if "/used-car/" not in final_url:
-        return None, "gone"
-    soup = BeautifulSoup(r.text, "html.parser")
-    text = " ".join(soup.stripped_strings)
-
-    brand = brand_from_url(final_url) or (fallback or {}).get("brand")
-    if brand not in BRANDS:
-        brand = (fallback or {}).get("brand")
-    model = (fallback or {}).get("model")
-    year = (fallback or {}).get("year")
-    mileage = (fallback or {}).get("mileage")
-    price = (fallback or {}).get("price")
-
-    # Prefer JSON-LD where available.
-    for item in extract_jsonld(soup):
-        if not isinstance(item, dict):
+def jsonld_objects(soup):
+    objects = []
+    for tag in soup.find_all("script", attrs={"type": re.compile("ld\\+json", re.I)}):
+        raw = tag.string or tag.get_text()
+        if not raw:
             continue
-        offers = item.get("offers") or {}
-        if isinstance(offers, list): offers = offers[0] if offers else {}
-        if not model:
-            model = item.get("model") or item.get("name")
-        price = norm_num(offers.get("price")) or price
-        if not year:
-            year = norm_num(item.get("vehicleModelDate") or item.get("productionDate")) or year
-        if not mileage:
-            mileage = norm_num(item.get("mileageFromOdometer", {}).get("value") if isinstance(item.get("mileageFromOdometer"), dict) else item.get("mileageFromOdometer")) or mileage
+        try:
+            data = json.loads(raw)
+        except Exception:
+            continue
+        if isinstance(data, list):
+            objects.extend(data)
+        elif isinstance(data, dict):
+            objects.append(data)
+    return objects
 
-    # Title/visible text fallbacks. CarSwitch exposes year, mileage and price in
-    # human-readable text on listing pages.
-    title = soup.find("h1")
-    title_text = title.get_text(" ", strip=True) if title else ""
-    if title_text:
-        m = re.search(r"(\d{4})\s+(.+)", title_text)
-        if m and not year: year = int(m.group(1))
-        if m and not model: model = m.group(2).strip()
+def walk_jsonld(obj):
+    if isinstance(obj, dict):
+        yield obj
+        for v in obj.values():
+            yield from walk_jsonld(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from walk_jsonld(v)
 
+def extract_listing(html, url):
+    soup = BeautifulSoup(html, "html.parser")
+    visible = clean_text(soup.get_text(" ", strip=True))
+
+    low = visible.lower()
+    unavailable = any(marker in low for marker in UNAVAILABLE_MARKERS)
+
+    title = ""
+    title_tag = soup.find("title")
+    if title_tag:
+        title = clean_text(title_tag.get_text())
+
+    canonical = ""
+    c = soup.find("link", rel="canonical")
+    if c and c.get("href"):
+        canonical = urljoin(url, c["href"])
+
+    data = {}
+    for obj in jsonld_objects(soup):
+        for item in walk_jsonld(obj):
+            if not isinstance(item, dict):
+                continue
+            typ = str(item.get("@type", "")).lower()
+            if "vehicle" in typ or "car" in typ or "product" in typ:
+                data.update(item)
+
+    # JSON-LD / metadata first.
+    name = clean_text(data.get("name"))
+    brand = data.get("brand")
+    if isinstance(brand, dict):
+        brand = brand.get("name")
+    brand = clean_text(brand)
+
+    model = clean_text(data.get("model"))
+    year = data.get("vehicleModelDate") or data.get("modelDate")
+    price = None
+    offers = data.get("offers")
+    if isinstance(offers, dict):
+        price = offers.get("price")
+    elif isinstance(offers, list) and offers:
+        if isinstance(offers[0], dict):
+            price = offers[0].get("price")
+
+    mileage = None
+    odo = data.get("mileageFromOdometer")
+    if isinstance(odo, dict):
+        mileage = odo.get("value")
+    elif odo is not None:
+        mileage = odo
+
+    # Page-text fallbacks.
     if not year:
-        m = re.search(r"\b(19\d{2}|20\d{2})\b", text)
-        year = int(m.group(1)) if m else year
-    if not mileage:
-        m = re.search(r"([\d,]+)\s*(?:KM|km)", text)
-        mileage = norm_num(m.group(1)) if m else mileage
-    if not price:
-        m = re.search(r"(?:SAR|ريال)\s*([\d,]+)", text)
-        price = norm_num(m.group(1)) if m else price
+        m = re.search(r"\b(19\d{2}|20\d{2})\b", visible)
+        year = m.group(1) if m else None
 
-    if not (brand and model and year and mileage is not None and price is not None):
-        # A page with an explicit sold/unavailable message should be dropped.
-        dead_words = ["no longer available", "not available", "page not found", "غير متاحة", "غير متوفر"]
-        if any(w in text.lower() for w in dead_words):
-            return None, "gone"
-        return None, "unparsed"
+    if price is None:
+        price = find_value(visible, ["price", "SAR", "ريال"])
+
+    if mileage is None:
+        mileage = find_value(
+            visible,
+            ["mileage", "odometer", "km", "kilometers", "كم"]
+        )
+
+    if not name:
+        h1 = soup.find("h1")
+        name = clean_text(h1.get_text()) if h1 else title
+
+    # If the page returned HTML but contains no meaningful listing identity,
+    # treat it as an unparsed response, not as a deleted listing.
+    meaningful = bool(name or brand or model or price is not None or mileage is not None)
+
+    if unavailable and not meaningful:
+        return {"status": "unavailable"}
+
+    if not meaningful:
+        return {"status": "unparsed"}
 
     return {
+        "status": "active",
+        "name": name,
         "brand": brand,
-        "model": str(model).strip(),
-        "year": int(float(year)),
-        "mileage": float(mileage),
-        "price": float(price),
-        "url": final_url,
-    }, "ok"
+        "model": model,
+        "year": to_number(year),
+        "price": to_number(price),
+        "mileage": to_number(mileage),
+        "canonical_url": canonical or url,
+    }
 
+def normalize_car(car):
+    return {
+        "id": car.get("id"),
+        "url": car.get("url") or car.get("listing_url") or car.get("link"),
+        "brand": car.get("brand") or car.get("make") or "",
+        "model": car.get("model") or car.get("description") or "",
+        "year": car.get("year"),
+        "mileage": car.get("mileage"),
+        "price": car.get("price"),
+    }
 
-def discover_urls(max_pages=140):
-    found = {}
-    empty_pages = 0
-    for page in range(1, max_pages + 1):
-        r = request(SEARCH.format(page), timeout=30)
-        if not r or r.status_code >= 400:
-            break
-        soup = BeautifulSoup(r.text, "html.parser")
-        links = []
-        for a in soup.select('a[href*="/used-car/"]'):
-            href = urljoin(BASE, a.get("href", ""))
-            if "/used-car/" in href and listing_id(href):
-                b = brand_from_url(href)
-                if b in BRANDS:
-                    links.append(href)
-                    found[listing_id(href)] = href
-        if not links:
-            empty_pages += 1
-            if empty_pages >= 2: break
-        else:
-            empty_pages = 0
-        time.sleep(random.uniform(0.5, 1.2))
-    return found
-
+def apply_update(car, result):
+    out = dict(car)
+    if result.get("brand"):
+        out["brand"] = result["brand"]
+    if result.get("model"):
+        out["model"] = result["model"]
+    if result.get("name") and not out.get("model"):
+        out["model"] = result["name"]
+    if result.get("year") is not None:
+        out["year"] = result["year"]
+    if result.get("mileage") is not None:
+        out["mileage"] = result["mileage"]
+    if result.get("price") is not None:
+        out["price"] = result["price"]
+    if result.get("canonical_url"):
+        out["url"] = result["canonical_url"]
+    out["last_checked"] = datetime.now(timezone.utc).isoformat()
+    out["source"] = "CarSwitch"
+    return out
 
 def main():
-    if DATA.exists():
-        payload = json.loads(DATA.read_text(encoding="utf-8"))
-        seed = payload.get("cars", payload) if isinstance(payload, dict) else payload
-    else:
-        seed = []
-    seed_by_id = {listing_id(x.get("url")): x for x in seed if listing_id(x.get("url"))}
+    if not DATA_FILE.exists():
+        print(f"ERROR: {DATA_FILE} not found", file=sys.stderr)
+        sys.exit(1)
 
-    discovered = discover_urls()
-    urls = dict((k, v) for k, v in ((listing_id(x.get("url")), x.get("url")) for x in seed) if k)
-    urls.update(discovered)
+    with DATA_FILE.open("r", encoding="utf-8") as f:
+        payload = json.load(f)
+
+    cars = payload.get("cars", [])
+    if not isinstance(cars, list) or not cars:
+        print("ERROR: current dataset contains no cars; refusing to update.")
+        sys.exit(2)
+
+    # Keep a local backup before any successful write.
+    BACKUP_FILE.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+
+    session = requests.Session()
+    session.headers.update(HEADERS)
 
     updated = []
-    gone = []
-    temporary = []
-    unparsed = []
-    for i, (lid, url) in enumerate(urls.items(), 1):
-        item, status = parse_detail(url, seed_by_id.get(lid))
-        if status == "ok": updated.append(item)
-        elif status == "gone": gone.append(lid)
-        elif status == "temporary": temporary.append(lid)
-        else: unparsed.append(lid)
-        time.sleep(random.uniform(0.35, 0.8))
+    active = 0
+    unavailable = 0
+    unparsed = 0
+    failed = 0
 
-    # Conservative rule: retain temporarily failed/unparsed seed records; remove
-    # only confirmed gone records.
-    by_id = {listing_id(x["url"]): x for x in updated}
-    for lid in temporary + unparsed:
-        if lid in seed_by_id and lid not in by_id:
-            by_id[lid] = seed_by_id[lid]
+    for index, original in enumerate(cars, 1):
+        car = dict(original)
+        url = normalize_car(car)["url"]
 
-    cars = sorted(by_id.values(), key=lambda x: (x["brand"], x["model"], x["year"], x["price"]))
-    result = {
-        "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        "source": "CarSwitch KSA",
-        "count": len(cars),
-        "removed_confirmed": len(gone),
-        "temporary_failures": len(temporary),
-        "unparsed": len(unparsed),
-        "cars": cars,
+        if not url or "carswitch.com" not in url:
+            failed += 1
+            updated.append(car)
+            continue
+
+        try:
+            response = session.get(url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+
+            if response.status_code == 404:
+                unavailable += 1
+                # A genuine HTTP 404 is sufficient evidence to remove it.
+                continue
+
+            if response.status_code in (403, 429, 500, 502, 503, 504):
+                failed += 1
+                updated.append(car)
+                continue
+
+            response.raise_for_status()
+            result = extract_listing(response.text, response.url)
+
+            if result["status"] == "active":
+                active += 1
+                updated.append(apply_update(car, result))
+            elif result["status"] == "unavailable":
+                unavailable += 1
+                # Remove only when the page itself clearly says unavailable.
+            else:
+                unparsed += 1
+                updated.append(car)
+
+        except requests.RequestException as exc:
+            failed += 1
+            updated.append(car)
+            print(f"[{index}/{len(cars)}] request failed: {exc}")
+        except Exception as exc:
+            failed += 1
+            updated.append(car)
+            print(f"[{index}/{len(cars)}] parse failed: {exc}")
+
+        if SLEEP_SECONDS:
+            time.sleep(SLEEP_SECONDS)
+
+    checked = active + unavailable + unparsed + failed
+    success_rate = active / max(1, len(cars))
+
+    print("---- CarSwitch update report ----")
+    print(f"Previous cars: {len(cars)}")
+    print(f"Verified active: {active}")
+    print(f"Confirmed unavailable: {unavailable}")
+    print(f"Unparsed: {unparsed}")
+    print(f"Request/other failures: {failed}")
+    print(f"Successful active rate: {success_rate:.1%}")
+
+    # Never replace a healthy dataset with a partial scrape.
+    if active < MIN_SUCCESS_COUNT or success_rate < MIN_SUCCESS_RATE:
+        print(
+            "SAFE MODE: verification threshold not met. "
+            "Keeping the existing dataset unchanged."
+        )
+        sys.exit(3)
+
+    payload["cars"] = updated
+    payload["count"] = len(updated)
+    payload["updated_at"] = datetime.now(timezone.utc).isoformat()
+    payload["update_stats"] = {
+        "previous_count": len(cars),
+        "verified_active": active,
+        "confirmed_unavailable": unavailable,
+        "unparsed": unparsed,
+        "failed": failed,
     }
-    tmp = DATA.with_suffix(".tmp")
-    tmp.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-    os.replace(tmp, DATA)
-    print(json.dumps({k: result[k] for k in result if k != "cars"}, ensure_ascii=False))
+
+    tmp = DATA_FILE.with_suffix(".json.tmp")
+    tmp.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+    tmp.replace(DATA_FILE)
+
+    print(f"SUCCESS: wrote {len(updated)} verified/retained cars.")
 
 if __name__ == "__main__":
     main()
