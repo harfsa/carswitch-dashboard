@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-22T11:18:26.414154Z",
+  "updated_at": "2026-09-22T11:34:51.385183Z",
   "source": "CarSwitch KSA",
   "count": 207,
   "removed_confirmed": 0,
   "temporary_failures": 0,
-  "unparsed": 244,
+  "unparsed": 314,
   "cars": [
     {
       "brand": "Audi",
@@ -788,7 +788,7 @@
       "year": 2019,
       "mileage": 164001.0,
       "price": 67000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/g70/2019/846896"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/g70/2019/846896"
     },
     {
       "brand": "Genesis",
@@ -796,7 +796,7 @@
       "year": 2023,
       "mileage": 39252.0,
       "price": 110000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/g70/2023/859719"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/g70/2023/859719"
     },
     {
       "brand": "Genesis",
@@ -804,7 +804,7 @@
       "year": 2021,
       "mileage": 290981.0,
       "price": 77000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/g80/2021/861501"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/g80/2021/861501"
     },
     {
       "brand": "Genesis",
@@ -812,7 +812,7 @@
       "year": 2021,
       "mileage": 33000.0,
       "price": 127600.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/genesis/gv70/2021/844702"
+      "url": "https://ksa.carswitch.com/en/jeddah/used-car/genesis/gv70/2021/844702"
     },
     {
       "brand": "Genesis",
@@ -820,7 +820,7 @@
       "year": 2023,
       "mileage": 126165.0,
       "price": 110700.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv70/2023/829401"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv70/2023/829401"
     },
     {
       "brand": "Genesis",
@@ -828,7 +828,7 @@
       "year": 2021,
       "mileage": 133430.0,
       "price": 135000.0,
-      "url": "https://ksa.carswitch.com/al-khobar/used-car/genesis/gv80/2021/846425"
+      "url": "https://ksa.carswitch.com/en/al-khobar/used-car/genesis/gv80/2021/846425"
     },
     {
       "brand": "Genesis",
@@ -844,7 +844,7 @@
       "year": 2022,
       "mileage": 151968.0,
       "price": 139000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2022/868617"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2022/868617"
     },
     {
       "brand": "Genesis",
@@ -852,7 +852,7 @@
       "year": 2022,
       "mileage": 97792.0,
       "price": 150000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2022/869375"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2022/869375"
     },
     {
       "brand": "Genesis",
@@ -860,7 +860,7 @@
       "year": 2022,
       "mileage": 86099.0,
       "price": 160000.0,
-      "url": "https://ksa.carswitch.com/dammam/used-car/genesis/gv80/2022/844696"
+      "url": "https://ksa.carswitch.com/en/dammam/used-car/genesis/gv80/2022/844696"
     },
     {
       "brand": "Genesis",
@@ -868,7 +868,7 @@
       "year": 2022,
       "mileage": 102000.0,
       "price": 160750.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/genesis/gv80/2022/797261"
+      "url": "https://ksa.carswitch.com/en/jeddah/used-car/genesis/gv80/2022/797261"
     },
     {
       "brand": "Genesis",
@@ -876,7 +876,7 @@
       "year": 2025,
       "mileage": 19991.0,
       "price": 275500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/872402"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2025/872402"
     },
     {
       "brand": "Genesis",
@@ -884,7 +884,7 @@
       "year": 2025,
       "mileage": 25349.0,
       "price": 275500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/872403"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2025/872403"
     },
     {
       "brand": "Genesis",
@@ -892,7 +892,7 @@
       "year": 2025,
       "mileage": 9153.0,
       "price": 328000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/868293"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2025/868293"
     },
     {
       "brand": "Infiniti",
@@ -956,7 +956,7 @@
       "year": 2020,
       "mileage": 96586.0,
       "price": 185000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2020/872927"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2020/872927"
     },
     {
       "brand": "Land Rover",
@@ -972,7 +972,7 @@
       "year": 2022,
       "mileage": 79613.0,
       "price": 250200.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2022/835911"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2022/835911"
     },
     {
       "brand": "Land Rover",
@@ -980,7 +980,7 @@
       "year": 2023,
       "mileage": 74600.0,
       "price": 286000.0,
-      "url": "https://ksa.carswitch.com/al-khobar/used-car/land-rover/defender/2023/846815"
+      "url": "https://ksa.carswitch.com/en/al-khobar/used-car/land-rover/defender/2023/846815"
     },
     {
       "brand": "Land Rover",
@@ -988,7 +988,7 @@
       "year": 2023,
       "mileage": 34059.0,
       "price": 300000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2023/870793"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2023/870793"
     },
     {
       "brand": "Land Rover",
@@ -996,7 +996,7 @@
       "year": 2024,
       "mileage": 30048.0,
       "price": 277250.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2024/801668"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2024/801668"
     },
     {
       "brand": "Land Rover",
@@ -1004,7 +1004,7 @@
       "year": 2024,
       "mileage": 96990.0,
       "price": 285000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2024/873186"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2024/873186"
     },
     {
       "brand": "Land Rover",
@@ -1012,7 +1012,7 @@
       "year": 2015,
       "mileage": 134562.0,
       "price": 45000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2015/871142"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2015/871142"
     },
     {
       "brand": "Land Rover",
@@ -1020,7 +1020,7 @@
       "year": 2016,
       "mileage": 174172.0,
       "price": 43600.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2016/833050"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2016/833050"
     },
     {
       "brand": "Land Rover",
@@ -1028,7 +1028,7 @@
       "year": 2016,
       "mileage": 137326.0,
       "price": 54500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2016/849206"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2016/849206"
     },
     {
       "brand": "Land Rover",
@@ -1036,7 +1036,7 @@
       "year": 2019,
       "mileage": 170709.0,
       "price": 45000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2019/856112"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2019/856112"
     },
     {
       "brand": "Lexus",
@@ -1364,7 +1364,7 @@
       "year": 2015,
       "mileage": 191000.0,
       "price": 86000.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/porsche/cayenne/2015/873031"
+      "url": "https://ksa.carswitch.com/en/jeddah/used-car/porsche/cayenne/2015/873031"
     },
     {
       "brand": "Porsche",
@@ -1372,7 +1372,7 @@
       "year": 2021,
       "mileage": 51437.0,
       "price": 198850.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/cayenne/2021/842012"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/cayenne/2021/842012"
     },
     {
       "brand": "Porsche",
@@ -1380,7 +1380,7 @@
       "year": 2021,
       "mileage": 60000.0,
       "price": 335000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/cayenne-gts/2021/862995"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/cayenne-gts/2021/862995"
     },
     {
       "brand": "Porsche",
@@ -1388,7 +1388,7 @@
       "year": 2019,
       "mileage": 140000.0,
       "price": 178000.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/porsche/cayenne-s/2019/826165"
+      "url": "https://ksa.carswitch.com/en/jeddah/used-car/porsche/cayenne-s/2019/826165"
     },
     {
       "brand": "Porsche",
@@ -1396,7 +1396,7 @@
       "year": 2020,
       "mileage": 75877.0,
       "price": 220000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/macan-gts/2020/821408"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/macan-gts/2020/821408"
     },
     {
       "brand": "Porsche",
@@ -1404,7 +1404,7 @@
       "year": 2014,
       "mileage": 111286.0,
       "price": 83600.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/macan-s/2014/819972"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/macan-s/2014/819972"
     },
     {
       "brand": "Porsche",
@@ -1412,7 +1412,7 @@
       "year": 2013,
       "mileage": 252052.0,
       "price": 41000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/panamera/2013/865889"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/panamera/2013/865889"
     },
     {
       "brand": "Porsche",
@@ -1420,7 +1420,7 @@
       "year": 2017,
       "mileage": 61200.0,
       "price": 195000.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/porsche/panamera-4s/2017/849790"
+      "url": "https://ksa.carswitch.com/en/jeddah/used-car/porsche/panamera-4s/2017/849790"
     },
     {
       "brand": "Range Rover",
