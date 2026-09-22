@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CarSwitch Platform</title>
+<style>body{margin:0;font-family:Arial,sans-serif;background:#f8f4e8;color:#0b5f49}main{max-width:1200px;margin:40px auto;padding:24px}.card{background:#fffdf8;border:1px solid #d7b85a;border-radius:18px;padding:24px}h1{margin-top:0}.status{display:inline-block;padding:8px 14px;border-radius:999px;background:#e8f3ee}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}button{border:1px solid #d7b85a;border-radius:10px;padding:12px 18px;background:#fff;color:#0b5f49;cursor:pointer;font-weight:700}button.primary{background:#087f5b;color:#fff}table{width:100%;border-collapse:collapse;margin-top:20px}th,td{padding:12px;border-bottom:1px solid #eee;text-align:right}@media(max-width:700px){main{margin:10px;padding:10px}}</style>
+</head>
+<body>
+<main><div class="card">
+<h1>CarSwitch Platform</h1>
+<p>لوحة بيانات السيارات الفاخرة</p>
+<div class="status" id="status">جاري تحميل البيانات...</div>
+<div class="actions"><button class="primary" id="refresh">تحديث البيانات</button><span id="updated"></span></div>
+<div id="summary"></div><div style="overflow:auto"><table><thead><tr><th>Brand</th><th>Model</th><th>Year</th><th>Mileage</th><th>Price</th></tr></thead><tbody id="rows"></tbody></table></div>
+</div></main>
+<script>
+const DATA_URL='./data/carswitch_data.json';
+let payload=null;
+function esc(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+async function load(force=false){
+ const status=document.getElementById('status'); status.textContent='جاري تحديث البيانات...';
+ try{
+  const r=await fetch(DATA_URL+(force?'?t='+Date.now():''),{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status);
+  payload=await r.json();
+  document.getElementById('summary').textContent=`عدد السيارات: ${payload.count ?? payload.cars?.length ?? 0}`;
+  document.getElementById('updated').textContent=payload.updated_at?`آخر تحديث: ${new Date(payload.updated_at).toLocaleString('en-GB')}`:'';
+  document.getElementById('rows').innerHTML=(payload.cars||[]).map(c=>`<tr><td>${esc(c.brand)}</td><td>${esc(c.model)}</td><td>${esc(c.year)}</td><td>${esc(c.mileage)}</td><td>${esc(c.price)}</td></tr>`).join('');
+  status.textContent='تم تحميل آخر نسخة من البيانات';
+ }catch(e){status.textContent='تعذر تحميل البيانات';console.error(e);}
+}
+document.getElementById('refresh').addEventListener('click',()=>load(true));
+load();
+setInterval(()=>load(false),30*60*1000);
+</script>
+</body></html>
