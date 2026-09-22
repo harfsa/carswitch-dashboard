@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-22T00:00:00Z",
+  "updated_at": "2026-09-22T11:00:49.824856Z",
   "source": "CarSwitch KSA",
-  "count": 207,
+  "count": 0,
   "removed_confirmed": 0,
   "temporary_failures": 0,
-  "unparsed": 0,
+  "unparsed": 118,
   "cars": []
 }
