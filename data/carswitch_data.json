@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-22T11:34:51.385183Z",
+  "updated_at": "2026-09-22T11:51:13.016742Z",
   "source": "CarSwitch KSA",
   "count": 207,
   "removed_confirmed": 0,
   "temporary_failures": 0,
-  "unparsed": 314,
+  "unparsed": 332,
   "cars": [
     {
       "brand": "Audi",
@@ -540,7 +540,7 @@
       "year": 2023,
       "mileage": 9670.0,
       "price": 159000.0,
-      "url": "https://ksa.carswitch.com/al-khobar/used-car/bmw/x3/2023/858586"
+      "url": "https://ksa.carswitch.com/en/al-khobar/used-car/bmw/x3/2023/858586"
     },
     {
       "brand": "BMW",
@@ -900,7 +900,7 @@
       "year": 2018,
       "mileage": 210123.0,
       "price": 62000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/q50/2018/855057"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/q50/2018/855057"
     },
     {
       "brand": "Infiniti",
@@ -908,7 +908,7 @@
       "year": 2015,
       "mileage": 272000.0,
       "price": 35500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2015/872288"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx60/2015/872288"
     },
     {
       "brand": "Infiniti",
@@ -916,7 +916,7 @@
       "year": 2015,
       "mileage": 129551.0,
       "price": 45000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2015/865742"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx60/2015/865742"
     },
     {
       "brand": "Infiniti",
@@ -924,7 +924,7 @@
       "year": 2020,
       "mileage": 77897.0,
       "price": 93000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2020/830370"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx60/2020/830370"
     },
     {
       "brand": "Infiniti",
@@ -932,7 +932,7 @@
       "year": 2022,
       "mileage": 59000.0,
       "price": 146700.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/infiniti/qx60/2022/821815"
+      "url": "https://ksa.carswitch.com/en/jeddah/used-car/infiniti/qx60/2022/821815"
     },
     {
       "brand": "Infiniti",
@@ -940,7 +940,7 @@
       "year": 2016,
       "mileage": 127000.0,
       "price": 55000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx70/2016/824113"
+      "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx70/2016/824113"
     },
     {
       "brand": "Infiniti",
