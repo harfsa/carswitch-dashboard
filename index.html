@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحة معلومات السيارات الفاخرة — CarSwitch</title>
+<style>
+:root{
+  --bg:#f4efe2;
+  --surface:#fffdf8;
+  --surface-soft:#faf6eb;
+  --green:#087451;
+  --green-dark:#07543f;
+  --green-soft:#edf5ef;
+  --text:#24362f;
+  --muted:#7b7465;
+  --line:#e6dcc2;
+  --shadow:0 5px 18px rgba(92,70,24,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f4efe2 0%,#f7f3e9 45%,#f2ecdc 100%);
+  color:var(--text);
+  font-family:"Tahoma","Arial","Noto Sans Arabic","Segoe UI",sans-serif;
+}
+.topbar{
+  border-top:4px solid #c7a64b;
+  position:sticky;top:0;z-index:30;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header{
+  max-width:1540px;margin:auto;padding:15px 30px;
+  display:flex;align-items:center;gap:17px;
+}
+.logo{
+  height:50px;max-width:195px;object-fit:contain;
+  background:#fff;padding:5px 9px;border:1px solid var(--line);border-radius:9px;
+}
+.title{flex:1}
+.title h1{margin:0;font-size:23px;color:var(--green-dark);letter-spacing:0}
+.title p{margin:5px 0 0;color:var(--muted);font-size:11px}
+
+.container{max-width:1540px;margin:auto;padding:22px 30px 40px}
+
+.hero{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:21px 24px;
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+}
+.hero-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.hero h2{font-size:25px;margin:0 0 5px;color:var(--text)}
+.hero p{margin:0;color:var(--muted);font-size:12px}
+.badge{
+  border:1px solid #dfcc8f;color:var(--green-dark);
+  background:#f4e7bd;padding:8px 12px;border-radius:8px;
+  font-size:10px;white-space:nowrap;font-weight:700
+}
+
+.filters{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:13px;
+  display:grid;
+  grid-template-columns:1.1fr .8fr 1.4fr 1fr auto;
+  gap:9px;
+  box-shadow:var(--shadow);
+  margin-bottom:14px
+}
+label{font-size:10px;color:var(--muted);display:block;margin:0 0 5px}
+select,input{
+  width:100%;padding:9px 10px;border:1px solid #dfd5bc;
+  border-radius:8px;background:#fffdf8;color:var(--text);
+  font-family:inherit;outline:none;font-size:11px
+}
+select:focus,input:focus{border-color:#b99a4a;box-shadow:0 0 0 2px rgba(8,127,91,.08)}
+button{
+  border:1px solid var(--green);border-radius:8px;padding:9px 15px;
+  background:var(--green);color:#fff;font-family:inherit;cursor:pointer;
+  font-weight:700;font-size:11px
+}
+button:hover{background:var(--green-dark)}
+
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:0 0 14px}
+.kpi{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+  box-shadow:var(--shadow);
+  border-top:3px solid #c7a64b;
+}
+.kpi .label{color:var(--muted);font-size:10px}
+.kpi .value{font-size:22px;font-weight:800;color:var(--green-dark);margin-top:7px}
+.kpi .sub{font-size:9px;color:var(--muted);margin-top:3px}
+
+.note{
+  background:#fcf8ed;
+  border:1px solid #eadfbe;
+  border-right:3px solid var(--green);
+  padding:9px 12px;
+  border-radius:8px;
+  font-size:10px;color:#62736d;
+  margin-bottom:14px
+}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:var(--shadow);
+  min-height:315px
+}
+.card.full{grid-column:1/-1}
+.brand-card .chart{height:375px}
+.card h2{
+  font-size:15px;margin:0 0 12px;color:var(--text);
+  display:flex;align-items:center;gap:8px
+}
+.card h2:before{content:"";width:3px;height:15px;border-radius:4px;background:#c7a64b}
+.chart{width:100%;height:330px;overflow:hidden}
+.chart svg{
+  font-family:"Tahoma","Arial","Noto Sans Arabic","Segoe UI",sans-serif
+}
+.chart svg text{fill:#52645e}
+.legend{font-size:10px;color:var(--muted);margin-top:5px}
+
+.sortbar{
+  display:flex;align-items:center;justify-content:flex-start;
+  gap:7px;margin:0 0 9px;direction:rtl
+}
+.sortbar label{margin:0;color:var(--muted);font-size:10px}
+.sortbar select{width:auto;min-width:175px;padding:7px 9px;font-size:10px}
+.sort-dir{
+  padding:7px 10px;font-size:10px;background:#fff;color:var(--green-dark);
+  border:1px solid #ddcfaa
+}
+
+.table-wrap{max-height:540px;overflow:auto;border:1px solid var(--line);border-radius:9px}
+table{border-collapse:collapse;width:100%;font-size:10px;background:#fff}
+th,td{padding:9px 8px;border-bottom:1px solid #edf1ef;text-align:right;white-space:nowrap}
+th{
+  position:sticky;top:0;background:#f0f7f4;color:var(--green-dark);
+  z-index:2;font-size:10px
+}
+tr:hover td{background:#f7fbf9}
+a{color:var(--green);text-decoration:none}
+.pill{
+  display:inline-block;background:#edf4ee;
+  border:1px solid #e2d4ac;color:var(--green-dark);
+  padding:3px 7px;border-radius:6px;font-size:9px;font-weight:700
+}
+.footer{margin:22px 0 3px;text-align:center;color:#8a9993;font-size:9px}
+
+@media(max-width:1150px){
+  .kpis{grid-template-columns:repeat(3,1fr)}
+  .filters{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .card.full{grid-column:auto}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .filters{grid-template-columns:1fr}
+  .header{padding:12px 16px}
+  .container{padding:15px}
+  .hero-row{align-items:flex-start;flex-direction:column}
+  .hero h2{font-size:21px}
+}
+
+/* ===== Platform / access layer ===== */
+.platform-userbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;background:rgba(255,253,248,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);direction:rtl}
+.platform-userbar .brandline{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green-dark)}
+.platform-userbar .brandline .mini-dot{width:10px;height:10px;border-radius:50%;background:var(--gold,#C7A64B);box-shadow:0 0 0 4px rgba(199,166,75,.15)}
+.platform-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pbtn{border:1px solid var(--line);background:#fffdf8;color:var(--green-dark);padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+.pbtn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(92,70,24,.10)}
+.pbtn.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.pbtn.gold{background:#f5ecd4;color:#6d5724;border-color:#ddc98e}
+.pbtn.danger{background:#fff0ed;color:#9b3325;border-color:#e6b5ad}
+.role-badge{padding:6px 9px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:12px;font-weight:800}
+.platform-panel{position:fixed;inset:0;background:rgba(24,39,33,.38);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px}
+.platform-panel.open{display:flex}
+.panel-card{width:min(980px,96vw);max-height:92vh;overflow:auto;background:#fffdf8;border:1px solid var(--line);border-radius:18px;box-shadow:0 22px 70px rgba(0,0,0,.18);padding:22px;direction:rtl}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.panel-head h2{margin:0;color:var(--green-dark)}
+.close-x{border:0;background:#f3eee2;border-radius:9px;width:36px;height:36px;cursor:pointer;font-size:18px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.form-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;font-weight:800;color:#596860}.field input,.field select{border:1px solid var(--line);background:#fff;padding:10px 11px;border-radius:9px;font:inherit;outline:none}.field input:focus,.field select:focus{border-color:#91b6a7;box-shadow:0 0 0 3px rgba(8,116,81,.08)}
+.panel-footer{display:flex;justify-content:flex-start;gap:8px;margin-top:18px}
+.notice{padding:11px 13px;border-radius:10px;background:#f8f2df;border:1px solid #e5d4a5;color:#675425;font-size:13px;margin-bottom:14px}
+.user-row{display:grid;grid-template-columns:1.3fr 1.4fr .8fr auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #eee6d4}.user-row:last-child{border-bottom:0}
+.user-meta strong{display:block}.user-meta span{font-size:12px;color:#7b7465}.user-role{font-size:12px;font-weight:800;color:var(--green-dark);background:var(--green-soft);padding:6px 9px;border-radius:999px;justify-self:start}
+.audit-row{padding:10px 0;border-bottom:1px solid #eee6d4;font-size:13px}.audit-row small{color:#7b7465}
+
+.login-card{width:min(460px,95vw);background:#fffdf8;border:1px solid var(--line);border-radius:22px;box-shadow:0 28px 90px rgba(46,65,56,.18);padding:30px}
+.login-logo{width:150px;max-width:55%;display:block;margin:0 auto 14px}.login-card h1{text-align:center;margin:0 0 8px;color:var(--green-dark);font-size:25px}.login-card p{text-align:center;color:#7b7465;margin:0 0 22px;font-size:13px}.login-card .field{margin-bottom:12px}.login-error{display:none;background:#fff0ed;color:#9b3325;border:1px solid #e6b5ad;padding:9px 11px;border-radius:9px;font-size:13px;margin-bottom:10px}.login-hint{margin-top:12px;font-size:11px;color:#8a8375;text-align:center}
+.editable-cell{cursor:pointer}.edit-btn{border:1px solid #cddbcf;background:#f0f7f2;color:var(--green-dark);border-radius:7px;padding:5px 8px;cursor:pointer;font-weight:700;font-size:11px}.readonly-note{font-size:12px;color:#7b7465;margin-top:8px}
+@media(max-width:760px){.form-grid,.form-grid.three{grid-template-columns:1fr}.user-row{grid-template-columns:1fr auto}.platform-userbar{position:relative}.panel-card{padding:16px}}
+
+</style>
+<style id="working-controls-css">
+button, .pbtn, .edit-btn, select { cursor:pointer; pointer-events:auto !important; }
+</style>
+<script id="carswitch-data-migration">
+(function(){
+  const REMOVED_IDS = new Set(['875520']);
+  function listingId(url){
+    const m = String(url||'').match(/\/(\d+)(?:\/)?$/);
+    return m ? m[1] : '';
+  }
+  try{
+    const raw = localStorage.getItem('carswitch_platform_v1');
+    if(raw){
+      const s = JSON.parse(raw);
+      if(Array.isArray(s.cars)){
+        s.cars = s.cars.filter(c => !REMOVED_IDS.has(listingId(c.url)));
+        localStorage.setItem('carswitch_platform_v1', JSON.stringify(s));
+      }
+    }
+  }catch(e){}
+})();
+</script>
+
+</head>
+<body>
+<div id="deploymentVersion" style="display:none">CarSwitch Dashboard v2026.09.22</div>
+
+<div class="platform-userbar" id="platformUserbar" style="display:flex">
+  <div class="brandline"><span class="mini-dot"></span><span>CarSwitch Platform</span><span class="role-badge" id="currentRoleBadge">OWNER</span></div>
+  <div class="platform-actions">
+    <span id="currentUserName" style="font-size:13px;font-weight:700;color:#5d695f"></span>
+    <button class="pbtn gold" id="usersBtn">المستخدمون</button>
+<button class="pbtn" id="ownerSettingsBtn">حساب المالك</button>
+    <button class="pbtn" id="auditBtn">سجل التعديلات</button>
+    <button class="pbtn primary" id="manageBtn">إدارة البيانات</button>
+    <button class="pbtn gold" id="refreshCarsBtn">تحديث البيانات</button>
+    <span id="dataUpdateStatus" style="font-size:11px;color:#667;align-self:center"></span>
+    
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="header">
+    <img class="logo" src="data:image/png;base64,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" alt="وزارة الطاقة">
+    <div class="title">
+      <h1>لوحة معلومات السيارات الفاخرة — CarSwitch</h1>
+      <p>تحليل تفاعلي شامل لبيانات ملف السيارات الفاخرة • <span id="headerCount">207</span> سجل</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="hero">
+    <div class="hero-row">
+      <div>
+        <h2>سوق السيارات الفاخرة</h2>
+        <p>لوحة تحليل تفاعلية لبيانات CarSwitch — الأسعار، الماركات، سنوات الموديل، الممشى والإعلانات.</p>
+      </div>
+      <div class="badge"><span id="heroCount">207</span> سجل • بيانات الملف المراجع</div>
+    </div>
+  </section>
+
+  <div style="font-size:11px;color:#8ea69d;margin:0 0 7px">التحكم في نطاق التحليل</div>
+  <div class="filters">
+    <div><label>الماركة</label><select id="brand"><option value="">كل الماركات</option></select></div>
+    <div><label>السنة</label><select id="year"><option value="">كل السنوات</option></select></div>
+    <div><label>بحث عن الموديل</label><input id="model" placeholder="مثال: Q8 أو X5"></div>
+    <div><label>نطاق السعر</label><select id="price"><option value="">كل الأسعار</option><option value="0-100000">أقل من 100 ألف</option><option value="100000-200000">100–200 ألف</option><option value="200000-400000">200–400 ألف</option><option value="400000+">أكثر من 400 ألف</option></select></div>
+    <div style="display:flex;align-items:end"><button onclick="resetFilters()">إعادة الضبط</button></div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="label">عدد السيارات</div><div class="value" id="kCount">—</div><div class="sub">السجلات المطابقة للفلاتر</div></div>
+    <div class="kpi"><div class="label">متوسط السعر</div><div class="value" id="kAvgPrice">—</div><div class="sub">ريال</div></div>
+    <div class="kpi"><div class="label">وسيط السعر</div><div class="value" id="kMedPrice">—</div><div class="sub">ريال</div></div>
+    <div class="kpi"><div class="label">متوسط الممشى</div><div class="value" id="kAvgMileage">—</div><div class="sub">كم</div></div>
+    <div class="kpi"><div class="label">متوسط سنة الموديل</div><div class="value" id="kAvgYear">—</div><div class="sub">سنة</div></div>
+    <div class="kpi"><div class="label">عدد الماركات</div><div class="value" id="kBrands">—</div><div class="sub">ضمن النطاق المحدد</div></div>
+  </div>
+
+  <div class="note">جميع المؤشرات والرسوم والجداول أدناه تُحسب مباشرة من سجلات ملف Excel المرفق، وتتغير فور تطبيق الفلاتر.</div>
+
+  <div class="grid">
+    <section class="card full brand-card"><h2>توزيع السيارات حسب الماركة</h2><div id="brandChart" class="chart"></div></section>
+    <section class="card"><h2>توزيع الأسعار</h2><div id="priceChart" class="chart"></div></section>
+    <section class="card"><h2>توزيع سنوات الموديل</h2><div id="yearChart" class="chart"></div></section>
+    <section class="card"><h2>توزيع الممشى</h2><div id="mileageChart" class="chart"></div></section>
+    <section class="card full">
+    <h2>تحليل الماركات</h2>
+    <div class="sortbar">
+      <label>ترتيب حسب:</label>
+      <select id="brandSort">
+        <option value="count">عدد السيارات</option>
+        <option value="share">النسبة</option>
+        <option value="avgPrice">متوسط السعر</option>
+        <option value="medianPrice">وسيط السعر</option>
+        <option value="minPrice">أدنى سعر</option>
+        <option value="maxPrice">أعلى سعر</option>
+        <option value="avgMileage">متوسط الممشى</option>
+        <option value="avgYear">متوسط السنة</option>
+        <option value="brand">اسم الماركة</option>
+      </select>
+      <button id="brandSortDir" class="sort-dir" type="button">تنازلي ↓</button>
+    </div>
+    <div id="brandTable"></div>
+  </section>
+    <section class="card full">
+    <h2>جميع البيانات — <span id="dataCount">207</span> سجل</h2>
+    <div class="sortbar">
+      <label>ترتيب حسب:</label>
+      <select id="dataSort">
+        <option value="price">السعر</option>
+        <option value="year">السنة</option>
+        <option value="mileage">الممشى</option>
+        <option value="brand">الماركة</option>
+        <option value="model">الموديل</option>
+      </select>
+      <button id="dataSortDir" class="sort-dir" type="button">تنازلي ↓</button>
+    </div>
+    <div id="dataTable"></div>
+  </section>
+  </div>
+  <div class="footer">وزارة الطاقة  •  CarSwitch  •  لوحة تحليل بيانات السيارات الفاخرة</div>
+</div>
+
+<script>
+const cars = [{"brand":"Audi","model":"Q8","year":2020,"mileage":159193.0,"price":136100.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/q8/2020/811296"},{"brand":"Audi","model":"Q7","year":2021,"mileage":71033.0,"price":141000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/q7/2021/855648"},{"brand":"Audi","model":"A3","year":2022,"mileage":44000.0,"price":89250.0,"url":"https://ksa.carswitch.com/jeddah/used-car/audi/a3/2022/825349"},{"brand":"Audi","model":"A6","year":2022,"mileage":83917.0,"price":95000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a6/2022/866070"},{"brand":"Audi","model":"A6","year":2022,"mileage":120398.0,"price":110000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a6/2022/833936"},{"brand":"Audi","model":"Q8","year":2022,"mileage":119483.0,"price":202000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/audi/q8/2022/841226"},{"brand":"Audi","model":"A3","year":2023,"mileage":28472.0,"price":88750.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a3/2023/818126"},{"brand":"Audi","model":"A6","year":2023,"mileage":72224.0,"price":143000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a6/2023/841803"},{"brand":"Audi","model":"Q7","year":2023,"mileage":30307.0,"price":186950.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/q7/2023/844741"},{"brand":"Audi","model":"S3","year":2024,"mileage":32472.0,"price":153500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/s3/2024/840258"},{"brand":"Audi","model":"A6","year":2024,"mileage":26650.0,"price":188000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a6/2024/870653"},{"brand":"Audi","model":"A4","year":2025,"mileage":18929.0,"price":145625.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a4/2025/828424"},{"brand":"Audi","model":"A4","year":2025,"mileage":22000.0,"price":149000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a4/2025/842777"},{"brand":"Audi","model":"A6","year":2019,"mileage":125000.0,"price":120500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a6/2019/864174"},{"brand":"Audi","model":"Q8","year":2019,"mileage":157102.0,"price":135750.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/q8/2019/857324"},{"brand":"Audi","model":"Q7","year":2018,"mileage":166000.0,"price":82400.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/q7/2018/807055"},{"brand":"Audi","model":"S3","year":2016,"mileage":160515.0,"price":49400.0,"url":"https://ksa.carswitch.com/jeddah/used-car/audi/s3/2016/848480"},{"brand":"Audi","model":"A6","year":2016,"mileage":125000.0,"price":53000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a6/2016/855098"},{"brand":"Audi","model":"Q7","year":2016,"mileage":223735.0,"price":62000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/q7/2016/819512"},{"brand":"Audi","model":"A8","year":2015,"mileage":115738.0,"price":49500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a8/2015/864582"},{"brand":"Audi","model":"A4","year":2013,"mileage":116195.0,"price":30000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/audi/a4/2013/868247"},{"brand":"Audi","model":"A8","year":2013,"mileage":106598.0,"price":47000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/audi/a8/2013/863665"},{"brand":"BMW","model":"X1","year":2020,"mileage":82000.0,"price":72000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x1/2020/797445"},{"brand":"BMW","model":"X3","year":2020,"mileage":90000.0,"price":97500.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x3/2020/786109"},{"brand":"BMW","model":"520","year":2020,"mileage":65000.0,"price":99500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2020/861704"},{"brand":"BMW","model":"730","year":2020,"mileage":148000.0,"price":129500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2020/859012"},{"brand":"BMW","model":"X6","year":2020,"mileage":199743.0,"price":155750.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/853089"},{"brand":"BMW","model":"730","year":2020,"mileage":115035.0,"price":157500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2020/828093"},{"brand":"BMW","model":"X6","year":2020,"mileage":59000.0,"price":173000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/841413"},{"brand":"BMW","model":"X6","year":2020,"mileage":69204.0,"price":185000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/857284"},{"brand":"BMW","model":"X6","year":2020,"mileage":83000.0,"price":205000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/872738"},{"brand":"BMW","model":"X1","year":2021,"mileage":133000.0,"price":60000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x1/2021/871233"},{"brand":"BMW","model":"X2","year":2021,"mileage":98000.0,"price":65050.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x2/2021/830868"},{"brand":"BMW","model":"520","year":2021,"mileage":130047.0,"price":90000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2021/826320"},{"brand":"BMW","model":"X4","year":2021,"mileage":72737.0,"price":144500.0,"url":"https://ksa.carswitch.com/dammam/used-car/bmw/x4/2021/800790"},{"brand":"BMW","model":"X4","year":2021,"mileage":90000.0,"price":149000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x4/2021/865775"},{"brand":"BMW","model":"X6","year":2021,"mileage":131807.0,"price":155500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2021/832921"},{"brand":"BMW","model":"520","year":2021,"mileage":26000.0,"price":163000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2021/805931"},{"brand":"BMW","model":"X5","year":2021,"mileage":84000.0,"price":166000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2021/868906"},{"brand":"BMW","model":"X4","year":2021,"mileage":47603.0,"price":177500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x4/2021/872657"},{"brand":"BMW","model":"X6","year":2021,"mileage":136900.0,"price":185000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/bmw/x6/2021/846504"},{"brand":"BMW","model":"730","year":2021,"mileage":75287.0,"price":195000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2021/853544"},{"brand":"BMW","model":"520","year":2022,"mileage":70493.0,"price":137500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2022/866880"},{"brand":"BMW","model":"X5","year":2022,"mileage":128064.0,"price":164000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2022/848160"},{"brand":"BMW","model":"730","year":2022,"mileage":66000.0,"price":169000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2022/845021"},{"brand":"BMW","model":"730","year":2022,"mileage":47000.0,"price":180900.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/730/2022/839950"},{"brand":"BMW","model":"840","year":2022,"mileage":61959.0,"price":215100.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/840/2022/792058"},{"brand":"BMW","model":"520","year":2023,"mileage":61254.0,"price":135500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2023/839084"},{"brand":"BMW","model":"X3","year":2023,"mileage":9670.0,"price":159000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/bmw/x3/2023/858586"},{"brand":"BMW","model":"X3","year":2023,"mileage":10635.0,"price":174000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x3/2023/874123"},{"brand":"BMW","model":"530","year":2023,"mileage":21000.0,"price":175000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/530/2023/872770"},{"brand":"BMW","model":"X3","year":2023,"mileage":16798.0,"price":182000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x3/2023/874965"},{"brand":"BMW","model":"X5","year":2023,"mileage":70500.0,"price":189700.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x5/2023/826666"},{"brand":"BMW","model":"430","year":2023,"mileage":38830.0,"price":209250.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/430/2023/799890"},{"brand":"BMW","model":"735","year":2023,"mileage":180959.0,"price":219000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/735/2023/840443"},{"brand":"BMW","model":"760","year":2023,"mileage":47157.0,"price":363000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/760/2023/850767"},{"brand":"BMW","model":"520","year":2024,"mileage":116689.0,"price":164500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2024/867577"},{"brand":"BMW","model":"520","year":2024,"mileage":6919.0,"price":265000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/520/2024/855039"},{"brand":"BMW","model":"840","year":2024,"mileage":36000.0,"price":280000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/840/2024/874884"},{"brand":"BMW","model":"X6","year":2024,"mileage":38440.0,"price":288500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2024/848928"},{"brand":"BMW","model":"X7","year":2024,"mileage":34300.0,"price":310000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x7/2024/847525"},{"brand":"BMW","model":"730","year":2019,"mileage":220379.0,"price":80000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2019/802023"},{"brand":"BMW","model":"740","year":2019,"mileage":129500.0,"price":92000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/740/2019/807819"},{"brand":"BMW","model":"X5","year":2019,"mileage":152000.0,"price":139000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2019/867359"},{"brand":"BMW","model":"318","year":2018,"mileage":106668.0,"price":46000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/318/2018/872740"},{"brand":"BMW","model":"X6","year":2018,"mileage":222123.0,"price":74000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2018/867767"},{"brand":"BMW","model":"730","year":2018,"mileage":295316.0,"price":75000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2018/839888"},{"brand":"BMW","model":"730","year":2018,"mileage":169500.0,"price":108000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2018/865375"},{"brand":"BMW","model":"730","year":2018,"mileage":79000.0,"price":133000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/730/2018/861152"},{"brand":"BMW","model":"730","year":2017,"mileage":159800.0,"price":85000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/730/2017/842593"},{"brand":"BMW","model":"X6","year":2016,"mileage":152000.0,"price":69500.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x6/2016/861921"},{"brand":"BMW","model":"740","year":2016,"mileage":136165.0,"price":72900.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/740/2016/839872"},{"brand":"BMW","model":"750","year":2016,"mileage":99500.0,"price":75000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/750/2016/865427"},{"brand":"BMW","model":"X6 M","year":2016,"mileage":162500.0,"price":99000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/bmw/x6-m/2016/866073"},{"brand":"BMW","model":"750","year":2016,"mileage":116931.0,"price":92000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/750/2016/862064"},{"brand":"BMW","model":"740","year":2016,"mileage":91028.0,"price":128000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/740/2016/865867"},{"brand":"BMW","model":"520","year":2015,"mileage":177924.0,"price":48000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/bmw/520/2015/867335"},{"brand":"BMW","model":"528","year":2015,"mileage":166610.0,"price":50375.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/528/2015/868174"},{"brand":"BMW","model":"X5","year":2015,"mileage":125000.0,"price":65000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2015/868628"},{"brand":"BMW","model":"740","year":2014,"mileage":248000.0,"price":42700.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/740/2014/794524"},{"brand":"BMW","model":"528","year":2014,"mileage":110039.0,"price":46500.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/528/2014/874154"},{"brand":"BMW","model":"X6","year":2014,"mileage":90284.0,"price":48000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x6/2014/845077"},{"brand":"BMW","model":"X5","year":2014,"mileage":166000.0,"price":74000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2014/875137"},{"brand":"BMW","model":"650","year":2013,"mileage":205000.0,"price":60000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/bmw/650/2013/875638"},{"brand":"BMW","model":"735","year":2024,"mileage":44657.0,"price":316000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/735/2024/849567"},{"brand":"BMW","model":"735","year":2024,"mileage":45260.0,"price":325000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/735/2024/820045"},{"brand":"BMW","model":"X6","year":2024,"mileage":36449.0,"price":349000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2024/840562"},{"brand":"BMW","model":"X4","year":2025,"mileage":12765.0,"price":270000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x4/2025/865115"},{"brand":"BMW","model":"735","year":2025,"mileage":3078.0,"price":351700.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/735/2025/819058"},{"brand":"BMW","model":"740","year":2025,"mileage":27531.0,"price":380000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/740/2025/847363"},{"brand":"BMW","model":"X6 M60i xDrive","year":2025,"mileage":33000.0,"price":395000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/bmw/x6-m60i-xdrive/2025/865712"},{"brand":"BMW","model":"530","year":2026,"mileage":14277.0,"price":304000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/530/2026/866247"},{"brand":"BMW","model":"740","year":2026,"mileage":447.0,"price":500500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/bmw/740/2026/865860"},{"brand":"Cadillac","model":"XT4","year":2020,"mileage":187345.0,"price":54250.0,"url":"https://ksa.carswitch.com/riyadh/used-car/cadillac/xt4/2020/860234"},{"brand":"Cadillac","model":"XT5","year":2020,"mileage":144000.0,"price":77000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/cadillac/xt5/2020/801178"},{"brand":"Cadillac","model":"CT4","year":2021,"mileage":126000.0,"price":76300.0,"url":"https://ksa.carswitch.com/jeddah/used-car/cadillac/ct4/2021/845476"},{"brand":"Cadillac","model":"CT6","year":2017,"mileage":105052.0,"price":83000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/cadillac/ct6/2017/857928"},{"brand":"Genesis","model":"G80","year":2021,"mileage":290981.0,"price":77000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/g80/2021/861501"},{"brand":"Genesis","model":"GV70","year":2021,"mileage":33000.0,"price":127600.0,"url":"https://ksa.carswitch.com/jeddah/used-car/genesis/gv70/2021/844702"},{"brand":"Genesis","model":"GV80","year":2021,"mileage":133430.0,"price":135000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/genesis/gv80/2021/846425"},{"brand":"Genesis","model":"GV80","year":2021,"mileage":92000.0,"price":144900.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2021/824122"},{"brand":"Genesis","model":"GV80","year":2022,"mileage":151968.0,"price":145000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2022/868617"},{"brand":"Genesis","model":"GV80","year":2022,"mileage":97792.0,"price":160000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2022/869375"},{"brand":"Genesis","model":"GV80","year":2022,"mileage":86099.0,"price":160000.0,"url":"https://ksa.carswitch.com/dammam/used-car/genesis/gv80/2022/844696"},{"brand":"Genesis","model":"GV80","year":2022,"mileage":102000.0,"price":160750.0,"url":"https://ksa.carswitch.com/jeddah/used-car/genesis/gv80/2022/797261"},{"brand":"Genesis","model":"G70","year":2023,"mileage":39252.0,"price":110000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/g70/2023/859719"},{"brand":"Genesis","model":"GV70","year":2023,"mileage":126165.0,"price":110700.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv70/2023/829401"},{"brand":"Genesis","model":"GV80","year":2025,"mileage":19991.0,"price":275500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/872402"},{"brand":"Genesis","model":"GV80","year":2025,"mileage":25349.0,"price":275500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/872403"},{"brand":"Genesis","model":"GV80","year":2025,"mileage":9153.0,"price":328000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/868293"},{"brand":"Genesis","model":"G70","year":2019,"mileage":164001.0,"price":67000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/genesis/g70/2019/846896"},{"brand":"Infiniti","model":"QX60","year":2020,"mileage":77897.0,"price":93000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2020/830370"},{"brand":"Infiniti","model":"QX60","year":2022,"mileage":59000.0,"price":146700.0,"url":"https://ksa.carswitch.com/jeddah/used-car/infiniti/qx60/2022/821815"},{"brand":"Infiniti","model":"QX70","year":2019,"mileage":123000.0,"price":69500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/infiniti/qx70/2019/830255"},{"brand":"Infiniti","model":"Q50","year":2018,"mileage":210123.0,"price":62000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/infiniti/q50/2018/855057"},{"brand":"Infiniti","model":"QX70","year":2016,"mileage":127000.0,"price":55000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/infiniti/qx70/2016/824113"},{"brand":"Infiniti","model":"QX60","year":2015,"mileage":272000.0,"price":35500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2015/872288"},{"brand":"Infiniti","model":"QX60","year":2015,"mileage":129551.0,"price":45000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2015/865742"},{"brand":"Land Rover","model":"Discovery Sport","year":2019,"mileage":170709.0,"price":45000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2019/856112"},{"brand":"Land Rover","model":"Discovery Sport","year":2016,"mileage":174172.0,"price":43600.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2016/833050"},{"brand":"Land Rover","model":"Discovery Sport","year":2016,"mileage":137326.0,"price":54500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2016/849206"},{"brand":"Land Rover","model":"Discovery Sport","year":2015,"mileage":134562.0,"price":45000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2015/871142"},{"brand":"Land Rover","model":"Defender","year":2020,"mileage":96586.0,"price":185000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2020/872927"},{"brand":"Land Rover","model":"Defender","year":2021,"mileage":100134.0,"price":226000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2021/849180"},{"brand":"Land Rover","model":"Defender","year":2022,"mileage":79613.0,"price":250200.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2022/835911"},{"brand":"Land Rover","model":"Defender","year":2023,"mileage":74600.0,"price":286000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/land-rover/defender/2023/846815"},{"brand":"Land Rover","model":"Defender","year":2023,"mileage":34059.0,"price":300000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2023/870793"},{"brand":"Land Rover","model":"Defender","year":2024,"mileage":30048.0,"price":277250.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2024/801668"},{"brand":"Land Rover","model":"Defender","year":2024,"mileage":96990.0,"price":285000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2024/873186"},{"brand":"Lexus","model":"NX300","year":2020,"mileage":167000.0,"price":72400.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/nx300/2020/838966"},{"brand":"Lexus","model":"RX350","year":2020,"mileage":147000.0,"price":131750.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2020/812738"},{"brand":"Lexus","model":"ES300h","year":2021,"mileage":123237.0,"price":119000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es300h/2021/873257"},{"brand":"Lexus","model":"ES350","year":2021,"mileage":200131.0,"price":131000.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/lexus/es350/2021/823813"},{"brand":"Lexus","model":"UX200","year":2022,"mileage":77000.0,"price":106000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/ux200/2022/866966"},{"brand":"Lexus","model":"RX350","year":2022,"mileage":131000.0,"price":155000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/rx350/2022/856831"},{"brand":"Lexus","model":"RX450h","year":2022,"mileage":54000.0,"price":165500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/rx450h/2022/836826"},{"brand":"Lexus","model":"GX460","year":2022,"mileage":99435.0,"price":171000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/gx460/2022/804295"},{"brand":"Lexus","model":"LS500","year":2022,"mileage":41865.0,"price":287000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/ls500/2022/864713"},{"brand":"Lexus","model":"ES250","year":2023,"mileage":98000.0,"price":128500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2023/848703"},{"brand":"Lexus","model":"ES250","year":2023,"mileage":96000.0,"price":135000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2023/842323"},{"brand":"Lexus","model":"ES300h","year":2023,"mileage":45899.0,"price":148000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es300h/2023/820318"},{"brand":"Lexus","model":"ES250","year":2023,"mileage":60899.0,"price":194000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2023/869233"},{"brand":"Lexus","model":"RX350","year":2023,"mileage":130520.0,"price":204000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2023/871978"},{"brand":"Lexus","model":"ES350","year":2024,"mileage":44700.0,"price":175500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2024/871050"},{"brand":"Lexus","model":"ES300h","year":2024,"mileage":13157.0,"price":178600.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es300h/2024/851574"},{"brand":"Lexus","model":"ES350","year":2024,"mileage":19147.0,"price":203000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2024/842062"},{"brand":"Lexus","model":"LS350","year":2024,"mileage":133000.0,"price":279500.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/ls350/2024/863072"},{"brand":"Lexus","model":"NX300","year":2019,"mileage":128847.0,"price":93500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/nx300/2019/835427"},{"brand":"Lexus","model":"ES250","year":2019,"mileage":101883.0,"price":100500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2019/860641"},{"brand":"Lexus","model":"NX300","year":2019,"mileage":83014.0,"price":107000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/nx300/2019/862372"},{"brand":"Lexus","model":"ES350","year":2019,"mileage":117033.0,"price":123500.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/es350/2019/869370"},{"brand":"Lexus","model":"IS350","year":2018,"mileage":77742.0,"price":97000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/is350/2018/868145"},{"brand":"Lexus","model":"RX350","year":2018,"mileage":100813.0,"price":145000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2018/840171"},{"brand":"Lexus","model":"LS500","year":2018,"mileage":157000.0,"price":180000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/ls500/2018/848497"},{"brand":"Lexus","model":"LS500","year":2018,"mileage":64114.0,"price":193600.0,"url":"https://ksa.carswitch.com/jeddah/used-car/lexus/ls500/2018/872566"},{"brand":"Lexus","model":"ES350","year":2017,"mileage":109480.0,"price":93500.0,"url":"https://ksa.carswitch.com/dammam/used-car/lexus/es350/2017/871074"},{"brand":"Lexus","model":"ES350","year":2017,"mileage":157194.0,"price":95000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2017/843922"},{"brand":"Lexus","model":"GS350","year":2017,"mileage":155300.0,"price":119500.0,"url":"https://ksa.carswitch.com/dammam/used-car/lexus/gs350/2017/835325"},{"brand":"Lexus","model":"ES350","year":2016,"mileage":288000.0,"price":72500.0,"url":"https://ksa.carswitch.com/dammam/used-car/lexus/es350/2016/838304"},{"brand":"Lexus","model":"LX570","year":2014,"mileage":267353.0,"price":149000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/lx570/2014/832310"},{"brand":"Lexus","model":"RX350","year":2024,"mileage":14000.0,"price":238000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2024/809310"},{"brand":"Lexus","model":"LX600","year":2024,"mileage":15482.0,"price":490000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2024/806303"},{"brand":"Lexus","model":"LX600","year":2024,"mileage":57154.0,"price":491500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2024/827672"},{"brand":"Lexus","model":"NX350","year":2025,"mileage":21367.0,"price":173000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/nx350/2025/832227"},{"brand":"Lexus","model":"ES350","year":2025,"mileage":13002.0,"price":225500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2025/872362"},{"brand":"Lexus","model":"LX600","year":2025,"mileage":17028.0,"price":510000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2025/855454"},{"brand":"Lexus","model":"LX600","year":2025,"mileage":15755.0,"price":545000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2025/869288"},{"brand":"Maserati","model":"Quattroporte","year":2019,"mileage":13357.0,"price":245000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/maserati/quattroporte/2019/825805"},{"brand":"Maserati","model":"Quattroporte","year":2020,"mileage":42926.0,"price":149900.0,"url":"https://ksa.carswitch.com/riyadh/used-car/maserati/quattroporte/2020/813608"},{"brand":"Porsche","model":"Cayenne S","year":2019,"mileage":140000.0,"price":178000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/porsche/cayenne-s/2019/826165"},{"brand":"Porsche","model":"Panamera 4S","year":2017,"mileage":61200.0,"price":195000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/porsche/panamera-4s/2017/849790"},{"brand":"Porsche","model":"Cayenne","year":2015,"mileage":191000.0,"price":86000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/porsche/cayenne/2015/873031"},{"brand":"Porsche","model":"Macan S","year":2014,"mileage":111286.0,"price":83600.0,"url":"https://ksa.carswitch.com/riyadh/used-car/porsche/macan-s/2014/819972"},{"brand":"Porsche","model":"Panamera","year":2013,"mileage":252052.0,"price":42000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/porsche/panamera/2013/865889"},{"brand":"Porsche","model":"Macan GTS","year":2020,"mileage":75877.0,"price":220000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/porsche/macan-gts/2020/821408"},{"brand":"Porsche","model":"Cayenne","year":2021,"mileage":51437.0,"price":198850.0,"url":"https://ksa.carswitch.com/riyadh/used-car/porsche/cayenne/2021/842012"},{"brand":"Porsche","model":"Cayenne GTS","year":2021,"mileage":60000.0,"price":345000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/porsche/cayenne-gts/2021/862995"},{"brand":"Range Rover","model":"Velar R-Dynamic","year":2019,"mileage":95793.0,"price":128000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/velar-r-dynamic/2019/858531"},{"brand":"Range Rover","model":"HSE","year":2019,"mileage":155000.0,"price":159000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/hse/2019/824582"},{"brand":"Range Rover","model":"Autobiography","year":2018,"mileage":199500.0,"price":107250.0,"url":"https://ksa.carswitch.com/al-khobar/used-car/range-rover/autobiography/2018/860249"},{"brand":"Range Rover","model":"Sport","year":2018,"mileage":170329.0,"price":150000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2018/867007"},{"brand":"Range Rover","model":"Vogue SE","year":2018,"mileage":115374.0,"price":149600.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue-se/2018/858344"},{"brand":"Range Rover","model":"Vogue","year":2017,"mileage":122440.0,"price":119400.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue/2017/864543"},{"brand":"Range Rover","model":"Sport","year":2017,"mileage":66000.0,"price":128775.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2017/785276"},{"brand":"Range Rover","model":"Sport","year":2016,"mileage":163500.0,"price":78500.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2016/817739"},{"brand":"Range Rover","model":"Sport","year":2014,"mileage":190000.0,"price":70000.0,"url":"https://ksa.carswitch.com/qasim-breda/used-car/range-rover/sport/2014/875266"},{"brand":"Range Rover","model":"Vogue","year":2013,"mileage":213139.0,"price":66200.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue/2013/802676"},{"brand":"Range Rover","model":"Evoque","year":2020,"mileage":125628.0,"price":98000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/evoque/2020/804251"},{"brand":"Range Rover","model":"Sport","year":2020,"mileage":178000.0,"price":117000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2020/870341"},{"brand":"Range Rover","model":"Velar R-Dynamic","year":2020,"mileage":46196.0,"price":145500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/velar-r-dynamic/2020/843203"},{"brand":"Range Rover","model":"Velar R-Dynamic","year":2020,"mileage":52354.0,"price":160000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/velar-r-dynamic/2020/815754"},{"brand":"Range Rover","model":"Sport","year":2020,"mileage":132000.0,"price":165000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2020/861382"},{"brand":"Range Rover","model":"HSE","year":2020,"mileage":107271.0,"price":166000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/hse/2020/838841"},{"brand":"Range Rover","model":"Sport","year":2020,"mileage":69600.0,"price":251000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2020/818605"},{"brand":"Range Rover","model":"Sport","year":2021,"mileage":73000.0,"price":164000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2021/807863"},{"brand":"Range Rover","model":"Velar","year":2022,"mileage":72000.0,"price":200000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/velar/2022/867060"},{"brand":"Range Rover","model":"Sport","year":2022,"mileage":29000.0,"price":245000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2022/864301"},{"brand":"Range Rover","model":"Sport","year":2022,"mileage":37000.0,"price":255000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2022/866263"},{"brand":"Range Rover","model":"Evoque","year":2023,"mileage":67496.0,"price":138000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/evoque/2023/823529"},{"brand":"Range Rover","model":"HSE","year":2023,"mileage":40329.0,"price":460000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/hse/2023/813102"},{"brand":"Range Rover","model":"Vogue","year":2023,"mileage":53000.0,"price":461300.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue/2023/838184"},{"brand":"Range Rover","model":"SV","year":2023,"mileage":66121.0,"price":610000.0,"url":"https://ksa.carswitch.com/jeddah/used-car/range-rover/sv/2023/833416"},{"brand":"Range Rover","model":"Velar","year":2024,"mileage":24356.0,"price":280000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/velar/2024/795159"},{"brand":"Range Rover","model":"Sport","year":2024,"mileage":15070.0,"price":325625.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2024/837647"},{"brand":"Range Rover","model":"SE","year":2024,"mileage":52000.0,"price":510100.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/se/2024/831592"},{"brand":"Range Rover","model":"HSE","year":2024,"mileage":36000.0,"price":525000.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/hse/2024/861076"},{"brand":"Range Rover","model":"SV","year":2024,"mileage":31400.0,"price":784500.0,"url":"https://ksa.carswitch.com/riyadh/used-car/range-rover/sv/2024/830925"}];
+const fmt = new Intl.NumberFormat('en-US', {useGrouping:true, maximumFractionDigits:0});
+const money = v => v==null ? '—' : fmt.format(Math.round(v));
+const avg = a => a.length ? a.reduce((x,y)=>x+y,0)/a.length : 0;
+const median = a => { if(!a.length)return 0; const b=[...a].sort((x,y)=>x-y),m=Math.floor(b.length/2); return b.length%2?b[m]:(b[m-1]+b[m])/2; };
+
+const brandEl=document.getElementById('brand'), yearEl=document.getElementById('year');
+[...new Set(cars.map(x=>x.brand))].sort((a,b)=>a.localeCompare(b,'ar')).forEach(b=>brandEl.add(new Option(b,b)));
+[...new Set(cars.map(x=>x.year).filter(Boolean))].sort((a,b)=>b-a).forEach(y=>yearEl.add(new Option(y,y)));
+['brand','year','model','price'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+document.getElementById('brandSort').addEventListener('change',e=>{brandSortKey=e.target.value;render();});
+document.getElementById('brandSortDir').addEventListener('click',()=>{
+  brandSortDesc=!brandSortDesc;
+  document.getElementById('brandSortDir').textContent=brandSortDesc?'تنازلي ↓':'تصاعدي ↑';
+  render();
+});
+document.getElementById('dataSort').addEventListener('change',e=>{dataSortKey=e.target.value;render();});
+document.getElementById('dataSortDir').addEventListener('click',()=>{
+  dataSortDesc=!dataSortDesc;
+  document.getElementById('dataSortDir').textContent=dataSortDesc?'تنازلي ↓':'تصاعدي ↑';
+  render();
+});
+
+function filtered(){
+  const b=brandEl.value,y=yearEl.value,m=document.getElementById('model').value.trim().toLowerCase(),p=document.getElementById('price').value;
+  return cars.filter(c=>{
+    if(b && c.brand!==b)return false;
+    if(y && String(c.year)!==String(y))return false;
+    if(m && !(`${c.brand} ${c.model}`).toLowerCase().includes(m))return false;
+    if(p==='0-100000' && c.price>=100000)return false;
+    if(p==='100000-200000' && (c.price<100000||c.price>=200000))return false;
+    if(p==='200000-400000' && (c.price<200000||c.price>=400000))return false;
+    if(p==='400000+' && c.price<400000)return false;
+    return true;
+  });
+}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function setKpis(a){
+  const prices=a.map(x=>x.price).filter(Number.isFinite), miles=a.map(x=>x.mileage).filter(Number.isFinite), years=a.map(x=>x.year).filter(Number.isFinite);
+  kCount.textContent=fmt.format(a.length);
+  kAvgPrice.textContent=money(avg(prices)); kMedPrice.textContent=money(median(prices));
+  kAvgMileage.textContent=fmt.format(Math.round(avg(miles))); kAvgYear.textContent=Number(avg(years).toFixed(1)).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+  kBrands.textContent=fmt.format(new Set(a.map(x=>x.brand)).size);
+}
+function svgBars(items, max, color='var(--green)', horizontal=true){
+  const W=1200,H=400,pad=65,left=horizontal?385:82,bottom=58,innerW=W-left-pad,innerH=H-bottom-32;
+  if(!items.length)return '<div class="legend">لا توجد بيانات</div>';
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">`;
+  const palette=['#087451','#C7A64B','#2E8B70','#8B6F2F','#4F9A7D','#D8BD72','#176B55','#A98C4A','#66A88F','#E4D29E'];
+  if(horizontal){
+    const gap=13,bh=Math.max(17,(innerH-gap*(items.length-1))/items.length);
+    items.forEach((it,i)=>{
+      const y=20+i*(bh+gap), w=(it.v/max)*innerW, fill=palette[i%palette.length];
+      s+=`<rect x="${left}" y="${y}" width="${Math.max(1,w)}" height="${bh}" rx="4" fill="${fill}"/>`;
+      s+=`<text x="${left-18}" y="${y+bh*.72}" text-anchor="end" direction="ltr" unicode-bidi="plaintext" font-size="15" font-weight="600" fill="#52645e">${esc(it.k)}</text>`;
+      s+=`<text x="${Math.min(left+w+12,W-pad)}" y="${y+bh*.72}" font-size="13" font-weight="700" fill="#35564b">${fmt.format(it.v)}</text>`;
+    });
+  } else {
+    const gap=8,bw=Math.max(8,(innerW-gap*(items.length-1))/items.length);
+    items.forEach((it,i)=>{
+      const x=left+i*(bw+gap), h=(it.v/max)*innerH, y=20+innerH-h, fill=palette[i%palette.length];
+      s+=`<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="4" fill="${fill}"/>`;
+      s+=`<text x="${x+bw/2}" y="${H-12}" text-anchor="middle" font-size="14" font-weight="600" fill="#52645e">${esc(it.k)}</text>`;
+      s+=`<text x="${x+bw/2}" y="${y-5}" text-anchor="middle" font-size="12" font-weight="600" fill="#52645e">${fmt.format(it.v)}</text>`;
+    });
+  }
+  return s+'</svg>';
+}
+
+let brandSortKey = 'count';
+let brandSortDesc = true;
+let dataSortKey = 'price';
+let dataSortDesc = true;
+
+function sortValues(a, key, desc=true){
+  const arr=[...a];
+  arr.sort((x,y)=>{
+    let vx=x[key], vy=y[key];
+    if(typeof vx === 'string' || typeof vy === 'string'){
+      vx=String(vx??'').toLowerCase(); vy=String(vy??'').toLowerCase();
+      const c=vx.localeCompare(vy,'ar');
+      return desc ? -c : c;
+    }
+    vx=Number.isFinite(vx)?vx:-Infinity; vy=Number.isFinite(vy)?vy:-Infinity;
+    return desc ? vy-vx : vx-vy;
+  });
+  return arr;
+}
+
+function sortBrandEntries(entries){
+  return sortValues(entries.map(([brand,arr])=>{
+    const ps=arr.map(x=>x.price).filter(Number.isFinite);
+    const ms=arr.map(x=>x.mileage).filter(Number.isFinite);
+    const ys=arr.map(x=>x.year).filter(Number.isFinite);
+    return {
+      brand, arr,
+      count:arr.length,
+      share:arr.length,
+      avgPrice:avg(ps),
+      medianPrice:median(ps),
+      minPrice:Math.min(...ps),
+      maxPrice:Math.max(...ps),
+      avgMileage:avg(ms),
+      avgYear:avg(ys)
+    };
+  }), brandSortKey, brandSortDesc);
+}
+
+function renderCharts(a){
+  const bc={}; a.forEach(x=>bc[x.brand]=(bc[x.brand]||0)+1);
+  let brands=Object.entries(bc).sort((x,y)=>y[1]-x[1]);
+  brandChart.innerHTML=svgBars(brands.map(([k,v])=>({k,v})),brands[0]?.[1]||1, '#087451');
+
+  const buckets=[['أقل من 100 ألف',0],['100–200 ألف',0],['200–400 ألف',0],['400 ألف فأكثر',0]];
+  a.forEach(x=>{if(x.price<100000)buckets[0][1]++;else if(x.price<200000)buckets[1][1]++;else if(x.price<400000)buckets[2][1]++;else buckets[3][1]++;});
+  priceChart.innerHTML=svgBars(buckets.map(x=>({k:x[0],v:x[1]})),Math.max(...buckets.map(x=>x[1]),1), '#C7A64B', false);
+
+  const yc={}; a.forEach(x=>yc[x.year]=(yc[x.year]||0)+1);
+  let years=Object.entries(yc).sort((x,y)=>Number(x[0])-Number(y[0]));
+  yearChart.innerHTML=svgBars(years.map(([k,v])=>({k,v})),Math.max(...years.map(x=>x[1]),1), '#2E8B70', false);
+
+  const mb=[['أقل من 50 ألف',0],['50–100 ألف',0],['100–150 ألف',0],['150–200 ألف',0],['200 ألف فأكثر',0]];
+  a.forEach(x=>{if(x.mileage<50000)mb[0][1]++;else if(x.mileage<100000)mb[1][1]++;else if(x.mileage<150000)mb[2][1]++;else if(x.mileage<200000)mb[3][1]++;else mb[4][1]++;});
+  mileageChart.innerHTML=svgBars(mb.map(x=>({k:x[0],v:x[1]})),Math.max(...mb.map(x=>x[1]),1), '#8B6F2F', false);
+}
+function renderBrandTable(a){
+  const map={}; a.forEach(x=>{if(!map[x.brand])map[x.brand]=[];map[x.brand].push(x);});
+  const entries=sortBrandEntries(Object.entries(map));
+  let h='<div class="table-wrap"><table><thead><tr><th>الماركة</th><th>العدد</th><th>النسبة</th><th>متوسط السعر</th><th>وسيط السعر</th><th>أدنى سعر</th><th>أعلى سعر</th><th>متوسط الممشى</th><th>متوسط السنة</th></tr></thead><tbody>';
+  entries.forEach(item=>{
+    const b=item.brand, arr=item.arr;
+    const ps=arr.map(x=>x.price), ms=arr.map(x=>x.mileage), ys=arr.map(x=>x.year);
+    h+=`<tr><td><span class="pill">${esc(b)}</span></td><td>${arr.length}</td><td>${(arr.length/a.length*100).toFixed(1)}%</td><td>${money(avg(ps))}</td><td>${money(median(ps))}</td><td>${money(Math.min(...ps))}</td><td>${money(Math.max(...ps))}</td><td>${fmt.format(Math.round(avg(ms)))} كم</td><td>${Number(avg(ys).toFixed(1)).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1})}</td></tr>`;
+  });
+  document.getElementById('brandTable').innerHTML=h+'</tbody></table></div>';
+}
+function renderDataTable(a){
+  const sorted=sortValues(a, dataSortKey, dataSortDesc);
+  let h='<div class="table-wrap"><table><thead><tr><th>#</th><th>الماركة</th><th>الموديل</th><th>السنة</th><th>الممشى (كم)</th><th>السعر (ريال)</th><th>الرابط</th></tr></thead><tbody>';
+  sorted.forEach((x,i)=>h+=`<tr><td>${i+1}</td><td>${esc(x.brand)}</td><td>${esc(x.model)}</td><td>${x.year??'—'}</td><td>${fmt.format(Math.round(x.mileage||0))}</td><td>${money(x.price)}</td><td>${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">فتح الإعلان ↗</a>`:'—'}</td></tr>`);
+  document.getElementById('dataTable').innerHTML=h+'</tbody></table></div>';
+}
+function render(){const a=filtered();setKpis(a);renderCharts(a);renderBrandTable(a);renderDataTable(a);}
+function resetFilters(){brandEl.value='';yearEl.value='';document.getElementById('model').value='';document.getElementById('price').value='';render();}
+render();
+
+  function refreshUserSwitcher(){
+    const el=document.getElementById('userSwitcher');
+    if(!el || !state || !state.users) return;
+    el.innerHTML=state.users.map(u=>`<option value="${esc(u.id)}">${esc(u.name)} — ${esc(roleNames[u.role]||u.role)}</option>`).join('');
+    if(currentUser) el.value=currentUser.id;
+  }
+
+  const userSwitcher=document.getElementById('userSwitcher');
+  if(userSwitcher){
+    userSwitcher.addEventListener('change',()=>{
+      const u=state.users.find(x=>x.id===userSwitcher.value);
+      if(!u) return;
+      currentUser=u;
+      refreshUserSwitcher();
+      if(window.__carSwitchApp) window.__carSwitchApp.renderUsers();
+      if(typeof updateUI==='function') updateUI();
+      if(typeof renderAll==='function') renderAll();
+      if(typeof showToast==='function') showToast('تم التبديل إلى: '+u.name);
+      else alert('تم التبديل إلى: '+u.name);
+    });
+  }
+
+</script>
+
+
+<div class="platform-panel" id="accessRequestPanel" style="display:none">
+  <div class="panel-head">
+    <div>
+      <h2>طلبات الوصول والتعديل</h2>
+      <p>راجع طلبات الأشخاص الذين يريدون التسجيل أو الحصول على صلاحية التعديل.</p>
+    </div>
+    <button class="pbtn" id="closeAccessRequests">إغلاق</button>
+  </div>
+  <div id="accessRequestsList"></div>
+</div>
+
+
+<div id="dataSourceCard" style="margin:18px 0;padding:12px 16px;border:1px solid #d8bd72;border-radius:14px;background:rgba(255,255,255,.88);direction:rtl;color:#5d695f;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span><b>مصدر البيانات:</b> CarSwitch KSA</span><span id="dataUpdateStatus">جاري التحقق من آخر تحديث...</span></div>
+
+<div class="public-access-card" style="margin:18px 0;padding:18px;border:1px solid #d8bd72;border-radius:16px;background:rgba(255,255,255,.92)">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <div>
+      <strong>الوصول العام</strong>
+      <div style="color:#667;font-size:13px;margin-top:4px">يمكن لأي شخص مشاهدة المنصة. التعديل أو إنشاء حساب يتطلب موافقة المالك.</div>
+    </div>
+    <button class="pbtn gold" id="requestAccessBtn">طلب التسجيل / التعديل</button>
+  </div>
+</div>
+
+<div class="platform-panel" id="usersPanel">
+  <div class="panel-card">
+    <div class="panel-head"><h2>إدارة المستخدمين والصلاحيات</h2><button class="close-x" data-close="usersPanel">×</button></div>
+    <div class="notice">صلاحيات المنصة: <b>Owner</b> تحكم كامل، <b>Admin</b> إدارة المستخدمين والبيانات، <b>Editor</b> تعديل البيانات، <b>Viewer</b> عرض فقط.</div>
+    <div id="usersList"></div>
+    <div class="panel-footer"><button class="pbtn primary" id="addUserBtn">+ إضافة مستخدم</button></div>
+  </div>
+</div>
+
+<div class="platform-panel" id="userFormPanel">
+  <div class="panel-card" style="max-width:560px">
+    <div class="panel-head"><h2 id="userFormTitle">إضافة مستخدم</h2><button class="close-x" data-close="userFormPanel">×</button></div>
+    <div class="form-grid">
+      <div class="field"><label>الاسم</label><input id="uName" placeholder="اسم المستخدم"></div>
+      <div class="field"><label>البريد الإلكتروني</label><input id="uEmail" type="email" placeholder="name@example.com"></div>
+      <div class="field"><label>الدور</label><select id="uRole"><option value="owner">Owner</option><option value="admin">Admin</option><option value="editor">Editor</option><option value="viewer">Viewer</option></select></div>
+      <div class="field"><label>كلمة المرور</label><input id="uPass" type="password" placeholder="كلمة مرور المستخدم"></div>
+    </div>
+    <div class="panel-footer"><button class="pbtn primary" id="saveUserBtn">حفظ المستخدم</button><button class="pbtn" data-close="userFormPanel">إلغاء</button></div>
+  </div>
+</div>
+
+<div class="platform-panel" id="auditPanel">
+  <div class="panel-card">
+    <div class="panel-head"><h2>سجل التعديلات</h2><button class="close-x" data-close="auditPanel">×</button></div>
+    <div id="auditList"></div>
+  </div>
+</div>
+
+<div class="platform-panel" id="dataPanel">
+  <div class="panel-card">
+    <div class="panel-head"><h2>إدارة بيانات السيارات</h2><button class="close-x" data-close="dataPanel">×</button></div>
+    <div class="notice" id="dataPermissionNote"></div>
+    <div class="platform-actions" style="margin-bottom:14px"><button class="pbtn primary" id="addCarBtn">+ إضافة سيارة</button><button class="pbtn gold" id="resetDataBtn">استعادة البيانات الأصلية</button></div>
+    <div id="manageCarsList"></div>
+  </div>
+</div>
+
+<div class="platform-panel" id="carFormPanel">
+  <div class="panel-card" style="max-width:700px">
+    <div class="panel-head"><h2 id="carFormTitle">تعديل سيارة</h2><button class="close-x" data-close="carFormPanel">×</button></div>
+    <div class="form-grid three">
+      <div class="field"><label>الماركة</label><input id="cBrand"></div>
+      <div class="field"><label>الموديل</label><input id="cModel"></div>
+      <div class="field"><label>السنة</label><input id="cYear" type="number"></div>
+      <div class="field"><label>الممشى (كم)</label><input id="cMileage" type="number"></div>
+      <div class="field"><label>السعر (ريال)</label><input id="cPrice" type="number"></div>
+      <div class="field"><label>الرابط</label><input id="cUrl" type="url"></div>
+    </div>
+    <div class="panel-footer"><button class="pbtn primary" id="saveCarBtn">حفظ السيارة</button><button class="pbtn" data-close="carFormPanel">إلغاء</button></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const STORAGE='carswitch_platform_v1';
+  const originalCars = cars.map((c,i)=>({...c,_id:'car_'+i}));
+  let state = JSON.parse(localStorage.getItem(STORAGE)||'null');
+  if(!state){
+    state={
+      users:[{id:'owner',name:'Owner',email:'owner@carswitch.local',role:'owner',password:'Owner@123'}],
+      cars:originalCars,
+      audit:[{ts:new Date().toISOString(),user:'System',action:'تهيئة المنصة',detail:'تم إنشاء حساب المالك لأول مرة.'}]
+    };
+    localStorage.setItem(STORAGE,JSON.stringify(state));
+  }
+  // Ensure old/local data remains compatible.
+  state.cars=(state.cars||originalCars).map((c,i)=>({...c,_id:c._id||'car_'+i}));
+  state.users=Array.isArray(state.users)?state.users:[];
+  state.audit=Array.isArray(state.audit)?state.audit:[];
+
+  // Owner recovery: always guarantee one real Owner account in local storage.
+  // This preserves existing users while preventing older/local states from losing owner access.
+  let owner=state.users.find(u=>u && u.role==='owner');
+  if(!owner){
+    owner={id:'owner',name:'Owner',email:'owner@carswitch.local',role:'owner',password:'Owner@123'};
+    state.users.unshift(owner);
+    state.audit.unshift({ts:new Date().toISOString(),user:owner.email,action:'استعادة حساب المالك',detail:'تمت استعادة حساب Owner تلقائيًا للحفاظ على صلاحيات مالك المنصة.'});
+    localStorage.setItem(STORAGE,JSON.stringify(state));
+  }
+  let currentUser=owner;
+  window.currentUser=owner;
+  window._realOwnerId=owner.id;
+  let editingUserId=null, editingCarId=null;
+  const roleNames={owner:'OWNER',admin:'ADMIN',editor:'EDITOR',viewer:'VIEWER'};
+  const canManageUsers=()=>currentUser && (currentUser.role==='owner'||currentUser.role==='admin');
+  const canEdit=()=>currentUser && ['owner','admin','editor'].includes(currentUser.role);
+  const save=()=>localStorage.setItem(STORAGE,JSON.stringify(state));
+  const log=(action,detail)=>{state.audit.unshift({ts:new Date().toISOString(),user:currentUser?.email||'System',action,detail});state.audit=state.audit.slice(0,200);save();};
+  const show=id=>{const el=document.getElementById(id);if(!el)return;el.style.removeProperty('display');el.classList.add('open');};
+  const hide=id=>{const el=document.getElementById(id);if(!el)return;el.classList.remove('open');el.style.removeProperty('display');};
+  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>hide(b.dataset.close)));
+
+  function setUserBar(){
+    document.getElementById('platformUserbar').style.display='flex';
+    document.getElementById('currentUserName').textContent=currentUser.name+' — '+currentUser.email;
+    document.getElementById('currentRoleBadge').textContent=roleNames[currentUser.role]||currentUser.role.toUpperCase();
+    document.getElementById('usersBtn').style.display=canManageUsers()?'inline-block':'none';
+    document.getElementById('auditBtn').style.display=canManageUsers()?'inline-block':'none';
+    document.getElementById('manageBtn').style.display=canEdit()?'inline-block':'none';
+  }
+  // No-login mode: the local owner account is active automatically.
+  setUserBar();
+
+  document.getElementById('usersBtn').addEventListener('click',()=>{renderUsers();show('usersPanel');});
+  document.getElementById('auditBtn').addEventListener('click',()=>{renderAudit();show('auditPanel');});
+  document.getElementById('manageBtn').addEventListener('click',()=>{renderManageCars();show('dataPanel');});
+  document.getElementById('addUserBtn').addEventListener('click',()=>{editingUserId=null;document.getElementById('userFormTitle').textContent='إضافة مستخدم';['uName','uEmail','uPass'].forEach(id=>document.getElementById(id).value='');document.getElementById('uRole').value='editor';show('userFormPanel');});
+  document.getElementById('addCarBtn').addEventListener('click',()=>openCarForm(null));
+  document.getElementById('resetDataBtn').addEventListener('click',()=>{if(!canEdit())return;if(confirm('سيتم حذف كل التعديلات المحلية وإرجاع بيانات السيارات الأصلية. هل أنت متأكد؟')){state.cars=originalCars.map(c=>({...c}));log('استعادة البيانات','تمت استعادة بيانات السيارات الأصلية.');save();render();renderManageCars();}});
+
+  function renderUsers(){
+  const box=document.getElementById('usersList');
+  if(!box) return;
+  const roleNames={owner:'Owner',admin:'Admin',editor:'Editor',viewer:'Viewer'};
+  if(!Array.isArray(state.users)||!state.users.some(u=>u&&u.role==='owner')){
+    const fallback={id:'owner',name:'Owner',email:'owner@carswitch.local',role:'owner',password:'Owner@123'};
+    state.users=[fallback,...(Array.isArray(state.users)?state.users:[])]; save();
+  }
+  box.innerHTML=state.users.map(u=>`
+    <div class="user-row">
+      <div class="user-meta"><strong>${esc(u.name)}</strong><span>${esc(u.email)}</span></div>
+      <span class="user-role">${roleNames[u.role]||u.role}</span>
+      <div style="font-size:12px;color:#777">${u.role==='owner'?'مالك المنصة':'مستخدم'}</div>
+      <div style="display:flex;gap:6px;justify-content:flex-end">
+        <button class="edit-btn" type="button" data-edit-user="${esc(u.id)}">تعديل</button>
+        ${u.role!=='owner'?`<button class="pbtn switch-user-btn" type="button" data-switch-user="${esc(u.id)}">تبديل</button>
+        <button class="pbtn danger" type="button" data-del-user="${esc(u.id)}">حذف</button>`:''}
+      </div>
+    </div>`).join('');
+
+  box.querySelectorAll('[data-edit-user]').forEach(b=>b.onclick=()=>openUserForm(b.dataset.editUser));
+  box.querySelectorAll('[data-del-user]').forEach(b=>b.onclick=()=>{
+    const u=state.users.find(x=>x.id===b.dataset.delUser);
+    if(!u || u.role==='owner') return;
+    if(confirm('هل تريد حذف المستخدم '+u.name+'؟')){
+      state.users=state.users.filter(x=>x.id!==u.id);
+      save();
+      renderUsers();
+      refreshAllWorkingControls();
+    }
+  });
+  box.querySelectorAll('[data-switch-user]').forEach(b=>b.onclick=()=>switchUserAsOwner(b.dataset.switchUser));
+}
+  function openUserForm(id){
+    const u=state.users.find(x=>x.id===id);if(!u)return;editingUserId=id;
+    document.getElementById('userFormTitle').textContent='تعديل مستخدم';
+    document.getElementById('uName').value=u.name;document.getElementById('uEmail').value=u.email;document.getElementById('uRole').value=u.role;document.getElementById('uPass').value=u.password;show('userFormPanel');
+  }
+  function deleteUser(id){
+    const u=state.users.find(x=>x.id===id);if(!u||u.role==='owner')return;
+    if(confirm('حذف المستخدم '+u.name+'؟')){state.users=state.users.filter(x=>x.id!==id);log('حذف مستخدم',u.email);save();renderUsers();}
+  }
+  document.getElementById('saveUserBtn').addEventListener('click',()=>{
+    if(!canManageUsers())return;
+    const name=document.getElementById('uName').value.trim(),email=document.getElementById('uEmail').value.trim().toLowerCase(),role=document.getElementById('uRole').value,pass=document.getElementById('uPass').value;
+    if(!name||!email||!pass){alert('أكمل بيانات المستخدم.');return;}
+    if(editingUserId){
+      const u=state.users.find(x=>x.id===editingUserId);if(!u)return;
+      if(u.role==='owner' && role!=='owner'){alert('لا يمكن تغيير دور المالك من Owner.');return;}
+      if(u.role!=='owner' && role==='owner' && state.users.some(x=>x.role==='owner' && x.id!==u.id)){alert('يوجد مالك للمنصة بالفعل.');return;}
+      if(state.users.some(x=>x.email===email && x.id!==u.id)){alert('هذا البريد مستخدم بالفعل.');return;}
+      u.name=name;u.email=email;u.role=role;u.password=pass;
+      currentUser=u;
+      log('تعديل مستخدم',email);
+    }else{
+      if(role==='owner'){alert('حساب Owner موجود بالفعل. استخدم تعديل حساب المالك.');return;}
+      if(state.users.some(x=>x.email===email)){alert('هذا البريد مستخدم بالفعل.');return;}
+      state.users.push({id:'u_'+Date.now(),name,email,role,password:pass});log('إضافة مستخدم',email);
+    }
+    save();hide('userFormPanel');renderUsers();
+  });
+
+  function renderAudit(){
+    document.getElementById('auditList').innerHTML=state.audit.length?state.audit.map(a=>`<div class="audit-row"><b>${esc(a.action)}</b> — ${esc(a.detail)}<br><small>${esc(a.user)} · ${new Date(a.ts).toLocaleString('ar-SA')}</small></div>`).join(''):'<div class="readonly-note">لا توجد تعديلات بعد.</div>';
+  }
+  function renderManageCars(){
+    const box=document.getElementById('manageCarsList');
+    document.getElementById('dataPermissionNote').textContent=canEdit()?'يمكنك تعديل أو إضافة أو حذف السيارات. سيتم حفظ التغييرات داخل هذا المتصفح.':'صلاحيتك للعرض فقط.';
+    const a=workingCars;
+    box.innerHTML='<div class="table-wrap"><table><thead><tr><th>#</th><th>الماركة</th><th>الموديل</th><th>السنة</th><th>الممشى</th><th>السعر</th><th>إجراء</th></tr></thead><tbody>'+a.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.brand)}</td><td>${esc(x.model)}</td><td>${x.year||'—'}</td><td>${fmt.format(Math.round(x.mileage||0))}</td><td>${money(x.price)}</td><td>${canEdit()?`<button class="edit-btn" data-edit-car="${esc(x._id)}">تعديل</button> <button class="pbtn danger" style="padding:5px 8px;font-size:11px" data-del-car="${esc(x._id)}">حذف</button>`:'—'}</td></tr>`).join('')+'</tbody></table></div>';
+    box.querySelectorAll('[data-edit-car]').forEach(b=>b.addEventListener('click',()=>openCarForm(b.dataset.editCar)));
+    box.querySelectorAll('[data-del-car]').forEach(b=>b.addEventListener('click',()=>deleteCar(b.dataset.delCar)));
+  }
+  function openCarForm(id){
+    editingCarId=id;const c=id?workingCars.find(x=>x._id===id):null;
+    document.getElementById('carFormTitle').textContent=id?'تعديل سيارة':'إضافة سيارة';
+    document.getElementById('cBrand').value=c?.brand||'';document.getElementById('cModel').value=c?.model||'';document.getElementById('cYear').value=c?.year||'';document.getElementById('cMileage').value=c?.mileage||'';document.getElementById('cPrice').value=c?.price||'';document.getElementById('cUrl').value=c?.url||'';show('carFormPanel');
+  }
+  function deleteCar(id){if(!canEdit())return;const c=workingCars.find(x=>x._id===id);if(!c)return;if(confirm('حذف '+c.brand+' '+c.model+'؟')){workingCars=workingCars.filter(x=>x._id!==id);state.cars=workingCars.map(x=>({...x}));log('حذف سيارة',c.brand+' '+c.model);save();render();renderManageCars();}}
+  document.getElementById('saveCarBtn').addEventListener('click',()=>{
+    if(!canEdit())return;
+    const brand=document.getElementById('cBrand').value.trim(),model=document.getElementById('cModel').value.trim(),year=Number(document.getElementById('cYear').value),mileage=Number(document.getElementById('cMileage').value),price=Number(document.getElementById('cPrice').value),url=document.getElementById('cUrl').value.trim();
+    if(!brand||!model||!year||!Number.isFinite(mileage)||!Number.isFinite(price)){alert('أكمل بيانات السيارة بشكل صحيح.');return;}
+    if(editingCarId){const c=workingCars.find(x=>x._id===editingCarId);Object.assign(c,{brand,model,year,mileage,price,url});log('تعديل سيارة',brand+' '+model);}else{const c={_id:'car_'+Date.now(),brand,model,year,mileage,price,url};workingCars.push(c);log('إضافة سيارة',brand+' '+model);}
+    state.cars=workingCars.map(x=>({...x}));save();hide('carFormPanel');render();renderManageCars();
+  });
+
+  // Use a working copy so all dashboard calculations reflect edits.
+  let workingCars = (state.cars||originalCars).map(c=>({...c}));
+  // Override the dashboard data source through the existing render functions.
+  const originalFiltered = window.filtered;
+  window.filtered = function(){
+    const b=brandEl.value,y=yearEl.value,m=document.getElementById('model').value.trim().toLowerCase(),p=document.getElementById('price').value;
+    return workingCars.filter(c=>{if(b&&c.brand!==b)return false;if(y&&String(c.year)!==String(y))return false;if(m&&!(`${c.brand} ${c.model}`).toLowerCase().includes(m))return false;if(p==='0-100000'&&c.price>=100000)return false;if(p==='100000-200000'&&(c.price<100000||c.price>=200000))return false;if(p==='200000-400000'&&(c.price<200000||c.price>=400000))return false;if(p==='400000+'&&c.price<400000)return false;return true;});
+  };
+  window.renderDataTable = function(a){
+    const sorted=sortValues(a,dataSortKey,dataSortDesc);let h='<div class="table-wrap"><table><thead><tr><th>#</th><th>الماركة</th><th>الموديل</th><th>السنة</th><th>الممشى (كم)</th><th>السعر (ريال)</th><th>الرابط</th>'+ (canEdit()?'<th>تعديل</th>':'') +'</tr></thead><tbody>';
+    sorted.forEach((x,i)=>h+=`<tr><td>${i+1}</td><td>${esc(x.brand)}</td><td>${esc(x.model)}</td><td>${x.year??'—'}</td><td>${fmt.format(Math.round(x.mileage||0))}</td><td>${money(x.price)}</td><td>${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">فتح الإعلان ↗</a>`:'—'}</td>${canEdit()?`<td><button class="edit-btn" data-dashboard-edit="${esc(x._id)}">تعديل</button></td>`:''}</tr>`);
+    document.getElementById('dataTable').innerHTML=h+'</tbody></table></div>';
+    document.querySelectorAll('[data-dashboard-edit]').forEach(b=>b.addEventListener('click',()=>{openCarForm(b.dataset.dashboardEdit);show('carFormPanel');}));
+  };
+  window.render = function(){const a=window.filtered();setKpis(a);renderCharts(a);renderBrandTable(a);window.renderDataTable(a);};
+
+  // Refresh dashboard selectors from the working data after edits.
+  function refreshSelectors(){
+    const bv=brandEl.value,yv=yearEl.value;brandEl.innerHTML='<option value="">كل الماركات</option>';yearEl.innerHTML='<option value="">كل السنوات</option>';
+    [...new Set(workingCars.map(x=>x.brand))].sort((a,b)=>a.localeCompare(b,'ar')).forEach(b=>brandEl.add(new Option(b,b)));
+    [...new Set(workingCars.map(x=>x.year).filter(Boolean))].sort((a,b)=>b-a).forEach(y=>yearEl.add(new Option(y,y)));
+    if([...brandEl.options].some(o=>o.value===bv))brandEl.value=bv;if([...yearEl.options].some(o=>o.value===yv))yearEl.value=yv;
+  }
+  const oldRender=window.render;window.render=function(){refreshSelectors();oldRender();};
+  // Update state when page edits are saved through renderManageCars by replacing reference.
+  const obs=setInterval(()=>{if(state.cars!==workingCars){state.cars=workingCars.map(x=>({...x}));save();}},1500);
+
+  // Expose the application API for the owner controls (the app state lives in this IIFE).
+  window.__carSwitchApp = {
+    getState: ()=>state,
+    getCurrentUser: ()=>currentUser,
+    setCurrentUser: (u)=>{ currentUser=u; window.currentUser=u; setUserBar(); refreshSelectors(); window.render(); },
+    renderUsers, renderAudit, renderManageCars, openUserForm,
+    save, log, show, hide, closePanel:(id)=>hide(id),
+    getWorkingCars: ()=>workingCars,
+    setWorkingCars: (v)=>{ workingCars=v.map((c,i)=>({...c,_id:c._id||'car_'+i})); state.cars=workingCars.map(x=>({...x})); save(); refreshSelectors(); window.render(); renderManageCars(); }
+  };
+  window.state=state;
+  window.currentUser=currentUser;
+
+  // First render in no-login mode.
+  refreshSelectors();window.render();
+})();
+</script>
+
+<script>try{refreshUserSwitcher();}catch(e){}</script>
+
+<div id="requestAccessModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border-radius:18px;max-width:520px;width:100%;padding:24px;direction:rtl">
+    <h2 style="margin-top:0">طلب تسجيل / صلاحية تعديل</h2>
+    <p style="color:#667">أرسل بياناتك. سيظهر الطلب لدى مالك المنصة للموافقة أو الرفض.</p>
+    <label>الاسم</label>
+    <input id="requestName" type="text" placeholder="الاسم الكامل" style="width:100%;margin:8px 0 14px;padding:12px;border:1px solid #ddd;border-radius:10px">
+    <label>البريد الإلكتروني</label>
+    <input id="requestEmail" type="email" placeholder="name@example.com" style="width:100%;margin:8px 0 14px;padding:12px;border:1px solid #ddd;border-radius:10px">
+    <label>نوع الطلب</label>
+    <select id="requestRole" style="width:100%;margin:8px 0 14px;padding:12px;border:1px solid #ddd;border-radius:10px">
+      <option value="viewer">مشاهدة فقط</option>
+      <option value="editor">صلاحية تعديل</option>
+    </select>
+    <label>ملاحظة</label>
+    <textarea id="requestNote" placeholder="سبب الطلب (اختياري)" style="width:100%;margin:8px 0 18px;padding:12px;border:1px solid #ddd;border-radius:10px;min-height:90px"></textarea>
+    <div style="display:flex;gap:10px;justify-content:flex-start">
+      <button class="pbtn gold" id="submitAccessRequest">إرسال الطلب</button>
+      <button class="pbtn" id="cancelAccessRequest">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+
+<script id="access-and-user-controls">
+(function(){
+  function getStateSafe(){
+    try { return window.__carSwitchApp ? window.__carSwitchApp.getState() : null; } catch(e){ return null; }
+  }
+  function escSafe(v){
+    try { return typeof esc === 'function' ? esc(v) : String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    catch(e){ return String(v); }
+  }
+  function roleLabel(r){ return ({owner:'Owner',admin:'Admin',editor:'Editor',viewer:'Viewer'})[r]||r; }
+
+  window.refreshUserSwitcherFixed=function(){
+    const el=document.getElementById('userSwitcher'), s=getStateSafe();
+    if(!el || !s || !Array.isArray(s.users)) return;
+    el.innerHTML=s.users.map(u=>`<option value="${escSafe(u.id)}">${escSafe(u.name)} — ${roleLabel(u.role)}</option>`).join('');
+    if(typeof currentUser!=='undefined' && currentUser) el.value=currentUser.id;
+  };
+
+  window.switchUserFixed=function(id){
+    const s=getStateSafe(); if(!s || !Array.isArray(s.users)) return;
+    const u=s.users.find(x=>x.id===id); if(!u) return;
+    try { currentUser=u; } catch(e) { window.currentUser=u; }
+    refreshUserSwitcherFixed();
+    if(typeof updateUI==='function') updateUI();
+    if(typeof renderAll==='function') renderAll();
+    if(typeof renderUsers==='function') renderUsers();
+  };
+
+  const sel=document.getElementById('userSwitcher');
+  if(sel) sel.addEventListener('change',()=>switchUserFixed(sel.value));
+
+  // Public access request workflow (local prototype).
+  const modal=document.getElementById('requestAccessModal');
+  const open=document.getElementById('requestAccessBtn');
+  const cancel=document.getElementById('cancelAccessRequest');
+  const submit=document.getElementById('submitAccessRequest');
+  if(open) open.onclick=()=>{modal.style.display='flex';};
+  if(cancel) cancel.onclick=()=>{modal.style.display='none';};
+
+  function requests(){
+    try { return JSON.parse(localStorage.getItem('carswitch_access_requests')||'[]'); }
+    catch(e){ return []; }
+  }
+  function saveRequests(v){ localStorage.setItem('carswitch_access_requests',JSON.stringify(v)); }
+
+  if(submit) submit.onclick=()=>{
+    const name=document.getElementById('requestName').value.trim();
+    const email=document.getElementById('requestEmail').value.trim().toLowerCase();
+    const role=document.getElementById('requestRole').value;
+    const note=document.getElementById('requestNote').value.trim();
+    if(!name || !email){ alert('اكتب الاسم والبريد الإلكتروني.'); return; }
+    const arr=requests();
+    arr.push({id:'req_'+Date.now(),name,email,role,note,status:'pending',createdAt:new Date().toISOString()});
+    saveRequests(arr);
+    modal.style.display='none';
+    alert('تم إرسال الطلب. بانتظار موافقة مالك المنصة.');
+    document.getElementById('requestName').value='';
+    document.getElementById('requestEmail').value='';
+    document.getElementById('requestNote').value='';
+  };
+
+  window.renderAccessRequestsFixed=function(){
+    const box=document.getElementById('accessRequestsList'); if(!box) return;
+    const arr=requests();
+    if(!arr.length){ box.innerHTML='<div style="padding:20px;color:#777">لا توجد طلبات حالياً.</div>'; return; }
+    box.innerHTML=arr.map(r=>`
+      <div style="border:1px solid #ddd;border-radius:14px;padding:15px;margin:10px 0">
+        <strong>${escSafe(r.name)}</strong> — ${escSafe(r.email)}
+        <div style="font-size:13px;color:#667;margin:6px 0">الطلب: ${roleLabel(r.role)} | الحالة: ${escSafe(r.status)}</div>
+        ${r.note?`<div style="font-size:13px;margin:6px 0">${escSafe(r.note)}</div>`:''}
+        ${r.status==='pending'?`<div style="display:flex;gap:8px;margin-top:10px">
+          <button class="pbtn gold" data-approve="${escSafe(r.id)}">قبول</button>
+          <button class="pbtn danger" data-reject="${escSafe(r.id)}">رفض</button>
+        </div>`:''}
+      </div>`).join('');
+    box.querySelectorAll('[data-approve]').forEach(b=>b.onclick=()=>{
+      const id=b.dataset.approve, a=requests(), r=a.find(x=>x.id===id); if(!r)return;
+      const s=getStateSafe(); if(s && Array.isArray(s.users) && !s.users.some(u=>u.email===r.email)){
+        s.users.push({id:'u_'+Date.now(),name:r.name,email:r.email,role:r.role,password:''});
+        if(typeof save==='function') save();
+      }
+      r.status='approved'; saveRequests(a); renderAccessRequestsFixed(); refreshUserSwitcherFixed();
+      alert('تم قبول الطلب وإضافة المستخدم.');
+    });
+    box.querySelectorAll('[data-reject]').forEach(b=>b.onclick=()=>{
+      const a=requests(), r=a.find(x=>x.id===b.dataset.reject); if(!r)return;
+      r.status='rejected'; saveRequests(a); renderAccessRequestsFixed();
+    });
+  };
+
+  const close=document.getElementById('closeAccessRequests');
+  if(close) close.onclick=()=>{document.getElementById('accessRequestPanel').style.display='none';};
+
+  // Owner can open the request inbox from the users button area.
+  const usersBtn=document.getElementById('usersBtn');
+  if(usersBtn){
+    const old=usersBtn.onclick;
+    usersBtn.addEventListener('dblclick',()=>{
+      try{
+        if(typeof currentUser!=='undefined' && currentUser && currentUser.role==='owner'){
+          document.getElementById('accessRequestPanel').style.display='block';
+          renderAccessRequestsFixed();
+        }
+      }catch(e){}
+    });
+  }
+
+  // Initial population after the existing app initializes.
+  setTimeout(refreshUserSwitcherFixed,250);
+  setTimeout(refreshUserSwitcherFixed,1000);
+})();
+</script>
+
+
+<div id="ownerTools" style="display:none;direction:rtl;max-width:1200px;margin:42px auto 24px;padding:18px 20px;border:1px solid #d8bd72;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 8px 25px rgba(0,0,0,.05)">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap">
+    <div>
+      <div style="font-weight:800;color:#075f49;font-size:18px">أدوات المالك</div>
+      <div style="font-size:12px;color:#777;margin-top:4px">تظهر للمالك فقط — إدارة الحسابات والتبديل بين المستخدمين.</div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <label for="bottomUserSwitcher" style="font-size:13px;font-weight:700">المستخدم الحالي</label>
+      <select id="bottomUserSwitcher" style="min-width:260px;padding:11px 14px;border:1px solid #c7a64b;border-radius:10px;background:#fff;font-size:14px;direction:rtl">
+      </select>
+      <button class="pbtn gold" id="openAccessRequestsBottom">طلبات الوصول</button>
+    </div>
+  </div>
+</div>
+
+
+<script id="fixed-owner-switcher">
+(function(){
+  function safeState(){
+    try { return window.__carSwitchApp ? window.__carSwitchApp.getState() : null; } catch(e){ return null; }
+  }
+  function roleText(r){
+    return ({owner:'Owner',admin:'Admin',editor:'Editor',viewer:'Viewer'})[r] || r || '';
+  }
+  function esc2(v){
+    try { return typeof esc === 'function' ? esc(v) : String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    catch(e){ return String(v); }
+  }
+
+  function refreshBottomSwitcher(){
+    const box=document.getElementById('bottomUserSwitcher');
+    const s=safeState();
+    if(!box || !s || !Array.isArray(s.users)) return;
+    box.innerHTML=s.users.map(u=>`<option value="${esc2(u.id)}">${esc2(u.name)} — ${roleText(u.role)} — ${esc2(u.email)}</option>`).join('');
+    try {
+      const cu=window.__carSwitchApp && window.__carSwitchApp.getCurrentUser(); if(cu) box.value=cu.id;
+    } catch(e){}
+  }
+
+  function switchUser(id){
+    const s=safeState();
+    let cu=null; try { cu=(typeof currentUser!=='undefined') ? currentUser : null; } catch(e){}
+    if(!s || !Array.isArray(s.users) || !cu || cu.role!=='owner'){
+      alert('التبديل بين المستخدمين متاح للـOwner الحقيقي فقط.');
+      return;
+    }
+    if(typeof window.switchUserAsOwner==='function'){
+      window.switchUserAsOwner(id);
+    }
+    refreshBottomSwitcher();
+  }
+
+  function init(){
+    const tools=document.getElementById('ownerTools');
+    const box=document.getElementById('bottomUserSwitcher');
+    const s=safeState();
+    let cu=null;
+    try { cu=(typeof currentUser!=='undefined') ? currentUser : null; } catch(e){}
+
+    if(tools && cu && cu.role==='owner') tools.style.display='block';
+    else if(tools) tools.style.display='none';
+
+    refreshBottomSwitcher();
+
+    if(box && !box.dataset.bound){
+      box.dataset.bound='1';
+      box.addEventListener('change',()=>switchUser(box.value));
+    }
+
+    const req=document.getElementById('openAccessRequestsBottom');
+    if(req && !req.dataset.bound){
+      req.dataset.bound='1';
+      req.addEventListener('click',()=>{
+        const panel=document.getElementById('accessRequestPanel');
+        if(panel){
+          panel.style.display='block';
+          if(typeof renderAccessRequestsFixed==='function') renderAccessRequestsFixed();
+          panel.scrollIntoView({behavior:'smooth',block:'center'});
+        }
+      });
+    }
+  }
+
+  // The original app initializes its state after the document loads.
+  setTimeout(init,300);
+  setTimeout(init,1000);
+  setTimeout(init,1800);
+})();
+</script>
+
+
+
+
+
+<script id="fully-working-controls">
+(function(){
+  window.refreshAllWorkingControls=function(){
+    try{
+      if(typeof renderUsers==='function') renderUsers();
+    }catch(e){}
+    try{ refreshBottomOwnerTools(); }catch(e){}
+    try{ refreshHeader(); }catch(e){}
+  };
+
+  window.refreshHeader=function(){
+    let u=null;
+    try{u=typeof currentUser!=='undefined'?currentUser:null}catch(e){}
+    if(!u) return;
+    document.querySelectorAll('#currentUserName,.current-user-name,[data-current-user]').forEach(el=>{
+      el.textContent=u.name+' — '+u.email;
+    });
+    document.querySelectorAll('#currentUserRole,.current-user-role,[data-current-role]').forEach(el=>{
+      el.textContent=(u.role||'').toUpperCase();
+    });
+  };
+
+  window.switchUserAsOwner=function(id){
+    const app=window.__carSwitchApp;
+    if(!app) return;
+    const s=app.getState(), cu=app.getCurrentUser();
+    if(!s || !Array.isArray(s.users) || !cu || cu.role!=='owner'){
+      alert('التبديل بين المستخدمين متاح للـOwner الحقيقي فقط.'); return;
+    }
+    const target=s.users.find(x=>String(x.id)===String(id));
+    if(!target) return;
+    window._realOwnerId=(s.users.find(x=>x.role==='owner')||{}).id;
+    app.setCurrentUser(target);
+    window._actingAsUserId=target.id;
+    refreshHeader();
+    refreshAllWorkingControls();
+    showActingBar();
+  };
+
+  window.returnToOwner=function(){
+    const app=window.__carSwitchApp;
+    if(!app) return;
+    const s=app.getState();
+    if(!s || !Array.isArray(s.users)) return;
+    const owner=s.users.find(x=>String(x.id)===String(window._realOwnerId)) || s.users.find(x=>x.role==='owner');
+    if(!owner) return;
+    app.setCurrentUser(owner);
+    window._actingAsUserId=null;
+    refreshHeader();
+    refreshAllWorkingControls();
+    hideActingBar();
+  };
+
+  function showActingBar(){
+    let bar=document.getElementById('ownerActingBar');
+    if(!bar){
+      bar=document.createElement('div');
+      bar.id='ownerActingBar';
+      bar.style.cssText='position:fixed;bottom:18px;left:18px;right:18px;z-index:99999;background:#075f49;color:#fff;border-radius:16px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 12px 35px rgba(0,0,0,.2);direction:rtl';
+      bar.innerHTML='<div id="ownerActingText"></div><button type="button" id="ownerReturnBtn" style="border:0;border-radius:10px;padding:9px 16px;background:#d8bd72;color:#17382e;font-weight:800;cursor:pointer">العودة إلى Owner</button>';
+      document.body.appendChild(bar);
+      document.getElementById('ownerReturnBtn').onclick=returnToOwner;
+    }
+    let u=null; try{u=currentUser}catch(e){}
+    document.getElementById('ownerActingText').textContent='أنت الآن تتصفح بصلاحيات: '+u.name+' — '+String(u.role).toUpperCase();
+    bar.style.display='flex';
+  }
+
+  function hideActingBar(){
+    const bar=document.getElementById('ownerActingBar');
+    if(bar) bar.style.display='none';
+  }
+
+  function refreshBottomOwnerTools(){
+    const tools=document.getElementById('ownerTools');
+    if(!tools) return;
+    let u=null; try{u=currentUser}catch(e){}
+    tools.style.display=(u && u.role==='owner')?'block':'none';
+  }
+
+  // Universal close handler: closes panels reliably even if another handler has set inline display.
+  document.addEventListener('click',function(e){
+    const closeBtn=e.target.closest && e.target.closest('[data-close]');
+    if(!closeBtn) return;
+    const id=closeBtn.getAttribute('data-close');
+    const panel=document.getElementById(id);
+    if(panel){ e.preventDefault(); panel.classList.remove('open'); panel.style.removeProperty('display'); }
+  },true);
+
+  // Fix every top navigation button by delegating clicks, so later re-renders cannot break them.
+  document.addEventListener('click',function(e){
+    const btn=e.target.closest && e.target.closest('button,a');
+    if(!btn) return;
+
+    if(btn.id==='usersBtn'){
+      e.preventDefault();
+      e.stopPropagation();
+      let u=null; try{u=currentUser}catch(x){}
+      if(!u || u.role!=='owner'){
+        alert('إدارة المستخدمين متاحة للـOwner فقط.');
+        return;
+      }
+      if(typeof renderUsers==='function') renderUsers();
+      const panel=document.getElementById('usersPanel');
+      if(panel){
+        panel.style.removeProperty('display');
+        panel.classList.add('open');
+        panel.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      return;
+    }
+
+    if(btn.id==='manageBtn' || btn.id==='dataBtn' || btn.id==='dataManagementBtn'){
+      if(window.__carSwitchApp) window.__carSwitchApp.renderManageCars();
+      // Let the original handler work, but if absent, open the data panel.
+      setTimeout(function(){
+        const p=document.getElementById('dataPanel')||document.getElementById('dataManagementPanel');
+        if(p && !p.classList.contains('open')) p.classList.add('open');
+      },30);
+    }
+
+    if(btn.id==='auditBtn'){
+      if(window.__carSwitchApp) window.__carSwitchApp.renderAudit();
+      setTimeout(function(){
+        const p=document.getElementById('auditPanel');
+        if(p && !p.classList.contains('open')) p.classList.add('open');
+      },30);
+    }
+
+    if(btn.id==='ownerSettingsBtn'){
+      e.preventDefault();
+      let u=null; try{u=currentUser}catch(x){}
+      if(u && u.role==='owner' && window.__carSwitchApp) window.__carSwitchApp.openUserForm(u.id);
+    }
+
+    if(btn.id==='closeUsers' || btn.matches('[data-close-users]')){
+      const p=document.getElementById('usersPanel');
+      if(p){p.classList.remove('open');p.style.removeProperty('display');}
+    }
+  },true);
+
+  // Bind the existing user form controls if present.
+  document.addEventListener('click',function(e){
+    const b=e.target.closest && e.target.closest('[data-switch-user]');
+    if(b){
+      e.preventDefault();
+      switchUserAsOwner(b.dataset.switchUser);
+    }
+  },true);
+
+  setTimeout(refreshAllWorkingControls,250);
+  setTimeout(refreshAllWorkingControls,900);
+  setTimeout(refreshAllWorkingControls,1800);
+})();
+</script>
+
+
+<script id="carswitch-update-controls">
+(function(){
+  function app(){return window.__carSwitchApp||null;}
+  function state(){try{return app()?app().getState():null;}catch(e){return null;}}
+  function status(msg,ok=true){const el=document.getElementById('dataUpdateStatus');if(el){el.textContent=msg;el.style.color=ok?'#075f49':'#9b3325';}}
+  function setCount(n){['dataCount','headerCount','heroCount'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=n;});}
+  function applyCars(list, meta){
+    if(!Array.isArray(list)||!app()||typeof app().setWorkingCars!=='function') return false;
+    app().setWorkingCars(list);
+    setCount(list.length);
+    if(typeof app().log==='function') app().log('تحديث بيانات CarSwitch','تم تحميل '+list.length+' سجل من المصدر المركزي.');
+    const when=meta&&meta.updated_at?new Date(meta.updated_at):new Date();
+    status('آخر تحديث: '+when.toLocaleString('ar-SA')+' • '+list.length+' سيارة',true);
+    return true;
+  }
+  async function fetchRemote(silent=false){
+    try{
+      const r=await fetch('./data/carswitch_data.json?ts='+Date.now(),{cache:'no-store'});
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      const payload=await r.json();
+      const list=Array.isArray(payload)?payload:payload.cars;
+      if(!Array.isArray(list)) throw new Error('invalid data');
+      return applyCars(list,payload);
+    }catch(e){
+      if(!silent) status('تعذر الاتصال بمصدر البيانات المركزي',false);
+      return false;
+    }
+  }
+  const btn=document.getElementById('refreshCarsBtn');
+  if(btn&&!btn.dataset.bound){
+    btn.dataset.bound='1';
+    btn.addEventListener('click',async()=>{
+      btn.disabled=true; const old=btn.textContent; btn.textContent='جاري التحديث...';
+      const ok=await fetchRemote(false);
+      if(!ok) alert('تعذر تحديث البيانات من الخادم. تأكد من اتصال المنصة بمصدر البيانات المنشور.');
+      btn.disabled=false; btn.textContent=old;
+    });
+  }
+  // Initial load + periodic refresh while the dashboard is open.
+  setTimeout(()=>fetchRemote(true),700);
+  setInterval(()=>fetchRemote(true),30*60*1000);
+  setTimeout(()=>{const s=state();setCount(s&&Array.isArray(s.cars)?s.cars.length:0);},300);
+})();
+</script>
+
+
+<script id="owner-recovery-final">
+(function(){
+  function recover(){
+    try{
+      const raw=localStorage.getItem('carswitch_platform_v1');
+      if(!raw) return;
+      const s=JSON.parse(raw);
+      if(!Array.isArray(s.users)) s.users=[];
+      let owner=s.users.find(u=>u && u.role==='owner');
+      if(!owner){
+        owner={id:'owner',name:'Owner',email:'owner@carswitch.local',role:'owner',password:'Owner@123'};
+        s.users.unshift(owner);
+        localStorage.setItem('carswitch_platform_v1',JSON.stringify(s));
+      }
+      window._realOwnerId=owner.id;
+      try{ currentUser=owner; }catch(e){}
+      const name=document.getElementById('currentUserName');
+      const role=document.getElementById('currentRoleBadge');
+      if(name) name.textContent=owner.name+' — '+owner.email;
+      if(role) role.textContent='OWNER';
+      const users=document.getElementById('usersBtn'); if(users) users.style.display='inline-block';
+      const audit=document.getElementById('auditBtn'); if(audit) audit.style.display='inline-block';
+      const manage=document.getElementById('manageBtn'); if(manage) manage.style.display='inline-block';
+      const tools=document.getElementById('ownerTools'); if(tools) tools.style.display='block';
+    }catch(e){}
+  }
+  setTimeout(recover,100);
+  setTimeout(recover,700);
+  setTimeout(recover,1500);
+})();
+</script>
+
+
+<script id="owner-final-ui-sync">
+(function(){
+  function sync(){
+    try{
+      const s=window.__carSwitchApp ? window.__carSwitchApp.getState() : null;
+      if(!s || !Array.isArray(s.users)) return;
+      const owner=s.users.find(u=>u && u.role==='owner');
+      if(!owner) return;
+      if(window.__carSwitchApp) window.__carSwitchApp.setCurrentUser(owner);
+      window._realOwnerId=owner.id;
+      const name=document.getElementById('currentUserName');
+      const role=document.getElementById('currentRoleBadge');
+      if(name) name.textContent=owner.name+' — '+owner.email;
+      if(role) role.textContent='OWNER';
+      ['usersBtn','ownerSettingsBtn','auditBtn','manageBtn'].forEach(id=>{
+        const b=document.getElementById(id); if(b) b.style.display='inline-block';
+      });
+      const tools=document.getElementById('ownerTools');
+      if(tools) tools.style.display='block';
+      if(typeof refreshBottomSwitcher==='function') refreshBottomSwitcher();
+    }catch(e){}
+  }
+  setTimeout(sync,100);
+  setTimeout(sync,700);
+  setTimeout(sync,1500);
+})();
+</script>
+
+<script id="carswitch-interaction-selfcheck">
+window.runCarSwitchInteractionSelfCheck=function(){
+  const checks=[]; const ok=(name,value)=>checks.push({name,ok:!!value});
+  const panel=id=>document.getElementById(id);
+  ok('Owner user exists',!!(window.__carSwitchApp&&window.__carSwitchApp.getState().users.some(u=>u.role==='owner')));
+  ok('Users panel exists',!!panel('usersPanel'));
+  ok('Users close button exists',!!panel('usersPanel')?.querySelector('[data-close=\"usersPanel\"]'));
+  ok('User form exists',!!panel('userFormPanel'));
+  ok('Data panel exists',!!panel('dataPanel'));
+  ok('Audit panel exists',!!panel('auditPanel'));
+  return checks;
+};
+</script>
+</body>
+</html>
