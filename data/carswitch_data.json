@@ -1,9 +1,1663 @@
 {
-  "updated_at": "2026-09-22T11:00:49.824856Z",
-  "source": "CarSwitch KSA",
-  "count": 0,
-  "removed_confirmed": 0,
-  "temporary_failures": 0,
-  "unparsed": 118,
-  "cars": []
+  "updated_at": "2026-09-22",
+  "source": "CarSwitch",
+  "count": 207,
+  "cars": [
+    {
+      "brand": "Audi",
+      "model": "Q8",
+      "year": 2020,
+      "mileage": 159193.0,
+      "price": 136100.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q8/2020/811296"
+    },
+    {
+      "brand": "Audi",
+      "model": "Q7",
+      "year": 2021,
+      "mileage": 71033.0,
+      "price": 141000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q7/2021/855648"
+    },
+    {
+      "brand": "Audi",
+      "model": "A3",
+      "year": 2022,
+      "mileage": 44000.0,
+      "price": 89250.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/audi/a3/2022/825349"
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "year": 2022,
+      "mileage": 83917.0,
+      "price": 94000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a6/2022/866070"
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "year": 2022,
+      "mileage": 120398.0,
+      "price": 110000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a6/2022/833936"
+    },
+    {
+      "brand": "Audi",
+      "model": "Q8",
+      "year": 2022,
+      "mileage": 119483.0,
+      "price": 202000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/audi/q8/2022/841226"
+    },
+    {
+      "brand": "Audi",
+      "model": "A3",
+      "year": 2023,
+      "mileage": 28472.0,
+      "price": 88750.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a3/2023/818126"
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "year": 2023,
+      "mileage": 72224.0,
+      "price": 143000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a6/2023/841803"
+    },
+    {
+      "brand": "Audi",
+      "model": "Q7",
+      "year": 2023,
+      "mileage": 30307.0,
+      "price": 186950.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q7/2023/844741"
+    },
+    {
+      "brand": "Audi",
+      "model": "S3",
+      "year": 2024,
+      "mileage": 32472.0,
+      "price": 153500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/s3/2024/840258"
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "year": 2024,
+      "mileage": 26650.0,
+      "price": 188000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a6/2024/870653"
+    },
+    {
+      "brand": "Audi",
+      "model": "A4",
+      "year": 2025,
+      "mileage": 18929.0,
+      "price": 145625.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a4/2025/828424"
+    },
+    {
+      "brand": "Audi",
+      "model": "A4",
+      "year": 2025,
+      "mileage": 22000.0,
+      "price": 149000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a4/2025/842777"
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "year": 2019,
+      "mileage": 125000.0,
+      "price": 120500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a6/2019/864174"
+    },
+    {
+      "brand": "Audi",
+      "model": "Q8",
+      "year": 2019,
+      "mileage": 157102.0,
+      "price": 135750.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q8/2019/857324"
+    },
+    {
+      "brand": "Audi",
+      "model": "Q7",
+      "year": 2018,
+      "mileage": 166000.0,
+      "price": 82400.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q7/2018/807055"
+    },
+    {
+      "brand": "Audi",
+      "model": "S3",
+      "year": 2016,
+      "mileage": 160515.0,
+      "price": 49400.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/audi/s3/2016/848480"
+    },
+    {
+      "brand": "Audi",
+      "model": "A6",
+      "year": 2016,
+      "mileage": 125000.0,
+      "price": 53000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a6/2016/855098"
+    },
+    {
+      "brand": "Audi",
+      "model": "Q7",
+      "year": 2016,
+      "mileage": 223735.0,
+      "price": 62000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q7/2016/819512"
+    },
+    {
+      "brand": "Audi",
+      "model": "A8",
+      "year": 2015,
+      "mileage": 115738.0,
+      "price": 49500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a8/2015/864582"
+    },
+    {
+      "brand": "Audi",
+      "model": "A4",
+      "year": 2013,
+      "mileage": 116195.0,
+      "price": 27000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/audi/a4/2013/868247"
+    },
+    {
+      "brand": "Audi",
+      "model": "A8",
+      "year": 2013,
+      "mileage": 106598.0,
+      "price": 47000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/a8/2013/863665"
+    },
+    {
+      "brand": "BMW",
+      "model": "X1",
+      "year": 2020,
+      "mileage": 82000.0,
+      "price": 72000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x1/2020/797445"
+    },
+    {
+      "brand": "BMW",
+      "model": "X3",
+      "year": 2020,
+      "mileage": 90000.0,
+      "price": 97500.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x3/2020/786109"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2020,
+      "mileage": 65000.0,
+      "price": 99500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2020/861704"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2020,
+      "mileage": 148000.0,
+      "price": 129500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2020/859012"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2020,
+      "mileage": 199743.0,
+      "price": 155750.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/853089"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2020,
+      "mileage": 115035.0,
+      "price": 157500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2020/828093"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2020,
+      "mileage": 59000.0,
+      "price": 173000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/841413"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2020,
+      "mileage": 69204.0,
+      "price": 185000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/857284"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2020,
+      "mileage": 83000.0,
+      "price": 205000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2020/872738"
+    },
+    {
+      "brand": "BMW",
+      "model": "X1",
+      "year": 2021,
+      "mileage": 133000.0,
+      "price": 57000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x1/2021/871233"
+    },
+    {
+      "brand": "BMW",
+      "model": "X2",
+      "year": 2021,
+      "mileage": 98000.0,
+      "price": 65050.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x2/2021/830868"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2021,
+      "mileage": 130047.0,
+      "price": 90000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2021/826320"
+    },
+    {
+      "brand": "BMW",
+      "model": "X4",
+      "year": 2021,
+      "mileage": 72737.0,
+      "price": 144500.0,
+      "url": "https://ksa.carswitch.com/dammam/used-car/bmw/x4/2021/800790"
+    },
+    {
+      "brand": "BMW",
+      "model": "X4",
+      "year": 2021,
+      "mileage": 90000.0,
+      "price": 149000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x4/2021/865775"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2021,
+      "mileage": 131807.0,
+      "price": 155500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2021/832921"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2021,
+      "mileage": 26000.0,
+      "price": 163000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2021/805931"
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2021,
+      "mileage": 84000.0,
+      "price": 166000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2021/868906"
+    },
+    {
+      "brand": "BMW",
+      "model": "X4",
+      "year": 2021,
+      "mileage": 47603.0,
+      "price": 177500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x4/2021/872657"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2021,
+      "mileage": 136900.0,
+      "price": 185000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/bmw/x6/2021/846504"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2021,
+      "mileage": 75287.0,
+      "price": 195000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2021/853544"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2022,
+      "mileage": 70493.0,
+      "price": 137500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2022/866880"
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2022,
+      "mileage": 128064.0,
+      "price": 164000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2022/848160"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2022,
+      "mileage": 66000.0,
+      "price": 169000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2022/845021"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2022,
+      "mileage": 47000.0,
+      "price": 180900.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/730/2022/839950"
+    },
+    {
+      "brand": "BMW",
+      "model": "840",
+      "year": 2022,
+      "mileage": 61959.0,
+      "price": 215100.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/840/2022/792058"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2023,
+      "mileage": 61254.0,
+      "price": 135500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2023/839084"
+    },
+    {
+      "brand": "BMW",
+      "model": "X3",
+      "year": 2023,
+      "mileage": 9670.0,
+      "price": 159000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/bmw/x3/2023/858586"
+    },
+    {
+      "brand": "BMW",
+      "model": "X3",
+      "year": 2023,
+      "mileage": 10635.0,
+      "price": 174000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x3/2023/874123"
+    },
+    {
+      "brand": "BMW",
+      "model": "530",
+      "year": 2023,
+      "mileage": 21000.0,
+      "price": 175000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/530/2023/872770"
+    },
+    {
+      "brand": "BMW",
+      "model": "X3",
+      "year": 2023,
+      "mileage": 16798.0,
+      "price": 182000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x3/2023/874965"
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2023,
+      "mileage": 70500.0,
+      "price": 189700.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x5/2023/826666"
+    },
+    {
+      "brand": "BMW",
+      "model": "430",
+      "year": 2023,
+      "mileage": 38830.0,
+      "price": 209250.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/430/2023/799890"
+    },
+    {
+      "brand": "BMW",
+      "model": "735",
+      "year": 2023,
+      "mileage": 180959.0,
+      "price": 219000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/735/2023/840443"
+    },
+    {
+      "brand": "BMW",
+      "model": "760",
+      "year": 2023,
+      "mileage": 47157.0,
+      "price": 363000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/760/2023/850767"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2024,
+      "mileage": 116689.0,
+      "price": 164500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2024/867577"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2024,
+      "mileage": 6919.0,
+      "price": 265000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/520/2024/855039"
+    },
+    {
+      "brand": "BMW",
+      "model": "840",
+      "year": 2024,
+      "mileage": 36000.0,
+      "price": 280000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/840/2024/874884"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2024,
+      "mileage": 38440.0,
+      "price": 288500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2024/848928"
+    },
+    {
+      "brand": "BMW",
+      "model": "X7",
+      "year": 2024,
+      "mileage": 34300.0,
+      "price": 310000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x7/2024/847525"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2019,
+      "mileage": 220379.0,
+      "price": 80000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2019/802023"
+    },
+    {
+      "brand": "BMW",
+      "model": "740",
+      "year": 2019,
+      "mileage": 129500.0,
+      "price": 92000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/740/2019/807819"
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2019,
+      "mileage": 152000.0,
+      "price": 139000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2019/867359"
+    },
+    {
+      "brand": "BMW",
+      "model": "318",
+      "year": 2018,
+      "mileage": 106668.0,
+      "price": 46000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/318/2018/872740"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2018,
+      "mileage": 222123.0,
+      "price": 72000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2018/867767"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2018,
+      "mileage": 295316.0,
+      "price": 75000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2018/839888"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2018,
+      "mileage": 169500.0,
+      "price": 99500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2018/865375"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2018,
+      "mileage": 79000.0,
+      "price": 129500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/730/2018/861152"
+    },
+    {
+      "brand": "BMW",
+      "model": "730",
+      "year": 2017,
+      "mileage": 159800.0,
+      "price": 85000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/730/2017/842593"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2016,
+      "mileage": 152000.0,
+      "price": 69500.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x6/2016/861921"
+    },
+    {
+      "brand": "BMW",
+      "model": "740",
+      "year": 2016,
+      "mileage": 136165.0,
+      "price": 72900.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/740/2016/839872"
+    },
+    {
+      "brand": "BMW",
+      "model": "750",
+      "year": 2016,
+      "mileage": 99500.0,
+      "price": 75000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/750/2016/865427"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6 M",
+      "year": 2016,
+      "mileage": 162500.0,
+      "price": 88000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/bmw/x6-m/2016/866073"
+    },
+    {
+      "brand": "BMW",
+      "model": "750",
+      "year": 2016,
+      "mileage": 116931.0,
+      "price": 92000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/750/2016/862064"
+    },
+    {
+      "brand": "BMW",
+      "model": "740",
+      "year": 2016,
+      "mileage": 91028.0,
+      "price": 128000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/740/2016/865867"
+    },
+    {
+      "brand": "BMW",
+      "model": "520",
+      "year": 2015,
+      "mileage": 177924.0,
+      "price": 48000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/bmw/520/2015/867335"
+    },
+    {
+      "brand": "BMW",
+      "model": "528",
+      "year": 2015,
+      "mileage": 166610.0,
+      "price": 50375.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/528/2015/868174"
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2015,
+      "mileage": 125000.0,
+      "price": 65000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2015/868628"
+    },
+    {
+      "brand": "BMW",
+      "model": "740",
+      "year": 2014,
+      "mileage": 248000.0,
+      "price": 42700.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/740/2014/794524"
+    },
+    {
+      "brand": "BMW",
+      "model": "528",
+      "year": 2014,
+      "mileage": 110039.0,
+      "price": 46500.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/528/2014/874154"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2014,
+      "mileage": 90284.0,
+      "price": 48000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x6/2014/845077"
+    },
+    {
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2014,
+      "mileage": 166000.0,
+      "price": 74000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2014/875137"
+    },
+    {
+      "brand": "BMW",
+      "model": "650",
+      "year": 2013,
+      "mileage": 205000.0,
+      "price": 60000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/bmw/650/2013/875638"
+    },
+    {
+      "brand": "BMW",
+      "model": "735",
+      "year": 2024,
+      "mileage": 44657.0,
+      "price": 316000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/735/2024/849567"
+    },
+    {
+      "brand": "BMW",
+      "model": "735",
+      "year": 2024,
+      "mileage": 45260.0,
+      "price": 325000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/735/2024/820045"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6",
+      "year": 2024,
+      "mileage": 36449.0,
+      "price": 349000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2024/840562"
+    },
+    {
+      "brand": "BMW",
+      "model": "X4",
+      "year": 2025,
+      "mileage": 12765.0,
+      "price": 270000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x4/2025/865115"
+    },
+    {
+      "brand": "BMW",
+      "model": "735",
+      "year": 2025,
+      "mileage": 3078.0,
+      "price": 351700.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/735/2025/819058"
+    },
+    {
+      "brand": "BMW",
+      "model": "740",
+      "year": 2025,
+      "mileage": 27531.0,
+      "price": 380000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/740/2025/847363"
+    },
+    {
+      "brand": "BMW",
+      "model": "X6 M60i xDrive",
+      "year": 2025,
+      "mileage": 33000.0,
+      "price": 395000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/bmw/x6-m60i-xdrive/2025/865712"
+    },
+    {
+      "brand": "BMW",
+      "model": "530",
+      "year": 2026,
+      "mileage": 14277.0,
+      "price": 304000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/530/2026/866247"
+    },
+    {
+      "brand": "BMW",
+      "model": "740",
+      "year": 2026,
+      "mileage": 447.0,
+      "price": 500500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/740/2026/865860"
+    },
+    {
+      "brand": "Cadillac",
+      "model": "XT4",
+      "year": 2020,
+      "mileage": 187345.0,
+      "price": 54250.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/cadillac/xt4/2020/860234"
+    },
+    {
+      "brand": "Cadillac",
+      "model": "XT5",
+      "year": 2020,
+      "mileage": 144000.0,
+      "price": 77000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/cadillac/xt5/2020/801178"
+    },
+    {
+      "brand": "Cadillac",
+      "model": "CT4",
+      "year": 2021,
+      "mileage": 126000.0,
+      "price": 76300.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/cadillac/ct4/2021/845476"
+    },
+    {
+      "brand": "Cadillac",
+      "model": "CT6",
+      "year": 2017,
+      "mileage": 105052.0,
+      "price": 83000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/cadillac/ct6/2017/857928"
+    },
+    {
+      "brand": "Genesis",
+      "model": "G80",
+      "year": 2021,
+      "mileage": 290981.0,
+      "price": 77000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/g80/2021/861501"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV70",
+      "year": 2021,
+      "mileage": 33000.0,
+      "price": 127600.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/genesis/gv70/2021/844702"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2021,
+      "mileage": 133430.0,
+      "price": 135000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/genesis/gv80/2021/846425"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2021,
+      "mileage": 92000.0,
+      "price": 144900.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2021/824122"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2022,
+      "mileage": 151968.0,
+      "price": 139000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2022/868617"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2022,
+      "mileage": 97792.0,
+      "price": 150000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2022/869375"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2022,
+      "mileage": 86099.0,
+      "price": 160000.0,
+      "url": "https://ksa.carswitch.com/dammam/used-car/genesis/gv80/2022/844696"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2022,
+      "mileage": 102000.0,
+      "price": 160750.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/genesis/gv80/2022/797261"
+    },
+    {
+      "brand": "Genesis",
+      "model": "G70",
+      "year": 2023,
+      "mileage": 39252.0,
+      "price": 110000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/g70/2023/859719"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV70",
+      "year": 2023,
+      "mileage": 126165.0,
+      "price": 110700.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv70/2023/829401"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2025,
+      "mileage": 19991.0,
+      "price": 275500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/872402"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2025,
+      "mileage": 25349.0,
+      "price": 275500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/872403"
+    },
+    {
+      "brand": "Genesis",
+      "model": "GV80",
+      "year": 2025,
+      "mileage": 9153.0,
+      "price": 328000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2025/868293"
+    },
+    {
+      "brand": "Genesis",
+      "model": "G70",
+      "year": 2019,
+      "mileage": 164001.0,
+      "price": 67000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/g70/2019/846896"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "QX60",
+      "year": 2020,
+      "mileage": 77897.0,
+      "price": 93000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2020/830370"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "QX60",
+      "year": 2022,
+      "mileage": 59000.0,
+      "price": 146700.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/infiniti/qx60/2022/821815"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "QX70",
+      "year": 2019,
+      "mileage": 123000.0,
+      "price": 69500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx70/2019/830255"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "Q50",
+      "year": 2018,
+      "mileage": 210123.0,
+      "price": 62000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/q50/2018/855057"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "QX70",
+      "year": 2016,
+      "mileage": 127000.0,
+      "price": 55000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx70/2016/824113"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "QX60",
+      "year": 2015,
+      "mileage": 272000.0,
+      "price": 35500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2015/872288"
+    },
+    {
+      "brand": "Infiniti",
+      "model": "QX60",
+      "year": 2015,
+      "mileage": 129551.0,
+      "price": 45000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx60/2015/865742"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Discovery Sport",
+      "year": 2019,
+      "mileage": 170709.0,
+      "price": 45000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2019/856112"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Discovery Sport",
+      "year": 2016,
+      "mileage": 174172.0,
+      "price": 43600.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2016/833050"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Discovery Sport",
+      "year": 2016,
+      "mileage": 137326.0,
+      "price": 54500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2016/849206"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Discovery Sport",
+      "year": 2015,
+      "mileage": 134562.0,
+      "price": 45000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/discovery-sport/2015/871142"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2020,
+      "mileage": 96586.0,
+      "price": 185000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2020/872927"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2021,
+      "mileage": 100134.0,
+      "price": 226000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2021/849180"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2022,
+      "mileage": 79613.0,
+      "price": 250200.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2022/835911"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2023,
+      "mileage": 74600.0,
+      "price": 286000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/land-rover/defender/2023/846815"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2023,
+      "mileage": 34059.0,
+      "price": 300000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2023/870793"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2024,
+      "mileage": 30048.0,
+      "price": 277250.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2024/801668"
+    },
+    {
+      "brand": "Land Rover",
+      "model": "Defender",
+      "year": 2024,
+      "mileage": 96990.0,
+      "price": 285000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2024/873186"
+    },
+    {
+      "brand": "Lexus",
+      "model": "NX300",
+      "year": 2020,
+      "mileage": 167000.0,
+      "price": 72400.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/nx300/2020/838966"
+    },
+    {
+      "brand": "Lexus",
+      "model": "RX350",
+      "year": 2020,
+      "mileage": 147000.0,
+      "price": 131750.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2020/812738"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES300h",
+      "year": 2021,
+      "mileage": 123237.0,
+      "price": 119000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es300h/2021/873257"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2021,
+      "mileage": 200131.0,
+      "price": 131000.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/lexus/es350/2021/823813"
+    },
+    {
+      "brand": "Lexus",
+      "model": "UX200",
+      "year": 2022,
+      "mileage": 77000.0,
+      "price": 106000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/ux200/2022/866966"
+    },
+    {
+      "brand": "Lexus",
+      "model": "RX350",
+      "year": 2022,
+      "mileage": 131000.0,
+      "price": 155000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/rx350/2022/856831"
+    },
+    {
+      "brand": "Lexus",
+      "model": "RX450h",
+      "year": 2022,
+      "mileage": 54000.0,
+      "price": 165500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/rx450h/2022/836826"
+    },
+    {
+      "brand": "Lexus",
+      "model": "GX460",
+      "year": 2022,
+      "mileage": 99435.0,
+      "price": 171000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/gx460/2022/804295"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LS500",
+      "year": 2022,
+      "mileage": 41865.0,
+      "price": 287000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/ls500/2022/864713"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES250",
+      "year": 2023,
+      "mileage": 98000.0,
+      "price": 128500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2023/848703"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES250",
+      "year": 2023,
+      "mileage": 96000.0,
+      "price": 135000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2023/842323"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES300h",
+      "year": 2023,
+      "mileage": 45899.0,
+      "price": 148000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es300h/2023/820318"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES250",
+      "year": 2023,
+      "mileage": 61899.0,
+      "price": 194000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2023/869233"
+    },
+    {
+      "brand": "Lexus",
+      "model": "RX350",
+      "year": 2023,
+      "mileage": 130520.0,
+      "price": 204000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2023/871978"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2024,
+      "mileage": 44700.0,
+      "price": 172500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2024/871050"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES300h",
+      "year": 2024,
+      "mileage": 13157.0,
+      "price": 178600.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es300h/2024/851574"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2024,
+      "mileage": 19147.0,
+      "price": 203000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2024/842062"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LS350",
+      "year": 2024,
+      "mileage": 133000.0,
+      "price": 234950.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/ls350/2024/863072"
+    },
+    {
+      "brand": "Lexus",
+      "model": "NX300",
+      "year": 2019,
+      "mileage": 128847.0,
+      "price": 93500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/nx300/2019/835427"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES250",
+      "year": 2019,
+      "mileage": 101883.0,
+      "price": 97500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es250/2019/860641"
+    },
+    {
+      "brand": "Lexus",
+      "model": "NX300",
+      "year": 2019,
+      "mileage": 83014.0,
+      "price": 107000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/nx300/2019/862372"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2019,
+      "mileage": 188346.0,
+      "price": 123500.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/es350/2019/869370"
+    },
+    {
+      "brand": "Lexus",
+      "model": "IS350",
+      "year": 2018,
+      "mileage": 77742.0,
+      "price": 94000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/is350/2018/868145"
+    },
+    {
+      "brand": "Lexus",
+      "model": "RX350",
+      "year": 2018,
+      "mileage": 100813.0,
+      "price": 145000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2018/840171"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LS500",
+      "year": 2018,
+      "mileage": 157000.0,
+      "price": 180000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/ls500/2018/848497"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LS500",
+      "year": 2018,
+      "mileage": 64114.0,
+      "price": 193600.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/ls500/2018/872566"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2017,
+      "mileage": 109480.0,
+      "price": 93500.0,
+      "url": "https://ksa.carswitch.com/dammam/used-car/lexus/es350/2017/871074"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2017,
+      "mileage": 157194.0,
+      "price": 95000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2017/843922"
+    },
+    {
+      "brand": "Lexus",
+      "model": "GS350",
+      "year": 2017,
+      "mileage": 155300.0,
+      "price": 119500.0,
+      "url": "https://ksa.carswitch.com/dammam/used-car/lexus/gs350/2017/835325"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2016,
+      "mileage": 288000.0,
+      "price": 72500.0,
+      "url": "https://ksa.carswitch.com/dammam/used-car/lexus/es350/2016/838304"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LX570",
+      "year": 2014,
+      "mileage": 267353.0,
+      "price": 149000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/lx570/2014/832310"
+    },
+    {
+      "brand": "Lexus",
+      "model": "RX350",
+      "year": 2024,
+      "mileage": 14000.0,
+      "price": 238000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/rx350/2024/809310"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LX600",
+      "year": 2024,
+      "mileage": 15482.0,
+      "price": 490000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2024/806303"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LX600",
+      "year": 2024,
+      "mileage": 57154.0,
+      "price": 491500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2024/827672"
+    },
+    {
+      "brand": "Lexus",
+      "model": "NX350",
+      "year": 2025,
+      "mileage": 21367.0,
+      "price": 173000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/nx350/2025/832227"
+    },
+    {
+      "brand": "Lexus",
+      "model": "ES350",
+      "year": 2025,
+      "mileage": 13002.0,
+      "price": 225500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/es350/2025/872362"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LX600",
+      "year": 2025,
+      "mileage": 17028.0,
+      "price": 510000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2025/855454"
+    },
+    {
+      "brand": "Lexus",
+      "model": "LX600",
+      "year": 2025,
+      "mileage": 15755.0,
+      "price": 545000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/lx600/2025/869288"
+    },
+    {
+      "brand": "Maserati",
+      "model": "Quattroporte",
+      "year": 2019,
+      "mileage": 13357.0,
+      "price": 245000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/maserati/quattroporte/2019/825805"
+    },
+    {
+      "brand": "Maserati",
+      "model": "Quattroporte",
+      "year": 2020,
+      "mileage": 42926.0,
+      "price": 149900.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/maserati/quattroporte/2020/813608"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Cayenne S",
+      "year": 2019,
+      "mileage": 140000.0,
+      "price": 178000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/porsche/cayenne-s/2019/826165"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Panamera 4S",
+      "year": 2017,
+      "mileage": 61200.0,
+      "price": 195000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/porsche/panamera-4s/2017/849790"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Cayenne",
+      "year": 2015,
+      "mileage": 191000.0,
+      "price": 86000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/porsche/cayenne/2015/873031"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Macan S",
+      "year": 2014,
+      "mileage": 111286.0,
+      "price": 83600.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/macan-s/2014/819972"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Panamera",
+      "year": 2013,
+      "mileage": 252052.0,
+      "price": 41000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/panamera/2013/865889"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Macan GTS",
+      "year": 2020,
+      "mileage": 75877.0,
+      "price": 220000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/macan-gts/2020/821408"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Cayenne",
+      "year": 2021,
+      "mileage": 51437.0,
+      "price": 198850.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/cayenne/2021/842012"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Cayenne GTS",
+      "year": 2021,
+      "mileage": 60000.0,
+      "price": 335000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/porsche/cayenne-gts/2021/862995"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Velar R-Dynamic",
+      "year": 2019,
+      "mileage": 95793.0,
+      "price": 124000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/velar-r-dynamic/2019/858531"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "HSE",
+      "year": 2019,
+      "mileage": 155000.0,
+      "price": 159000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/hse/2019/824582"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Autobiography",
+      "year": 2018,
+      "mileage": 199500.0,
+      "price": 107250.0,
+      "url": "https://ksa.carswitch.com/al-khobar/used-car/range-rover/autobiography/2018/860249"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2018,
+      "mileage": 170329.0,
+      "price": 145000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2018/867007"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Vogue SE",
+      "year": 2018,
+      "mileage": 115374.0,
+      "price": 149600.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue-se/2018/858344"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Vogue",
+      "year": 2017,
+      "mileage": 122440.0,
+      "price": 119400.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue/2017/864543"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2017,
+      "mileage": 66000.0,
+      "price": 128775.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2017/785276"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2016,
+      "mileage": 163500.0,
+      "price": 78500.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2016/817739"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2014,
+      "mileage": 190000.0,
+      "price": 70000.0,
+      "url": "https://ksa.carswitch.com/qasim-breda/used-car/range-rover/sport/2014/875266"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Vogue",
+      "year": 2013,
+      "mileage": 213139.0,
+      "price": 66200.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue/2013/802676"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Evoque",
+      "year": 2020,
+      "mileage": 125628.0,
+      "price": 98000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/evoque/2020/804251"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2020,
+      "mileage": 178000.0,
+      "price": 117000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2020/870341"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Velar R-Dynamic",
+      "year": 2020,
+      "mileage": 46196.0,
+      "price": 145500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/velar-r-dynamic/2020/843203"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Velar R-Dynamic",
+      "year": 2020,
+      "mileage": 52354.0,
+      "price": 160000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/velar-r-dynamic/2020/815754"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2020,
+      "mileage": 132000.0,
+      "price": 165000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2020/861382"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "HSE",
+      "year": 2020,
+      "mileage": 107271.0,
+      "price": 166000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/hse/2020/838841"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2020,
+      "mileage": 69600.0,
+      "price": 251000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2020/818605"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2021,
+      "mileage": 73000.0,
+      "price": 174000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2021/807863"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Velar",
+      "year": 2022,
+      "mileage": 72000.0,
+      "price": 180000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/velar/2022/867060"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2022,
+      "mileage": 29000.0,
+      "price": 220000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sport/2022/864301"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2022,
+      "mileage": 37000.0,
+      "price": 235475.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2022/866263"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Evoque",
+      "year": 2023,
+      "mileage": 67496.0,
+      "price": 138000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/evoque/2023/823529"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "HSE",
+      "year": 2023,
+      "mileage": 40329.0,
+      "price": 460000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/hse/2023/813102"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Vogue",
+      "year": 2023,
+      "mileage": 53000.0,
+      "price": 475300.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/vogue/2023/838184"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "SV",
+      "year": 2023,
+      "mileage": 66121.0,
+      "price": 610000.0,
+      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sv/2023/833416"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Velar",
+      "year": 2024,
+      "mileage": 24356.0,
+      "price": 280000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/velar/2024/795159"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "Sport",
+      "year": 2024,
+      "mileage": 15070.0,
+      "price": 325625.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sport/2024/837647"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "SE",
+      "year": 2024,
+      "mileage": 52000.0,
+      "price": 510100.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/se/2024/831592"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "HSE",
+      "year": 2024,
+      "mileage": 36000.0,
+      "price": 525000.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/hse/2024/861076"
+    },
+    {
+      "brand": "Range Rover",
+      "model": "SV",
+      "year": 2024,
+      "mileage": 31400.0,
+      "price": 784500.0,
+      "url": "https://ksa.carswitch.com/riyadh/used-car/range-rover/sv/2024/830925"
+    }
+  ]
 }
