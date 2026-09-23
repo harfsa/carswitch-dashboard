@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: car-switch-production-report
-          path: car-switch_update_report.json
+          path: carswitch_update_report.json
           if-no-files-found: ignore
