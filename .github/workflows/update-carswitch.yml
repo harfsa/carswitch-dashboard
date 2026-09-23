@@ -1,41 +1,13 @@
-name: Update CarSwitch data
+name: Update CarSwitch data (legacy - manual only)
 
+# Disabled as an automatic job. The Playwright workflow is now the single
+# scheduled updater so two scrapers cannot overwrite the same dashboard dataset.
 on:
-  schedule:
-    # 05:00 Saudi Arabia (UTC+3) every day.
-    - cron: '0 2 * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  update:
+  legacy_notice:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install scraper dependencies
-        run: pip install requests beautifulsoup4
-
-      - name: Update CarSwitch dataset
-        run: python scripts/update_carswitch.py
-
-      - name: Commit updated data
-        run: |
-          git config user.name "CarSwitch Data Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/carswitch_data.json
-          if git diff --cached --quiet; then
-            echo "No data changes."
-          else
-            git commit -m "chore: daily CarSwitch data update"
-            git push
-          fi
+      - name: Explain legacy workflow
+        run: echo "Legacy updater is manual-only. Use update-carswitch-live.yml for scheduled Playwright updates."
