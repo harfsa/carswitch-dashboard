@@ -2,6 +2,10 @@ name: Update CarSwitch production
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/update_carswitch_production.py"
+      - ".github/workflows/update-carswitch-production.yml"
 
 permissions:
   contents: write
