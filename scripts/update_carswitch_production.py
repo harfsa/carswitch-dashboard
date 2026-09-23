@@ -308,8 +308,8 @@ async def main():
     updated = []
     deleted = 0
     result_by_url = {
-        (old.get("url") or old.get("listing_url") or old.get("link")): r
-        for r in results
+        (row[0].get("url") or row[0].get("listing_url") or row[0].get("link")): row
+        for row in results
     }
 
     for car in all_cars:
