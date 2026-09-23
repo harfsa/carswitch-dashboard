@@ -2,10 +2,6 @@ name: Update CarSwitch production
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "scripts/update_carswitch_production.py"
-      - ".github/workflows/update-carswitch-production.yml"
 
 permissions:
   contents: write
@@ -29,14 +25,14 @@ jobs:
           pip install playwright
           python -m playwright install --with-deps chromium
 
-      - name: Test improved updater (dry run)
+      - name: Validate updater (dry run)
         env:
           PAGE_TIMEOUT_MS: "60000"
           WAIT_AFTER_LOAD_MS: "3500"
           DRY_RUN: "true"
         run: python scripts/update_carswitch_production.py
 
-      - name: Upload update report
+      - name: Upload validation report
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -44,5 +40,5 @@ jobs:
           path: carswitch_update_report.json
           if-no-files-found: ignore
 
-      - name: Dataset write disabled during validation
-        run: echo "Validation run only: carswitch_data.json was NOT modified."
+      - name: Confirm no dataset write
+        run: echo "Validation only: carswitch_data.json was NOT modified and no listings were deleted."
