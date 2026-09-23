@@ -25,10 +25,11 @@ jobs:
           pip install playwright
           python -m playwright install --with-deps chromium
 
-      - name: Update verified listings
+      - name: Test improved updater (dry run)
         env:
           PAGE_TIMEOUT_MS: "60000"
-          WAIT_AFTER_LOAD_MS: "4000"
+          WAIT_AFTER_LOAD_MS: "3500"
+          DRY_RUN: "true"
         run: python scripts/update_carswitch_production.py
 
       - name: Upload update report
@@ -39,14 +40,5 @@ jobs:
           path: carswitch_update_report.json
           if-no-files-found: ignore
 
-      - name: Commit updated dataset
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add carswitch_data.json
-          if git diff --cached --quiet; then
-            echo "No dataset changes to commit."
-          else
-            git commit -m "chore: update verified CarSwitch listings"
-            git push
-          fi
+      - name: Dataset write disabled during validation
+        run: echo "Validation run only: carswitch_data.json was NOT modified."
