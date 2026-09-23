@@ -26,9 +26,6 @@ def grab(patterns, text):
 
 
 def parse_text(text):
-    # CarSwitch pages contain other SAR amounts (for example home delivery fees
-    # and installment values). Only accept a value explicitly attached to
-    # "Cash price" / "السعر النقدي" as the listing price.
     price = grab(
         [
             r"cash\s+price\s*[:\-]?\s*(?:SAR|ر\.س\.?|ريال)\s*([\d,]+(?:\.\d+)?)",
@@ -63,18 +60,10 @@ def unavailable(text):
     return any(
         x in t
         for x in [
-            "page not found",
-            "listing not found",
-            "car not found",
-            "vehicle not found",
-            "listing is no longer available",
-            "no longer available",
-            "this listing has been removed",
-            "listing removed",
-            "غير متوفر",
-            "غير متاحة",
-            "تم حذف الإعلان",
-            "الإعلان غير متوفر",
+            "page not found", "listing not found", "car not found", "vehicle not found",
+            "listing is no longer available", "no longer available",
+            "this listing has been removed", "listing removed",
+            "غير متوفر", "غير متاحة", "تم حذف الإعلان", "الإعلان غير متوفر",
         ]
     )
 
@@ -101,21 +90,12 @@ def current_gone_streak(car):
 
 
 def apply_availability_state(car, state):
-    """
-    Apply the two-consecutive-gone safety policy.
-
-    - active -> reset gone_streak to 0
-    - gone -> increment gone_streak; delete only when it reaches 2
-    - temporary/unparsed -> keep the record and reset the streak because the
-      check did not definitively confirm that the listing is gone
-    """
     streak_before = current_gone_streak(car)
 
     if state == "gone":
         streak_after = streak_before + 1
         if streak_after >= 2:
             return None, "delete", streak_before, streak_after
-
         new = deepcopy(car)
         new["availability_status"] = "suspected_gone"
         new["gone_streak"] = streak_after
@@ -127,10 +107,12 @@ def apply_availability_state(car, state):
         new["gone_streak"] = 0
         return new, "retain", streak_before, 0
 
+    # Do not reset a previously confirmed gone streak on a transient fetch
+    # failure. A temporary/unparsed result is not evidence that the car returned.
     new = deepcopy(car)
     new["availability_status"] = "needs_recheck"
-    new["gone_streak"] = 0
-    return new, "retain", streak_before, 0
+    new["gone_streak"] = streak_before
+    return new, "retain", streak_before, streak_before
 
 
 def self_test():
@@ -149,8 +131,8 @@ def self_test():
 
     interrupted, action3, before3, after3 = apply_availability_state(first, "temporary")
     assert action3 == "retain"
-    assert interrupted["gone_streak"] == 0
-    assert before3 == 1 and after3 == 0
+    assert interrupted["gone_streak"] == 1
+    assert before3 == 1 and after3 == 1
 
     active, action4, before4, after4 = apply_availability_state(first, "active")
     assert action4 == "retain"
@@ -190,7 +172,6 @@ async def check(page, car):
 
         new = deepcopy(car)
         changed = []
-
         if price is not None and price != car.get("price"):
             new["price"] = price
             changed.append("price")
@@ -247,8 +228,9 @@ async def main():
 
         for i, car in enumerate(cars, 1):
             new, state, reason = await check(page, car)
+            carried = new if new is not None else car
             transitioned, action, streak_before, streak_after = apply_availability_state(
-                new if new is not None else car, state
+                carried, state
             )
             results.append(
                 (
@@ -285,7 +267,8 @@ async def main():
         "test_urls": TEST_URLS,
         "policy": (
             "A record is deleted only after two consecutive definitive 'gone' checks. "
-            "A temporary or unparsed check resets the gone streak."
+            "A temporary or unparsed check never causes deletion and preserves the current "
+            "gone streak for the next definitive check."
         ),
         "changes": [
             {
@@ -324,7 +307,6 @@ async def main():
 
     updated = []
     deleted = 0
-
     result_by_url = {
         (old.get("url") or old.get("listing_url") or old.get("link")): r
         for r in results
@@ -338,23 +320,20 @@ async def main():
             deleted += 1
             continue
 
+        item = deepcopy(car)
+
         if state == "active":
-            item = new
+            item.update(new)
             item["availability_status"] = "active"
             item["gone_streak"] = 0
-            updated.append(item)
         elif state == "gone":
-            item = deepcopy(car)
             item["availability_status"] = "suspected_gone"
             item["gone_streak"] = streak_after
-            updated.append(item)
         else:
-            # Temporary/unparsed: preserve the existing record but require a fresh
-            # definitive check before any future deletion.
-            item = deepcopy(car)
             item["availability_status"] = "needs_recheck"
-            item["gone_streak"] = 0
-            updated.append(item)
+            item["gone_streak"] = streak_after
+
+        updated.append(item)
 
     payload["cars"] = updated
     payload["count"] = len(updated)
@@ -365,13 +344,11 @@ async def main():
         "deleted": deleted,
         "policy": (
             "delete only after two consecutive definitive 'gone' checks; "
-            "temporary/unparsed resets the gone streak"
+            "temporary/unparsed never causes deletion and preserves the gone streak"
         ),
     }
 
-    DATA.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     print(counts)
     print(f"Deleted: {deleted}")
 
