@@ -1,41 +1,32 @@
 name: Update CarSwitch production
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
-  update:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-
-      - name: Install Playwright and Chromium
+          python-version: '3.12'
+      - name: Install Playwright
         run: |
           python -m pip install --upgrade pip
           pip install playwright
           python -m playwright install --with-deps chromium
-
-      - name: Validate updater (dry run)
+      - name: Validate updater
         env:
-          PAGE_TIMEOUT_MS: "60000"
-          WAIT_AFTER_LOAD_MS: "3500"
-          DRY_RUN: "true"
+          DRY_RUN: 'true'
+          PAGE_TIMEOUT_MS: '60000'
+          WAIT_AFTER_LOAD_MS: '3500'
         run: python scripts/update_carswitch_production.py
-
-      - name: Upload validation report
+      - name: Upload report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: car-switch-production-report
           path: carswitch_update_report.json
           if-no-files-found: ignore
-
-      - name: Confirm no dataset write
-        run: echo "Validation only: carswitch_data.json was NOT modified and no listings were deleted."
