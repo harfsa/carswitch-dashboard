@@ -1,0 +1,55 @@
+name: CarSwitch live data update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Live CarSwitch update
+        env:
+          DRY_RUN: 'false'
+          PAGE_TIMEOUT_MS: '60000'
+          WAIT_AFTER_LOAD_MS: '3500'
+        run: python scripts/update_carswitch_production.py
+
+      - name: Upload update report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: car-switch-live-update-report
+          path: carswitch_update_report.json
+          if-no-files-found: error
+
+      - name: Commit dataset changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- carswitch_data.json; then
+            echo "No dataset changes to commit."
+            exit 0
+          fi
+          git add carswitch_data.json
+          git commit -m "Update CarSwitch live data"
+          git push
