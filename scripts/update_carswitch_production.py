@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
 
-DATA = Path("data/carswitch_data.json")
+DATA = Path("carswitch_data.json")
 TIMEOUT = int(os.getenv("PAGE_TIMEOUT_MS", "60000"))
 WAIT_MS = int(os.getenv("WAIT_AFTER_LOAD_MS", "3000"))
 DRY_RUN = os.getenv("DRY_RUN", "true").lower() == "true"
