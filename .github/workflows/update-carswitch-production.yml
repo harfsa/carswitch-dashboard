@@ -5,6 +5,7 @@ on: [workflow_dispatch]
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,17 +18,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install playwright
           python -m playwright install --with-deps chromium
-      - name: Validate updater on 3 known listings
+      - name: Full 207-listing dry run
         env:
           DRY_RUN: 'true'
           PAGE_TIMEOUT_MS: '60000'
           WAIT_AFTER_LOAD_MS: '3500'
-          TEST_URLS: 'https://ksa.carswitch.com/riyadh/used-car/audi/q8/2020/811296,https://ksa.carswitch.com/riyadh/used-car/audi/q7/2021/855648,https://ksa.carswitch.com/jeddah/used-car/audi/a3/2022/825349'
         run: python scripts/update_carswitch_production.py
       - name: Upload report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: car-switch-production-report
-          path: carswitch_update_report.json
+          path: carsswitch_update_report.json
           if-no-files-found: ignore
