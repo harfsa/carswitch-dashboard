@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-23T13:02:41Z",
+  "updated_at": "2026-09-24T02:19:26Z",
   "source": "CarSwitch KSA",
-  "count": 207,
+  "count": 191,
   "removed_confirmed": 0,
   "temporary_failures": 0,
   "unparsed": 299,
@@ -13,7 +13,7 @@
       "mileage": 44000.0,
       "price": 89,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/audi/a3/2022/825349",
-      "last_checked": "2026-09-23T12:47:10Z",
+      "last_checked": "2026-09-24T02:04:09Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -24,7 +24,7 @@
       "mileage": 28472.0,
       "price": 88,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a3/2023/818126",
-      "last_checked": "2026-09-23T12:47:15Z",
+      "last_checked": "2026-09-24T02:04:14Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -35,7 +35,7 @@
       "mileage": 116195.0,
       "price": 26,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/audi/a4/2013/868247",
-      "last_checked": "2026-09-23T12:47:20Z",
+      "last_checked": "2026-09-24T02:04:18Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -46,7 +46,7 @@
       "mileage": 18929.0,
       "price": 145,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a4/2025/828424",
-      "last_checked": "2026-09-23T12:47:24Z",
+      "last_checked": "2026-09-24T02:04:23Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -57,7 +57,7 @@
       "mileage": 22000.0,
       "price": 149,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a4/2025/842777",
-      "last_checked": "2026-09-23T12:47:29Z",
+      "last_checked": "2026-09-24T02:04:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -68,7 +68,7 @@
       "mileage": 125000.0,
       "price": 50,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a6/2016/855098",
-      "last_checked": "2026-09-23T12:47:33Z",
+      "last_checked": "2026-09-24T02:04:33Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -79,7 +79,7 @@
       "mileage": 125000.0,
       "price": 120,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a6/2019/864174",
-      "last_checked": "2026-09-23T12:47:38Z",
+      "last_checked": "2026-09-24T02:04:37Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -90,7 +90,7 @@
       "mileage": 83917.0,
       "price": 110,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a6/2022/866070",
-      "last_checked": "2026-09-23T12:47:43Z",
+      "last_checked": "2026-09-24T02:04:42Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -101,7 +101,7 @@
       "mileage": 120398.0,
       "price": 110,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a6/2022/833936",
-      "last_checked": "2026-09-23T12:47:48Z",
+      "last_checked": "2026-09-24T02:04:46Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -112,7 +112,7 @@
       "mileage": 72224.0,
       "price": 143,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a6/2023/841803",
-      "last_checked": "2026-09-23T12:47:53Z",
+      "last_checked": "2026-09-24T02:04:51Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -123,7 +123,7 @@
       "mileage": 26650.0,
       "price": 188,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a6/2024/870653",
-      "last_checked": "2026-09-23T12:47:58Z",
+      "last_checked": "2026-09-24T02:04:55Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -134,7 +134,7 @@
       "mileage": 106598.0,
       "price": 47,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a8/2013/863665",
-      "last_checked": "2026-09-23T12:48:03Z",
+      "last_checked": "2026-09-24T02:04:59Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -145,7 +145,7 @@
       "mileage": 186262,
       "price": 49,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/a8/2015/864582",
-      "last_checked": "2026-09-23T12:48:07Z",
+      "last_checked": "2026-09-24T02:05:04Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -156,7 +156,7 @@
       "mileage": 223735.0,
       "price": 62,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/q7/2016/819512",
-      "last_checked": "2026-09-23T12:48:11Z",
+      "last_checked": "2026-09-24T02:05:08Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -167,7 +167,7 @@
       "mileage": 166000.0,
       "price": 82,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/q7/2018/807055",
-      "last_checked": "2026-09-23T12:48:16Z",
+      "last_checked": "2026-09-24T02:05:12Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -178,19 +178,9 @@
       "mileage": 71033.0,
       "price": 139,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/q7/2021/855648",
-      "last_checked": "2026-09-23T12:48:20Z",
+      "last_checked": "2026-09-24T02:05:17Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Audi",
-      "model": "Q7",
-      "year": 2023,
-      "mileage": 30307.0,
-      "price": 186950.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/audi/q7/2023/844741",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Audi",
@@ -199,7 +189,7 @@
       "mileage": 157102.0,
       "price": 135,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/q8/2019/857324",
-      "last_checked": "2026-09-23T12:48:28Z",
+      "last_checked": "2026-09-24T02:05:25Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -210,7 +200,7 @@
       "mileage": 159193.0,
       "price": 136,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/q8/2020/811296",
-      "last_checked": "2026-09-23T12:48:32Z",
+      "last_checked": "2026-09-24T02:05:30Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -221,7 +211,7 @@
       "mileage": 119483.0,
       "price": 202,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/audi/q8/2022/841226",
-      "last_checked": "2026-09-23T12:48:37Z",
+      "last_checked": "2026-09-24T02:05:34Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -232,7 +222,7 @@
       "mileage": 160515.0,
       "price": 46,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/audi/s3/2016/848480",
-      "last_checked": "2026-09-23T12:48:41Z",
+      "last_checked": "2026-09-24T02:05:39Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -243,7 +233,7 @@
       "mileage": 32472.0,
       "price": 153,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/audi/s3/2024/840258",
-      "last_checked": "2026-09-23T12:48:45Z",
+      "last_checked": "2026-09-24T02:05:44Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -254,7 +244,7 @@
       "mileage": 106668.0,
       "price": 46,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/318/2018/872740",
-      "last_checked": "2026-09-23T12:48:50Z",
+      "last_checked": "2026-09-24T02:05:49Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -265,7 +255,7 @@
       "mileage": 38830.0,
       "price": 209,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/430/2023/799890",
-      "last_checked": "2026-09-23T12:48:54Z",
+      "last_checked": "2026-09-24T02:05:53Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -276,7 +266,7 @@
       "mileage": 177924.0,
       "price": 48,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/bmw/520/2015/867335",
-      "last_checked": "2026-09-23T12:48:59Z",
+      "last_checked": "2026-09-24T02:05:57Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -285,10 +275,11 @@
       "model": "520",
       "year": 2020,
       "mileage": 65000.0,
-      "price": 99500.0,
+      "price": 99,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2020/861704",
-      "availability_status": "needs_recheck",
-      "gone_streak": 0
+      "availability_status": "active",
+      "gone_streak": 0,
+      "last_checked": "2026-09-24T02:06:02Z"
     },
     {
       "brand": "BMW",
@@ -298,7 +289,7 @@
       "price": 90,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2021/826320",
       "last_checked": "2026-09-23T12:49:08Z",
-      "availability_status": "active",
+      "availability_status": "needs_recheck",
       "gone_streak": 0
     },
     {
@@ -308,7 +299,7 @@
       "mileage": 26000.0,
       "price": 163,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2021/805931",
-      "last_checked": "2026-09-23T12:49:13Z",
+      "last_checked": "2026-09-24T02:06:09Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -319,7 +310,7 @@
       "mileage": 70493.0,
       "price": 137,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2022/866880",
-      "last_checked": "2026-09-23T12:49:18Z",
+      "last_checked": "2026-09-24T02:06:14Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -330,7 +321,7 @@
       "mileage": 61254.0,
       "price": 130,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2023/839084",
-      "last_checked": "2026-09-23T12:49:22Z",
+      "last_checked": "2026-09-24T02:06:19Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -341,7 +332,7 @@
       "mileage": 116689.0,
       "price": 161,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2024/867577",
-      "last_checked": "2026-09-23T12:49:27Z",
+      "last_checked": "2026-09-24T02:06:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -352,7 +343,7 @@
       "mileage": 6919.0,
       "price": 265,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/520/2024/855039",
-      "last_checked": "2026-09-23T12:49:31Z",
+      "last_checked": "2026-09-24T02:06:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -363,19 +354,9 @@
       "mileage": 110039.0,
       "price": 46,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/528/2014/874154",
-      "last_checked": "2026-09-23T12:49:35Z",
+      "last_checked": "2026-09-24T02:06:32Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "528",
-      "year": 2015,
-      "mileage": 166610.0,
-      "price": 50375.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/528/2015/868174",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -384,7 +365,7 @@
       "mileage": 21000.0,
       "price": 175,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/530/2023/872770",
-      "last_checked": "2026-09-23T12:49:45Z",
+      "last_checked": "2026-09-24T02:06:40Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -395,7 +376,7 @@
       "mileage": 14277.0,
       "price": 292,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/530/2026/866247",
-      "last_checked": "2026-09-23T12:49:49Z",
+      "last_checked": "2026-09-24T02:06:44Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -406,7 +387,7 @@
       "mileage": 205000.0,
       "price": 60,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/bmw/650/2013/875638",
-      "last_checked": "2026-09-23T12:49:54Z",
+      "last_checked": "2026-09-24T02:06:49Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -417,7 +398,7 @@
       "mileage": 159800.0,
       "price": 85,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/730/2017/842593",
-      "last_checked": "2026-09-23T12:49:58Z",
+      "last_checked": "2026-09-24T02:06:53Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -428,7 +409,7 @@
       "mileage": 295316.0,
       "price": 75,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2018/839888",
-      "last_checked": "2026-09-23T12:50:03Z",
+      "last_checked": "2026-09-24T02:06:58Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -439,7 +420,7 @@
       "mileage": 169500.0,
       "price": 99,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2018/865375",
-      "last_checked": "2026-09-23T12:50:08Z",
+      "last_checked": "2026-09-24T02:07:02Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -450,7 +431,7 @@
       "mileage": 79000.0,
       "price": 129,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2018/861152",
-      "last_checked": "2026-09-23T12:50:12Z",
+      "last_checked": "2026-09-24T02:07:07Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -461,7 +442,7 @@
       "mileage": 220379.0,
       "price": 80,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2019/802023",
-      "last_checked": "2026-09-23T12:50:17Z",
+      "last_checked": "2026-09-24T02:07:12Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -472,7 +453,7 @@
       "mileage": 148000.0,
       "price": 129,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2020/859012",
-      "last_checked": "2026-09-23T12:50:22Z",
+      "last_checked": "2026-09-24T02:07:16Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -483,7 +464,7 @@
       "mileage": 115035.0,
       "price": 157,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2020/828093",
-      "last_checked": "2026-09-23T12:50:26Z",
+      "last_checked": "2026-09-24T02:07:20Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -494,7 +475,7 @@
       "mileage": 75287.0,
       "price": 195,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2021/853544",
-      "last_checked": "2026-09-23T12:50:31Z",
+      "last_checked": "2026-09-24T02:07:25Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -505,7 +486,7 @@
       "mileage": 66000.0,
       "price": 165,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/730/2022/845021",
-      "last_checked": "2026-09-23T12:50:36Z",
+      "last_checked": "2026-09-24T02:07:30Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -516,7 +497,7 @@
       "mileage": 47000.0,
       "price": 180,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/730/2022/839950",
-      "last_checked": "2026-09-23T12:50:40Z",
+      "last_checked": "2026-09-24T02:07:34Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -527,7 +508,7 @@
       "mileage": 180959.0,
       "price": 209,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/735/2023/840443",
-      "last_checked": "2026-09-23T12:50:45Z",
+      "last_checked": "2026-09-24T02:07:38Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -538,7 +519,7 @@
       "mileage": 44657.0,
       "price": 316,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/735/2024/849567",
-      "last_checked": "2026-09-23T12:50:50Z",
+      "last_checked": "2026-09-24T02:07:42Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -549,7 +530,7 @@
       "mileage": 45260.0,
       "price": 325,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/735/2024/820045",
-      "last_checked": "2026-09-23T12:50:54Z",
+      "last_checked": "2026-09-24T02:07:47Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -560,19 +541,9 @@
       "mileage": 3078.0,
       "price": 351,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/735/2025/819058",
-      "last_checked": "2026-09-23T12:50:59Z",
+      "last_checked": "2026-09-24T02:07:52Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "740",
-      "year": 2014,
-      "mileage": 248000.0,
-      "price": 42700.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/740/2014/794524",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -581,7 +552,7 @@
       "mileage": 136165.0,
       "price": 72,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/740/2016/839872",
-      "last_checked": "2026-09-23T12:51:08Z",
+      "last_checked": "2026-09-24T02:08:00Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -592,7 +563,7 @@
       "mileage": 91028.0,
       "price": 128,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/740/2016/865867",
-      "last_checked": "2026-09-23T12:51:12Z",
+      "last_checked": "2026-09-24T02:08:05Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -603,7 +574,7 @@
       "mileage": 129500.0,
       "price": 92,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/740/2019/807819",
-      "last_checked": "2026-09-23T12:51:16Z",
+      "last_checked": "2026-09-24T02:08:10Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -614,7 +585,7 @@
       "mileage": 27531.0,
       "price": 380,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/740/2025/847363",
-      "last_checked": "2026-09-23T12:51:20Z",
+      "last_checked": "2026-09-24T02:08:14Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -625,7 +596,7 @@
       "mileage": 447.0,
       "price": 500,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/740/2026/865860",
-      "last_checked": "2026-09-23T12:51:24Z",
+      "last_checked": "2026-09-24T02:08:19Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -636,7 +607,7 @@
       "mileage": 99500.0,
       "price": 75,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/750/2016/865427",
-      "last_checked": "2026-09-23T12:51:28Z",
+      "last_checked": "2026-09-24T02:08:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -647,7 +618,7 @@
       "mileage": 116931.0,
       "price": 87,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/750/2016/862064",
-      "last_checked": "2026-09-23T12:51:33Z",
+      "last_checked": "2026-09-24T02:08:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -658,19 +629,9 @@
       "mileage": 47157.0,
       "price": 363,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/760/2023/850767",
-      "last_checked": "2026-09-23T12:51:37Z",
+      "last_checked": "2026-09-24T02:08:33Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "840",
-      "year": 2022,
-      "mileage": 61959.0,
-      "price": 215100.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/840/2022/792058",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -679,19 +640,9 @@
       "mileage": 36000.0,
       "price": 275,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/840/2024/874884",
-      "last_checked": "2026-09-23T12:51:46Z",
+      "last_checked": "2026-09-24T02:08:42Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "X1",
-      "year": 2020,
-      "mileage": 82000.0,
-      "price": 72000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x1/2020/797445",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -700,7 +651,7 @@
       "mileage": 133000.0,
       "price": 57,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x1/2021/871233",
-      "last_checked": "2026-09-23T12:51:55Z",
+      "last_checked": "2026-09-24T02:08:50Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -711,7 +662,7 @@
       "mileage": 98000.0,
       "price": 65,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x2/2021/830868",
-      "last_checked": "2026-09-23T12:52:00Z",
+      "last_checked": "2026-09-24T02:08:55Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -722,7 +673,7 @@
       "mileage": 90000.0,
       "price": 97,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x3/2020/786109",
-      "last_checked": "2026-09-23T12:52:05Z",
+      "last_checked": "2026-09-24T02:08:59Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -731,9 +682,9 @@
       "model": "X3",
       "year": 2023,
       "mileage": 9670.0,
-      "price": 159,
+      "price": 155,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/bmw/x3/2023/858586",
-      "last_checked": "2026-09-23T12:52:09Z",
+      "last_checked": "2026-09-24T02:09:04Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -744,7 +695,7 @@
       "mileage": 10635.0,
       "price": 169,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x3/2023/874123",
-      "last_checked": "2026-09-23T12:52:13Z",
+      "last_checked": "2026-09-24T02:09:08Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -755,7 +706,7 @@
       "mileage": 16798.0,
       "price": 179,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x3/2023/874965",
-      "last_checked": "2026-09-23T12:52:17Z",
+      "last_checked": "2026-09-24T02:09:13Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -766,7 +717,7 @@
       "mileage": 74737,
       "price": 144,
       "url": "https://ksa.carswitch.com/en/dammam/used-car/bmw/x4/2021/800790",
-      "last_checked": "2026-09-23T12:52:22Z",
+      "last_checked": "2026-09-24T02:09:18Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -777,7 +728,7 @@
       "mileage": 90000.0,
       "price": 149,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x4/2021/865775",
-      "last_checked": "2026-09-23T12:52:27Z",
+      "last_checked": "2026-09-24T02:09:23Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -788,7 +739,7 @@
       "mileage": 47603.0,
       "price": 169,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x4/2021/872657",
-      "last_checked": "2026-09-23T12:52:31Z",
+      "last_checked": "2026-09-24T02:09:27Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -799,7 +750,7 @@
       "mileage": 12765.0,
       "price": 270,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x4/2025/865115",
-      "last_checked": "2026-09-23T12:52:36Z",
+      "last_checked": "2026-09-24T02:09:32Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -810,19 +761,9 @@
       "mileage": 166000.0,
       "price": 73,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x5/2014/875137",
-      "last_checked": "2026-09-23T12:52:40Z",
+      "last_checked": "2026-09-24T02:09:37Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "X5",
-      "year": 2015,
-      "mileage": 125000.0,
-      "price": 65000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x5/2015/868628",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -831,7 +772,7 @@
       "mileage": 152000.0,
       "price": 139,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x5/2019/867359",
-      "last_checked": "2026-09-23T12:52:49Z",
+      "last_checked": "2026-09-24T02:09:47Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -842,7 +783,7 @@
       "mileage": 84000.0,
       "price": 159,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x5/2021/868906",
-      "last_checked": "2026-09-23T12:52:53Z",
+      "last_checked": "2026-09-24T02:09:51Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -853,7 +794,7 @@
       "mileage": 128064.0,
       "price": 164,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x5/2022/848160",
-      "last_checked": "2026-09-23T12:52:57Z",
+      "last_checked": "2026-09-24T02:09:56Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -864,7 +805,7 @@
       "mileage": 70500.0,
       "price": 189,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x5/2023/826666",
-      "last_checked": "2026-09-23T12:53:01Z",
+      "last_checked": "2026-09-24T02:10:00Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -875,7 +816,7 @@
       "mileage": 90284.0,
       "price": 45,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x6/2014/845077",
-      "last_checked": "2026-09-23T12:53:06Z",
+      "last_checked": "2026-09-24T02:10:04Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -886,19 +827,9 @@
       "mileage": 152000.0,
       "price": 69,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x6/2016/861921",
-      "last_checked": "2026-09-23T12:53:11Z",
+      "last_checked": "2026-09-24T02:10:09Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "X6",
-      "year": 2018,
-      "mileage": 222123.0,
-      "price": 72000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2018/867767",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -907,7 +838,7 @@
       "mileage": 199743.0,
       "price": 155,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x6/2020/853089",
-      "last_checked": "2026-09-23T12:53:20Z",
+      "last_checked": "2026-09-24T02:10:18Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -918,7 +849,7 @@
       "mileage": 59000.0,
       "price": 173,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x6/2020/841413",
-      "last_checked": "2026-09-23T12:53:24Z",
+      "last_checked": "2026-09-24T02:10:23Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -929,7 +860,7 @@
       "mileage": 69204.0,
       "price": 185,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x6/2020/857284",
-      "last_checked": "2026-09-23T12:53:29Z",
+      "last_checked": "2026-09-24T02:10:27Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -940,7 +871,7 @@
       "mileage": 83000.0,
       "price": 205,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x6/2020/872738",
-      "last_checked": "2026-09-23T12:53:33Z",
+      "last_checked": "2026-09-24T02:10:31Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -951,7 +882,7 @@
       "mileage": 131807.0,
       "price": 154,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x6/2021/832921",
-      "last_checked": "2026-09-23T12:53:37Z",
+      "last_checked": "2026-09-24T02:10:36Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -962,19 +893,9 @@
       "mileage": 136900.0,
       "price": 185,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/bmw/x6/2021/846504",
-      "last_checked": "2026-09-23T12:53:42Z",
+      "last_checked": "2026-09-24T02:10:40Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "BMW",
-      "model": "X6",
-      "year": 2024,
-      "mileage": 38440.0,
-      "price": 288500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/bmw/x6/2024/848928",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "BMW",
@@ -983,7 +904,7 @@
       "mileage": 36449.0,
       "price": 349,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/bmw/x6/2024/840562",
-      "last_checked": "2026-09-23T12:53:52Z",
+      "last_checked": "2026-09-24T02:10:49Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -994,7 +915,7 @@
       "mileage": 162500.0,
       "price": 85,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/bmw/x6-m/2016/866073",
-      "last_checked": "2026-09-23T12:53:56Z",
+      "last_checked": "2026-09-24T02:10:53Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1005,7 +926,7 @@
       "mileage": 33000.0,
       "price": 395,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x6-m60i-xdrive/2025/865712",
-      "last_checked": "2026-09-23T12:54:01Z",
+      "last_checked": "2026-09-24T02:10:58Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1014,10 +935,11 @@
       "model": "X7",
       "year": 2024,
       "mileage": 34300.0,
-      "price": 310000.0,
+      "price": 310,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/bmw/x7/2024/847525",
-      "availability_status": "needs_recheck",
-      "gone_streak": 0
+      "availability_status": "active",
+      "gone_streak": 0,
+      "last_checked": "2026-09-24T02:11:03Z"
     },
     {
       "brand": "Cadillac",
@@ -1027,7 +949,7 @@
       "price": 76300.0,
       "url": "https://ksa.carswitch.com/jeddah/used-car/cadillac/ct4/2021/845476",
       "last_checked": "2026-09-23T12:54:10Z",
-      "availability_status": "active",
+      "availability_status": "needs_recheck",
       "gone_streak": 0
     },
     {
@@ -1037,7 +959,7 @@
       "mileage": 105052.0,
       "price": 83000.0,
       "url": "https://ksa.carswitch.com/al-khobar/used-car/cadillac/ct6/2017/857928",
-      "last_checked": "2026-09-23T12:54:15Z",
+      "last_checked": "2026-09-24T02:11:12Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1048,7 +970,7 @@
       "mileage": 187345.0,
       "price": 54250.0,
       "url": "https://ksa.carswitch.com/riyadh/used-car/cadillac/xt4/2020/860234",
-      "last_checked": "2026-09-23T12:54:20Z",
+      "last_checked": "2026-09-24T02:11:16Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1059,7 +981,7 @@
       "mileage": 144000.0,
       "price": 77000.0,
       "url": "https://ksa.carswitch.com/riyadh/used-car/cadillac/xt5/2020/801178",
-      "last_checked": "2026-09-23T12:54:25Z",
+      "last_checked": "2026-09-24T02:11:20Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1070,7 +992,7 @@
       "mileage": 164001.0,
       "price": 67,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/g70/2019/846896",
-      "last_checked": "2026-09-23T12:54:30Z",
+      "last_checked": "2026-09-24T02:11:25Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1081,7 +1003,7 @@
       "mileage": 39252.0,
       "price": 110,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/g70/2023/859719",
-      "last_checked": "2026-09-23T12:54:34Z",
+      "last_checked": "2026-09-24T02:11:29Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1092,7 +1014,7 @@
       "mileage": 290981.0,
       "price": 77,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/g80/2021/861501",
-      "last_checked": "2026-09-23T12:54:39Z",
+      "last_checked": "2026-09-24T02:11:34Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1101,9 +1023,9 @@
       "model": "GV70",
       "year": 2021,
       "mileage": 33000.0,
-      "price": 125,
+      "price": 124,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/genesis/gv70/2021/844702",
-      "last_checked": "2026-09-23T12:54:44Z",
+      "last_checked": "2026-09-24T02:11:38Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1114,7 +1036,7 @@
       "mileage": 126165.0,
       "price": 110,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv70/2023/829401",
-      "last_checked": "2026-09-23T12:54:48Z",
+      "last_checked": "2026-09-24T02:11:43Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1125,19 +1047,9 @@
       "mileage": 133430.0,
       "price": 135,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/genesis/gv80/2021/846425",
-      "last_checked": "2026-09-23T12:54:53Z",
+      "last_checked": "2026-09-24T02:11:48Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Genesis",
-      "model": "GV80",
-      "year": 2021,
-      "mileage": 92000.0,
-      "price": 144900.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/genesis/gv80/2021/824122",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Genesis",
@@ -1146,7 +1058,7 @@
       "mileage": 151968.0,
       "price": 139,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2022/868617",
-      "last_checked": "2026-09-23T12:55:03Z",
+      "last_checked": "2026-09-24T02:11:57Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1157,7 +1069,7 @@
       "mileage": 97792.0,
       "price": 150,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2022/869375",
-      "last_checked": "2026-09-23T12:55:07Z",
+      "last_checked": "2026-09-24T02:12:02Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1168,7 +1080,7 @@
       "mileage": 86099.0,
       "price": 158,
       "url": "https://ksa.carswitch.com/en/dammam/used-car/genesis/gv80/2022/844696",
-      "last_checked": "2026-09-23T12:55:11Z",
+      "last_checked": "2026-09-24T02:12:06Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1179,7 +1091,7 @@
       "mileage": 102000.0,
       "price": 160,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/genesis/gv80/2022/797261",
-      "last_checked": "2026-09-23T12:55:16Z",
+      "last_checked": "2026-09-24T02:12:11Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1190,7 +1102,7 @@
       "mileage": 19991.0,
       "price": 275,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2025/872402",
-      "last_checked": "2026-09-23T12:55:20Z",
+      "last_checked": "2026-09-24T02:12:15Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1201,7 +1113,7 @@
       "mileage": 25349.0,
       "price": 275,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2025/872403",
-      "last_checked": "2026-09-23T12:55:24Z",
+      "last_checked": "2026-09-24T02:12:20Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1212,7 +1124,7 @@
       "mileage": 9153.0,
       "price": 328,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/genesis/gv80/2025/868293",
-      "last_checked": "2026-09-23T12:55:29Z",
+      "last_checked": "2026-09-24T02:12:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1223,7 +1135,7 @@
       "mileage": 210123.0,
       "price": 62,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/q50/2018/855057",
-      "last_checked": "2026-09-23T12:55:33Z",
+      "last_checked": "2026-09-24T02:12:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1234,7 +1146,7 @@
       "mileage": 272000.0,
       "price": 35,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx60/2015/872288",
-      "last_checked": "2026-09-23T12:55:37Z",
+      "last_checked": "2026-09-24T02:12:32Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1245,7 +1157,7 @@
       "mileage": 129551.0,
       "price": 45,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx60/2015/865742",
-      "last_checked": "2026-09-23T12:55:41Z",
+      "last_checked": "2026-09-24T02:12:36Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1256,7 +1168,7 @@
       "mileage": 77897.0,
       "price": 93,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx60/2020/830370",
-      "last_checked": "2026-09-23T12:55:45Z",
+      "last_checked": "2026-09-24T02:12:40Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1267,7 +1179,7 @@
       "mileage": 59000.0,
       "price": 146,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/infiniti/qx60/2022/821815",
-      "last_checked": "2026-09-23T12:55:49Z",
+      "last_checked": "2026-09-24T02:12:45Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1278,19 +1190,9 @@
       "mileage": 127000.0,
       "price": 55,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/infiniti/qx70/2016/824113",
-      "last_checked": "2026-09-23T12:55:54Z",
+      "last_checked": "2026-09-24T02:12:50Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Infiniti",
-      "model": "QX70",
-      "year": 2019,
-      "mileage": 123000.0,
-      "price": 69500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/infiniti/qx70/2019/830255",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Land Rover",
@@ -1299,19 +1201,9 @@
       "mileage": 96586.0,
       "price": 185,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2020/872927",
-      "last_checked": "2026-09-23T12:56:04Z",
+      "last_checked": "2026-09-24T02:12:58Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Land Rover",
-      "model": "Defender",
-      "year": 2021,
-      "mileage": 100134.0,
-      "price": 226000.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/land-rover/defender/2021/849180",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Land Rover",
@@ -1320,7 +1212,7 @@
       "mileage": 79613.0,
       "price": 250,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2022/835911",
-      "last_checked": "2026-09-23T12:56:14Z",
+      "last_checked": "2026-09-24T02:13:08Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1331,7 +1223,7 @@
       "mileage": 74600.0,
       "price": 286,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/land-rover/defender/2023/846815",
-      "last_checked": "2026-09-23T12:56:18Z",
+      "last_checked": "2026-09-24T02:13:12Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1342,7 +1234,7 @@
       "mileage": 34059.0,
       "price": 300,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2023/870793",
-      "last_checked": "2026-09-23T12:56:22Z",
+      "last_checked": "2026-09-24T02:13:16Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1353,7 +1245,7 @@
       "mileage": 30048.0,
       "price": 277,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2024/801668",
-      "last_checked": "2026-09-23T12:56:27Z",
+      "last_checked": "2026-09-24T02:13:20Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1364,7 +1256,7 @@
       "mileage": 96990.0,
       "price": 285,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/defender/2024/873186",
-      "last_checked": "2026-09-23T12:56:32Z",
+      "last_checked": "2026-09-24T02:13:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1375,7 +1267,7 @@
       "mileage": 134562.0,
       "price": 45,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2015/871142",
-      "last_checked": "2026-09-23T12:56:37Z",
+      "last_checked": "2026-09-24T02:13:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1386,7 +1278,7 @@
       "mileage": 174172.0,
       "price": 43,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2016/833050",
-      "last_checked": "2026-09-23T12:56:41Z",
+      "last_checked": "2026-09-24T02:13:32Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1397,7 +1289,7 @@
       "mileage": 137326.0,
       "price": 54,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2016/849206",
-      "last_checked": "2026-09-23T12:56:46Z",
+      "last_checked": "2026-09-24T02:13:36Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1408,7 +1300,7 @@
       "mileage": 170709.0,
       "price": 45,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/land-rover/discovery-sport/2019/856112",
-      "last_checked": "2026-09-23T12:56:51Z",
+      "last_checked": "2026-09-24T02:13:41Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1419,7 +1311,7 @@
       "mileage": 101883.0,
       "price": 97,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es250/2019/860641",
-      "last_checked": "2026-09-23T12:56:56Z",
+      "last_checked": "2026-09-24T02:13:45Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1430,7 +1322,7 @@
       "mileage": 98000.0,
       "price": 128,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es250/2023/848703",
-      "last_checked": "2026-09-23T12:57:00Z",
+      "last_checked": "2026-09-24T02:13:50Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1439,9 +1331,9 @@
       "model": "ES250",
       "year": 2023,
       "mileage": 96000.0,
-      "price": 135,
+      "price": 134,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es250/2023/842323",
-      "last_checked": "2026-09-23T12:57:05Z",
+      "last_checked": "2026-09-24T02:13:55Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1452,7 +1344,7 @@
       "mileage": 61899.0,
       "price": 194,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es250/2023/869233",
-      "last_checked": "2026-09-23T12:57:09Z",
+      "last_checked": "2026-09-24T02:13:59Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1463,7 +1355,7 @@
       "mileage": 123237.0,
       "price": 119,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es300h/2021/873257",
-      "last_checked": "2026-09-23T12:57:14Z",
+      "last_checked": "2026-09-24T02:14:03Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1474,7 +1366,7 @@
       "mileage": 45899.0,
       "price": 148,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es300h/2023/820318",
-      "last_checked": "2026-09-23T12:57:19Z",
+      "last_checked": "2026-09-24T02:14:07Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1485,7 +1377,7 @@
       "mileage": 13157.0,
       "price": 178,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es300h/2024/851574",
-      "last_checked": "2026-09-23T12:57:23Z",
+      "last_checked": "2026-09-24T02:14:11Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1496,7 +1388,7 @@
       "mileage": 288000.0,
       "price": 72,
       "url": "https://ksa.carswitch.com/en/dammam/used-car/lexus/es350/2016/838304",
-      "last_checked": "2026-09-23T12:57:28Z",
+      "last_checked": "2026-09-24T02:14:16Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1507,7 +1399,7 @@
       "mileage": 109480.0,
       "price": 93,
       "url": "https://ksa.carswitch.com/en/dammam/used-car/lexus/es350/2017/871074",
-      "last_checked": "2026-09-23T12:57:33Z",
+      "last_checked": "2026-09-24T02:14:20Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1518,7 +1410,7 @@
       "mileage": 157194.0,
       "price": 95,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es350/2017/843922",
-      "last_checked": "2026-09-23T12:57:37Z",
+      "last_checked": "2026-09-24T02:14:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1529,7 +1421,7 @@
       "mileage": 188346.0,
       "price": 123,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/lexus/es350/2019/869370",
-      "last_checked": "2026-09-23T12:57:41Z",
+      "last_checked": "2026-09-24T02:14:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1540,7 +1432,7 @@
       "mileage": 200131.0,
       "price": 131,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/lexus/es350/2021/823813",
-      "last_checked": "2026-09-23T12:57:46Z",
+      "last_checked": "2026-09-24T02:14:33Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1551,7 +1443,7 @@
       "mileage": 44700.0,
       "price": 172,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es350/2024/871050",
-      "last_checked": "2026-09-23T12:57:50Z",
+      "last_checked": "2026-09-24T02:14:38Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1562,7 +1454,7 @@
       "mileage": 19147.0,
       "price": 203,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es350/2024/842062",
-      "last_checked": "2026-09-23T12:57:54Z",
+      "last_checked": "2026-09-24T02:14:43Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1573,7 +1465,7 @@
       "mileage": 13002.0,
       "price": 225,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/es350/2025/872362",
-      "last_checked": "2026-09-23T12:57:59Z",
+      "last_checked": "2026-09-24T02:14:47Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1584,7 +1476,7 @@
       "mileage": 155300.0,
       "price": 119,
       "url": "https://ksa.carswitch.com/en/dammam/used-car/lexus/gs350/2017/835325",
-      "last_checked": "2026-09-23T12:58:03Z",
+      "last_checked": "2026-09-24T02:14:52Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1595,7 +1487,7 @@
       "mileage": 99435.0,
       "price": 171,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/gx460/2022/804295",
-      "last_checked": "2026-09-23T12:58:08Z",
+      "last_checked": "2026-09-24T02:14:57Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1606,19 +1498,9 @@
       "mileage": 77742.0,
       "price": 94,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/lexus/is350/2018/868145",
-      "last_checked": "2026-09-23T12:58:13Z",
+      "last_checked": "2026-09-24T02:15:02Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Lexus",
-      "model": "LS350",
-      "year": 2024,
-      "mileage": 133000.0,
-      "price": 234950.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/lexus/ls350/2024/863072",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Lexus",
@@ -1627,7 +1509,7 @@
       "mileage": 157000.0,
       "price": 180,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/lexus/ls500/2018/848497",
-      "last_checked": "2026-09-23T12:58:22Z",
+      "last_checked": "2026-09-24T02:15:10Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1638,7 +1520,7 @@
       "mileage": 64114.0,
       "price": 193,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/lexus/ls500/2018/872566",
-      "last_checked": "2026-09-23T12:58:27Z",
+      "last_checked": "2026-09-24T02:15:14Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1649,7 +1531,7 @@
       "mileage": 41865.0,
       "price": 287,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/ls500/2022/864713",
-      "last_checked": "2026-09-23T12:58:32Z",
+      "last_checked": "2026-09-24T02:15:19Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1660,7 +1542,7 @@
       "mileage": 267353.0,
       "price": 149,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/lx570/2014/832310",
-      "last_checked": "2026-09-23T12:58:36Z",
+      "last_checked": "2026-09-24T02:15:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1671,7 +1553,7 @@
       "mileage": 15482.0,
       "price": 490,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/lx600/2024/806303",
-      "last_checked": "2026-09-23T12:58:40Z",
+      "last_checked": "2026-09-24T02:15:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1682,7 +1564,7 @@
       "mileage": 57154.0,
       "price": 491,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/lx600/2024/827672",
-      "last_checked": "2026-09-23T12:58:44Z",
+      "last_checked": "2026-09-24T02:15:33Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1693,7 +1575,7 @@
       "mileage": 17028.0,
       "price": 510,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/lx600/2025/855454",
-      "last_checked": "2026-09-23T12:58:49Z",
+      "last_checked": "2026-09-24T02:15:37Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1704,7 +1586,7 @@
       "mileage": 15755.0,
       "price": 542,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/lx600/2025/869288",
-      "last_checked": "2026-09-23T12:58:54Z",
+      "last_checked": "2026-09-24T02:15:41Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1715,7 +1597,7 @@
       "mileage": 128847.0,
       "price": 93,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/nx300/2019/835427",
-      "last_checked": "2026-09-23T12:58:59Z",
+      "last_checked": "2026-09-24T02:15:46Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1726,7 +1608,7 @@
       "mileage": 83014.0,
       "price": 107,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/nx300/2019/862372",
-      "last_checked": "2026-09-23T12:59:03Z",
+      "last_checked": "2026-09-24T02:15:50Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1735,10 +1617,11 @@
       "model": "NX300",
       "year": 2020,
       "mileage": 167000.0,
-      "price": 72400.0,
+      "price": 68,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/lexus/nx300/2020/838966",
-      "availability_status": "needs_recheck",
-      "gone_streak": 0
+      "availability_status": "active",
+      "gone_streak": 0,
+      "last_checked": "2026-09-24T02:15:54Z"
     },
     {
       "brand": "Lexus",
@@ -1747,7 +1630,7 @@
       "mileage": 21367.0,
       "price": 173,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/nx350/2025/832227",
-      "last_checked": "2026-09-23T12:59:11Z",
+      "last_checked": "2026-09-24T02:15:59Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1758,7 +1641,7 @@
       "mileage": 100813.0,
       "price": 142,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/rx350/2018/840171",
-      "last_checked": "2026-09-23T12:59:15Z",
+      "last_checked": "2026-09-24T02:16:03Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1769,7 +1652,7 @@
       "mileage": 147000.0,
       "price": 131,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/rx350/2020/812738",
-      "last_checked": "2026-09-23T12:59:20Z",
+      "last_checked": "2026-09-24T02:16:08Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1781,7 +1664,7 @@
       "price": 155,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/lexus/rx350/2022/856831",
       "last_checked": "2026-09-23T12:59:24Z",
-      "availability_status": "active",
+      "availability_status": "needs_recheck",
       "gone_streak": 0
     },
     {
@@ -1791,7 +1674,7 @@
       "mileage": 130520.0,
       "price": 204,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/rx350/2023/871978",
-      "last_checked": "2026-09-23T12:59:29Z",
+      "last_checked": "2026-09-24T02:16:16Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1802,19 +1685,9 @@
       "mileage": 14000.0,
       "price": 238,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/rx350/2024/809310",
-      "last_checked": "2026-09-23T12:59:34Z",
+      "last_checked": "2026-09-24T02:16:21Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Lexus",
-      "model": "RX450h",
-      "year": 2022,
-      "mileage": 54000.0,
-      "price": 165500.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/lexus/rx450h/2022/836826",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Lexus",
@@ -1823,7 +1696,7 @@
       "mileage": 77000.0,
       "price": 106,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/lexus/ux200/2022/866966",
-      "last_checked": "2026-09-23T12:59:43Z",
+      "last_checked": "2026-09-24T02:16:30Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1834,19 +1707,9 @@
       "mileage": 13357.0,
       "price": 245000.0,
       "url": "https://ksa.carswitch.com/riyadh/used-car/maserati/quattroporte/2019/825805",
-      "last_checked": "2026-09-23T12:59:48Z",
+      "last_checked": "2026-09-24T02:16:34Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Maserati",
-      "model": "Quattroporte",
-      "year": 2020,
-      "mileage": 42926.0,
-      "price": 149900.0,
-      "url": "https://ksa.carswitch.com/riyadh/used-car/maserati/quattroporte/2020/813608",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Porsche",
@@ -1855,7 +1718,7 @@
       "mileage": 191000.0,
       "price": 86,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/porsche/cayenne/2015/873031",
-      "last_checked": "2026-09-23T12:59:57Z",
+      "last_checked": "2026-09-24T02:16:43Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1866,7 +1729,7 @@
       "mileage": 51437.0,
       "price": 198,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/cayenne/2021/842012",
-      "last_checked": "2026-09-23T13:00:01Z",
+      "last_checked": "2026-09-24T02:16:48Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1877,7 +1740,7 @@
       "mileage": 60000.0,
       "price": 324,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/cayenne-gts/2021/862995",
-      "last_checked": "2026-09-23T13:00:05Z",
+      "last_checked": "2026-09-24T02:16:52Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1888,7 +1751,7 @@
       "mileage": 140000.0,
       "price": 178,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/porsche/cayenne-s/2019/826165",
-      "last_checked": "2026-09-23T13:00:09Z",
+      "last_checked": "2026-09-24T02:16:56Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1899,7 +1762,7 @@
       "mileage": 75877.0,
       "price": 220,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/macan-gts/2020/821408",
-      "last_checked": "2026-09-23T13:00:13Z",
+      "last_checked": "2026-09-24T02:17:00Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1910,7 +1773,7 @@
       "mileage": 111286.0,
       "price": 83,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/macan-s/2014/819972",
-      "last_checked": "2026-09-23T13:00:18Z",
+      "last_checked": "2026-09-24T02:17:04Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1921,7 +1784,7 @@
       "mileage": 252052.0,
       "price": 41,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/porsche/panamera/2013/865889",
-      "last_checked": "2026-09-23T13:00:22Z",
+      "last_checked": "2026-09-24T02:17:08Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1932,7 +1795,7 @@
       "mileage": 61200.0,
       "price": 195,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/porsche/panamera-4s/2017/849790",
-      "last_checked": "2026-09-23T13:00:27Z",
+      "last_checked": "2026-09-24T02:17:13Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1943,19 +1806,9 @@
       "mileage": 199500.0,
       "price": 107,
       "url": "https://ksa.carswitch.com/en/al-khobar/used-car/range-rover/autobiography/2018/860249",
-      "last_checked": "2026-09-23T13:00:32Z",
+      "last_checked": "2026-09-24T02:17:17Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Range Rover",
-      "model": "Evoque",
-      "year": 2020,
-      "mileage": 125628.0,
-      "price": 98000.0,
-      "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/evoque/2020/804251",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Range Rover",
@@ -1964,7 +1817,7 @@
       "mileage": 67496.0,
       "price": 138,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/evoque/2023/823529",
-      "last_checked": "2026-09-23T13:00:41Z",
+      "last_checked": "2026-09-24T02:17:25Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1975,7 +1828,7 @@
       "mileage": 155000.0,
       "price": 159,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/hse/2019/824582",
-      "last_checked": "2026-09-23T13:00:45Z",
+      "last_checked": "2026-09-24T02:17:29Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1986,7 +1839,7 @@
       "mileage": 107271.0,
       "price": 166,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/hse/2020/838841",
-      "last_checked": "2026-09-23T13:00:49Z",
+      "last_checked": "2026-09-24T02:17:34Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -1997,7 +1850,7 @@
       "mileage": 40329.0,
       "price": 460,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/hse/2023/813102",
-      "last_checked": "2026-09-23T13:00:53Z",
+      "last_checked": "2026-09-24T02:17:38Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2008,7 +1861,7 @@
       "mileage": 36000.0,
       "price": 524,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/hse/2024/861076",
-      "last_checked": "2026-09-23T13:00:58Z",
+      "last_checked": "2026-09-24T02:17:43Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2019,19 +1872,9 @@
       "mileage": 52000.0,
       "price": 510,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/se/2024/831592",
-      "last_checked": "2026-09-23T13:01:02Z",
+      "last_checked": "2026-09-24T02:17:48Z",
       "availability_status": "active",
       "gone_streak": 0
-    },
-    {
-      "brand": "Range Rover",
-      "model": "SV",
-      "year": 2023,
-      "mileage": 66121.0,
-      "price": 610000.0,
-      "url": "https://ksa.carswitch.com/jeddah/used-car/range-rover/sv/2023/833416",
-      "availability_status": "suspected_gone",
-      "gone_streak": 1
     },
     {
       "brand": "Range Rover",
@@ -2040,7 +1883,7 @@
       "mileage": 31400.0,
       "price": 784,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/sv/2024/830925",
-      "last_checked": "2026-09-23T13:01:11Z",
+      "last_checked": "2026-09-24T02:17:57Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2051,7 +1894,7 @@
       "mileage": 190000.0,
       "price": 65,
       "url": "https://ksa.carswitch.com/en/qasim-breda/used-car/range-rover/sport/2014/875266",
-      "last_checked": "2026-09-23T13:01:15Z",
+      "last_checked": "2026-09-24T02:18:02Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2062,7 +1905,7 @@
       "mileage": 163500.0,
       "price": 78,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/sport/2016/817739",
-      "last_checked": "2026-09-23T13:01:20Z",
+      "last_checked": "2026-09-24T02:18:06Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2073,7 +1916,7 @@
       "mileage": 66000.0,
       "price": 128,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/sport/2017/785276",
-      "last_checked": "2026-09-23T13:01:24Z",
+      "last_checked": "2026-09-24T02:18:11Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2084,7 +1927,7 @@
       "mileage": 170329.0,
       "price": 140,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/sport/2018/867007",
-      "last_checked": "2026-09-23T13:01:29Z",
+      "last_checked": "2026-09-24T02:18:15Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2095,7 +1938,7 @@
       "mileage": 178000.0,
       "price": 105,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/sport/2020/870341",
-      "last_checked": "2026-09-23T13:01:33Z",
+      "last_checked": "2026-09-24T02:18:20Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2106,7 +1949,7 @@
       "mileage": 132000.0,
       "price": 159,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/sport/2020/861382",
-      "last_checked": "2026-09-23T13:01:38Z",
+      "last_checked": "2026-09-24T02:18:24Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2117,7 +1960,7 @@
       "mileage": 69600.0,
       "price": 251,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/sport/2020/818605",
-      "last_checked": "2026-09-23T13:01:44Z",
+      "last_checked": "2026-09-24T02:18:28Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2128,7 +1971,7 @@
       "mileage": 73000.0,
       "price": 174,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/sport/2021/807863",
-      "last_checked": "2026-09-23T13:01:48Z",
+      "last_checked": "2026-09-24T02:18:33Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2139,7 +1982,7 @@
       "mileage": 29000.0,
       "price": 220,
       "url": "https://ksa.carswitch.com/en/jeddah/used-car/range-rover/sport/2022/864301",
-      "last_checked": "2026-09-23T13:01:53Z",
+      "last_checked": "2026-09-24T02:18:37Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2150,7 +1993,7 @@
       "mileage": 37000.0,
       "price": 235,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/sport/2022/866263",
-      "last_checked": "2026-09-23T13:01:57Z",
+      "last_checked": "2026-09-24T02:18:41Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2161,7 +2004,7 @@
       "mileage": 15070.0,
       "price": 325,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/sport/2024/837647",
-      "last_checked": "2026-09-23T13:02:02Z",
+      "last_checked": "2026-09-24T02:18:46Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2172,7 +2015,7 @@
       "mileage": 72000.0,
       "price": 180,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/velar/2022/867060",
-      "last_checked": "2026-09-23T13:02:06Z",
+      "last_checked": "2026-09-24T02:18:51Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2183,7 +2026,7 @@
       "mileage": 24356.0,
       "price": 280,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/velar/2024/795159",
-      "last_checked": "2026-09-23T13:02:11Z",
+      "last_checked": "2026-09-24T02:18:56Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2194,7 +2037,7 @@
       "mileage": 95793.0,
       "price": 124,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/velar-r-dynamic/2019/858531",
-      "last_checked": "2026-09-23T13:02:16Z",
+      "last_checked": "2026-09-24T02:19:00Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2205,7 +2048,7 @@
       "mileage": 46196.0,
       "price": 145,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/velar-r-dynamic/2020/843203",
-      "last_checked": "2026-09-23T13:02:20Z",
+      "last_checked": "2026-09-24T02:19:04Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2216,7 +2059,7 @@
       "mileage": 52354.0,
       "price": 154,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/velar-r-dynamic/2020/815754",
-      "last_checked": "2026-09-23T13:02:24Z",
+      "last_checked": "2026-09-24T02:19:08Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2227,7 +2070,7 @@
       "mileage": 213139.0,
       "price": 66,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/vogue/2013/802676",
-      "last_checked": "2026-09-23T13:02:29Z",
+      "last_checked": "2026-09-24T02:19:13Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2238,7 +2081,7 @@
       "mileage": 122440.0,
       "price": 119,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/vogue/2017/864543",
-      "last_checked": "2026-09-23T13:02:33Z",
+      "last_checked": "2026-09-24T02:19:17Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2249,7 +2092,7 @@
       "mileage": 53000.0,
       "price": 461,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/vogue/2023/838184",
-      "last_checked": "2026-09-23T13:02:37Z",
+      "last_checked": "2026-09-24T02:19:21Z",
       "availability_status": "active",
       "gone_streak": 0
     },
@@ -2260,7 +2103,7 @@
       "mileage": 115374.0,
       "price": 149,
       "url": "https://ksa.carswitch.com/en/riyadh/used-car/range-rover/vogue-se/2018/858344",
-      "last_checked": "2026-09-23T13:02:41Z",
+      "last_checked": "2026-09-24T02:19:26Z",
       "availability_status": "active",
       "gone_streak": 0
     }
@@ -2272,7 +2115,7 @@
       "gone": 16,
       "temporary": 3
     },
-    "deleted": 0,
+    "deleted": 16,
     "policy": "delete only after two consecutive definitive 'gone' checks; temporary/unparsed never causes deletion and preserves the gone streak"
   }
 }
